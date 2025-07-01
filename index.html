@@ -46,6 +46,12 @@
     <p>Dynamo, Python, Revit API, pyRevit, Power BI, VBA, SQL</p>
   </section>
 
+<section class="youtube-subscribe" style="text-align:center; padding:2rem 0;">
+  <p>▶️ Subscribe to my YouTube channel for Revit automation tools & Python tips:</p>
+  <div id="yt-subscribe-button"></div>
+</section>
+
+
   <footer>
   <p>Connect with me:</p>
   <p>
@@ -57,4 +63,20 @@
 
 
 </body>
+<!-- YouTube Subscribe Button Script -->
+<script src="https://apis.google.com/js/platform.js"></script>
+<script>
+  function loadSubscribeButton() {
+    var container = document.getElementById('yt-subscribe-button');
+    container.innerHTML = `
+      <div class="g-ytsubscribe" 
+           data-channel="@HaniMTARTOUR" 
+           data-layout="default" 
+           data-theme="dark" 
+           data-count="default"></div>
+    `;
+  }
+  window.onload = loadSubscribeButton;
+</script>
+
 </html>

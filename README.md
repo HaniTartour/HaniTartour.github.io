@@ -27,5 +27,5 @@
 
 ## 📬 Let’s Connect
 🔗 [LinkedIn](https://www.linkedin.com/in/hanimtartour)  
-[   ](https://icons8.com/icon/3tC9EQumUAuq/github) [Github-Portfoilo](https://hanitartour.github.io/)              
+   [Github-Portfoilo](https://hanitartour.github.io/)              
 📫 DM for collaboration, freelance, or automation discussions

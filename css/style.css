@@ -119,9 +119,10 @@ footer a:hover i {
 }
 
 
-.flag-label img {
-  width: 24px;
-  height: 16px;
-  margin-right: 6px;
+.flag-button img {
+  height: 1em;
+  width: auto;
   vertical-align: middle;
+  margin-right: 6px;
 }
+

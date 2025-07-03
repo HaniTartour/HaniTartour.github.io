@@ -41,4 +41,5 @@ header {
   margin-bottom: 0.75rem;
   aspect-ratio: 16 / 9; /* Optional: helps maintain ratio in modern browsers */
   object-fit: cover;    /* Crops slightly to fill space without distortion */
+  background: #eee url('/assets/placeholder.jpg') center/cover no-repeat;
 }

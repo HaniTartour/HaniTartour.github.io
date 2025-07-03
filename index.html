@@ -1,84 +1,39 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hani Tartour | Structural BIM + Automation</title>
-   
-    <!-- ✅ Your CSS goes here -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header>
-    <div class="branding">
-      <img src="assets/ht-logo.png" alt="HT Logo" class="logo" />
+    <div class="branding" style="display:flex; align-items:center; gap:1rem; padding:1rem;">
+      <img src="assets/ht-logo.png" alt="HT Logo" class="logo" style="height:60px;" />
       <div>
         <h1>HT | Structural BIM + Python Developer</h1>
         <p>Dynamo • Revit API • pyRevit • Automation Tools</p>
       </div>
     </div>
+
+    <div style="text-align:center; padding:0.5rem;">
+      <a href="projects.html" style="font-weight:bold; font-size:1.1rem;">🧩 View My Full Projects Gallery</a>
+    </div>
   </header>
 
   <section class="projects">
     <h2>🚀 Featured Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
+    <div class="project-grid" style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+
+      <div class="project-card" style="width:300px; padding:1rem; background:#fff; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
         <h3>🔄 Rename Views+</h3>
         <p>Smart batch renaming of Revit views with preview UI (pyRevit).</p>
-        <a href="#">View on GitHub</a>
+        <a href="https://github.com/HaniTartour/RenameViewsPlus" target="_blank">View on GitHub</a>
       </div>
-      <div class="project-card">
+
+      <div class="project-card" style="width:300px; padding:1rem; background:#fff; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
         <h3>📌 Level Selector Tool</h3>
         <p>Dynamo + Python tool to filter and manage levels in Revit models.</p>
-        <a href="#">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>🧠 CloneBuddy</h3>
-        <p>pyRevit GitHub Extension Manager: clone, fix, and register extensions.</p>
-        <a href="#">View on GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="skills">
-    <h2>🛠 Tools & Technologies</h2>
-    <p>Dynamo, Python, Revit API, pyRevit, Power BI, VBA, SQL</p>
-  </section>
-
-<section class="youtube-subscribe" style="text-align:center; padding:2rem 0;">
-  <p>▶️ Subscribe to my YouTube channel for Revit automation tools & Python tips:</p>
-  <div id="yt-subscribe-button"></div>
-</section>
-
-
-  <footer>
-  <p>Connect with me:</p>
-  <p>
-    🔗 <a href="https://www.linkedin.com/in/hanimtartour" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
-    🐙 <a href="https://github.com/HaniTartour" target="_blank">GitHub</a> &nbsp;|&nbsp;
-    ▶️ <a href="https://www.youtube.com/@HaniMTARTOUR" target="_blank">YouTube</a>
-  </p>
-</footer>
-
-
-</body>
-<!-- YouTube Subscribe Button Script -->
-<script src="https://apis.google.com/js/platform.js"></script>
-<script>
-  function loadSubscribeButton() {
-    var container = document.getElementById('yt-subscribe-button');
-    container.innerHTML = `
-      <div class="g-ytsubscribe" 
-           data-channelid="UCf45vNzQK8nE7tYJvQn5xYA" 
-           data-layout="default" 
-           data-theme="dark" 
-           data-count="default"></div>
-    `;
-  }
-  window.onload = loadSubscribeButton;
-</script>
-
-
-
-</html>
+        <a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank">View on GitHub</a>
+      <

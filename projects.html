@@ -58,12 +58,12 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       width: 300px;
       padding: 1rem;
+      box-sizing: border-box;
     }
     .project-card img {
       width: 100%;
-      height: auto;
       border-radius: 8px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     .project-card h3 {
       margin-top: 0;
@@ -100,21 +100,22 @@
   </header>
 
   <nav>
-    <a href="index.html" target="_blank">🏠 Home</a>
+    <a href="index.html">🏠 Home</a>
     <a href="projects.html">🧩 Projects</a>
     <a href="#">📖 About</a>
     <a href="#">📬 Contact</a>
   </nav>
 
   <div class="filter-bar">
-    <button class="active" onclick="filterProjects(event, 'all')">All</button>
-    <button onclick="filterProjects(event, 'pyrevit')">pyRevit</button>
-    <button onclick="filterProjects(event, 'dynamo')">Dynamo</button>
-    <button onclick="filterProjects(event, 'ui')">WinForms</button>
+    <button class="active" onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('pyrevit')">pyRevit</button>
+    <button onclick="filterProjects('dynamo')">Dynamo</button>
+    <button onclick="filterProjects('ui')">WinForms</button>
   </div>
 
+  <!-- ✅ Dev Tools Section -->
   <div class="project-grid" id="projectGrid">
-    <!-- 🔄 Project 1 -->
+
     <div class="project-card" data-tags="pyrevit python ui">
       <h3>🔄 Rename Views+</h3>
       <p>Smart pyRevit tool to batch rename views with live preview, filters & color-coded UI.</p>
@@ -123,11 +124,10 @@
       </div>
       <div class="links">
         <a href="https://github.com/HaniTartour/RenameViewsPlus" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Demo</a>
+        <a href="#">Demo</a>
       </div>
     </div>
 
-    <!-- 📌 Project 2 -->
     <div class="project-card" data-tags="dynamo python ui">
       <h3>📌 Level Selector Tool</h3>
       <p>Multi-level Revit filtering UI built with Python, WinForms & Dynamo — perfect for multi-story projects.</p>
@@ -136,11 +136,10 @@
       </div>
       <div class="links">
         <a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Demo</a>
+        <a href="#">Demo</a>
       </div>
     </div>
 
-    <!-- 🧠 Project 3 -->
     <div class="project-card" data-tags="pyrevit python github">
       <h3>🧠 CloneBuddy</h3>
       <p>pyRevit Extension Manager to clone, fix, validate & register GitHub extensions with one click.</p>
@@ -149,27 +148,81 @@
       </div>
       <div class="links">
         <a href="https://github.com/HaniTartour/CloneBuddy" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Demo</a>
+        <a href="#">Demo</a>
       </div>
     </div>
-  </div> <!-- ✅ closes automation tools section -->
 
-  <!-- 👷 CONSTRUCTION PROJECTS -->
+  </div> <!-- ✅ Closed dev project grid -->
+
+  <!-- ✅ Construction Projects Section -->
   <section class="construction-projects">
     <h2>🏗️ Construction & BIM Projects</h2>
-    <p class="projects-description">
+    <p class="projects-description" style="text-align:center; color:#666;">
       A collection of large-scale construction projects I contributed to as a Structural BIM Engineer and Revit Automation Lead.
     </p>
+
     <div class="project-grid">
-      <!-- Repeat for all 10 construction projects -->
+
       <div class="project-card">
-        <img src="assets/thumbnails/belle-vie.jpg" alt="Belle Vie Compound" />
+        <img src="assets/thumbnails/belle-vie.jpg" alt="Belle Vie Thumbnail" />
         <h3>🏘 Belle Vie Compound – New Zayed</h3>
         <p>BIM Lead | Talaat Moustafa Group</p>
       </div>
 
-      <!-- Add remaining 9 cards exactly as you wrote -->
-      <!-- ... -->
+      <div class="project-card">
+        <img src="assets/thumbnails/noor-city.jpg" alt="Noor Smart City Thumbnail" />
+        <h3>🌇 Noor Smart City</h3>
+        <p>BIM Automation | Smart infrastructure planning</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/fourseasons.jpg" alt="Four Seasons Villas Thumbnail" />
+        <h3>🏝 Four Seasons Private Villas – Madinaty</h3>
+        <p>Luxury residential villas | Coordination & Revit Detailing</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/ministers-district.jpg" alt="Ministers District Thumbnail" />
+        <h3>🏛 Governmental District – New Capital</h3>
+        <p>Structural BIM | Ministry Clusters</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/business-park.jpg" alt="Cairo Business Park Thumbnail" />
+        <h3>🏢 Cairo Business Park – Al Rehab</h3>
+        <p>Commercial BIM Package | Clash & Docs</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/monte-galala.jpg" alt="IL Monte Galala Thumbnail" />
+        <h3>🏔 IL Monte Galala</h3>
+        <p>Chalet & Villas Modeling | BIM detailing</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/sinai-foodcourt.jpg" alt="SINAI Foodcourt Thumbnail" />
+        <h3>🍽 Sinai University – Food Court</h3>
+        <p>Steel Detailing | Revit Coordination</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/medical-complex.jpg" alt="Medical Complex Hospital Thumbnail" />
+        <h3>🏥 Medical Complex Hospital – Cairo Univ.</h3>
+        <p>6th October City | BIM for Healthcare</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/makkah-expansion.jpg" alt="Holy Haram Expansion Thumbnail" />
+        <h3>🕋 Holy Haram Makkah – Saudi Expansion</h3>
+        <p>Structural Revit Modeling | Int’l Collaboration</p>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/thumbnails/rayhanah.jpg" alt="Rayhanah Residence Thumbnail" />
+        <h3>🏙 Rayhanah Residence – Maadi</h3>
+        <p>Luxury Apartments | BIM Workflow Setup</p>
+      </div>
+
     </div>
   </section>
 
@@ -177,15 +230,15 @@
     Built with 💙 by Hani Tartour – 2025
   </footer>
 
-  <!-- ✅ JS filter fix -->
   <script>
-    function filterProjects(event, tag) {
-      const cards = document.querySelectorAll('#projectGrid .project-card');
+    function filterProjects(tag) {
+      const cards = document.querySelectorAll('.project-card');
       const buttons = document.querySelectorAll('.filter-bar button');
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
       cards.forEach(card => {
-        if (tag === 'all' || card.dataset.tags.includes(tag)) {
+        const tags = card.dataset.tags || "";
+        if (tag === 'all' || tags.includes(tag)) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';

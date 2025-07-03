@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Hub – Hani Tartour</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .grid-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+    }
+    .video-card {
+      width: 300px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+    .video-card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .video-card h3 {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.1rem;
+    }
+    .video-card a {
+      display: inline-block;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎓 Learning Hub</h1>
+    <p>Watch tutorials, explore my Udemy course, and level up your BIM + Automation skills!</p>
+  </header>
+
+  <section>
+    <h2><i class="fab fa-youtube"></i> YouTube Tutorials</h2>
+    <div class="grid-section">
+      <div class="video-card">
+        <img src="assets/learning/youtube1.jpg" alt="YouTube Video Thumbnail">
+        <h3>Getting Started with pyRevit</h3>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">Watch on YouTube</a>
+      </div>
+      <div class="video-card">
+        <img src="assets/learning/youtube2.jpg" alt="YouTube Video Thumbnail">
+        <h3>Dynamo + Python Filters</h3>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">Watch on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎓 Udemy Course</h2>
+    <div class="grid-section">
+      <div class="video-card">
+        <img src="assets/learning/udemy-course.jpg" alt="Udemy Course Thumbnail">
+        <h3>Mastering Revit API Automation</h3>
+        <a href="https://www.udemy.com/course/revit-api-course/" target="_blank">View on Udemy</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="text-align: center; padding: 2rem 1rem; background: #eee; font-size: 0.9rem; color: #666;">
+    <p>Connect with me:</p>
+    <p>
+      <a href="https://www.linkedin.com/in/hanimtartour" class="linkedin-link" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a> &nbsp;|&nbsp;
+      <a href="https://github.com/HaniTartour" class="github-link" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a> &nbsp;|&nbsp;
+      <a href="https://www.youtube.com/@HaniMTARTOUR" class="youtube-link" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+    </p>
+    <p style="margin-top: 1rem;">Built with 💙 by Hani Tartour – 2025</p>
+  </footer>
+
+</body>
+</html>

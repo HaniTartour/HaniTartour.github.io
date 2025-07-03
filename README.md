@@ -53,6 +53,14 @@ Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and 
 
 ---
 
+## 🧰 More Tools [ Future Soon... ]
+- 🧹 **CleanSheets** – Auto-delete unused sheets from Revit models  
+- 🕵️‍♂️ **Find & Fix Duplicates** – Preview & resolve duplicate element names  
+- 📤 **Batch Export Views to DWG** – Custom DWG setup & folder structure control
+  
+---
+
+
 ## 📬 Let's Connect
 
 - 🔗 [LinkedIn](https://www.linkedin.com/in/hanimtartour)

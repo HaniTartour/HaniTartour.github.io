@@ -21,13 +21,27 @@ Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and 
 
 ## 🌟 Featured Projects
 
-🔄 [**Rename Views+**](https://github.com/HaniTartour/RenameViewsPlus)  
-> Smart pyRevit tool to batch rename Revit views with live preview, filters & color-coded UI
+🔄 [**Rename Views+**](https://github.com/HaniTartour/RenameViewsPlus) 
 
-📌 [**Level Selector Tool**](https://github.com/HaniTartour/LevelSelectorTool)  
+![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)
+![UI: WinForms](https://img.shields.io/badge/UI-WinForms-green?style=for-the-badge)
+> Smart pyRevit tool to batch rename Revit views with live preview, filters & color-coded UI.
+
+
+
+📌 [**Level Selector Tool**](https://github.com/HaniTartour/LevelSelectorTool) 
+
+![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)
+![UI: WinForms](https://img.shields.io/badge/UI-WinForms-green?style=for-the-badge)
 > Multi-Level Revit filtering UI built with Python, WinForms & Dynamo — perfect for multi-story projects
 
 🧠 [**CloneBuddy**](https://github.com/HaniTartour/CloneBuddy)  
+
+![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)
+![UI: WinForms](https://img.shields.io/badge/UI-WinForms-green?style=for-the-badge)
 > pyRevit Extension Manager to clone, fix, validate & register GitHub extensions with one click
 
 ---

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f9f9f9;
       margin: 0;
       padding: 0;
@@ -25,6 +25,7 @@
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 1.5rem; /* spacing below logo */
     }
     .branding img.logo {
       height: 60px;
@@ -40,7 +41,7 @@
     /* Button to Projects */
     .projects-link {
       text-align: center;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
     .projects-link a {
       display: inline-block;
@@ -126,28 +127,43 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* Responsive enhancements */
+    @media (max-width: 600px) {
+      .branding {
+        flex-direction: column;
+        text-align: center;
+      }
+      .branding img.logo {
+        height: 50px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .projects-link a {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <header>
-  <div class="branding">
-    <img src="assets/ht-logo.png" alt="HT Logo" class="logo" />
-    <div>
-      <h1>HT | Structural BIM + Python Developer</h1>
-      <p>Dynamo • Revit API • pyRevit • Automation Tools</p>
+    <div class="branding">
+      <img src="assets/ht-logo.png" alt="HT Logo" class="logo" />
+      <div>
+        <h1>HT | Structural BIM + Python Developer</h1>
+        <p>Dynamo • Revit API • pyRevit • Automation Tools</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Move button BELOW branding, not inline -->
-  <div class="projects-link">
-    <a href="projects.html">
-      🧩 View My Full Projects Gallery
-    </a>
-  </div>
-</header>
-
+    <div class="projects-link">
+      <a href="projects.html">
+        🧩 View My Full Projects Gallery
+      </a>
+    </div>
   </header>
 
   <section class="projects">

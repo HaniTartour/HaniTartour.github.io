@@ -3,10 +3,10 @@
 </p>
 
 # 👋 Hey there, I'm Hani Tartour  
+**Structural BIM Engineer | Revit Automation Wizard | Python Tinkerer**
+
 ![Profile Views](https://komarev.com/ghpvc/?username=HaniTartour&color=blue)
 ![GitHub followers](https://img.shields.io/github/followers/HaniTartour?style=social)
-
-**Structural BIM Engineer | Revit Automation Wizard | Python Tinkerer**
 
 Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and pyRevit tools come to life. I build smart automation tools to save time, reduce errors, and make engineers look like heroes 💪.
 

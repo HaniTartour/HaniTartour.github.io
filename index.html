@@ -6,10 +6,41 @@
   <title>Hani Tartour | Structural BIM + Automation</title>
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <head>
+  <!-- Font Awesome CDN (already needed for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    /* 🔁 Shake animation */
+    @keyframes shake {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(-3px); }
+      50%  { transform: translateX(3px); }
+      75%  { transform: translateX(-2px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* 🟥 Shake only YouTube icon on hover */
+    .youtube-link:hover i {
+      animation: shake 0.4s ease;
+    }
+
+    /* 👻 Make GitHub icon true black */
+    .github-link i {
+      color: #000000 !important;
+    }
+
+    /* 📘 Keep LinkedIn blue */
+    .linkedin-link i {
+      color: #0077cc;
+    }
+
+    footer a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f9f9f9;
@@ -192,22 +223,20 @@
 <footer style="text-align: center; padding: 2rem 1rem; background: #eee; font-size: 0.9rem; color: #666;">
   <p>Connect with me:</p>
   <p>
-    <a href="https://www.linkedin.com/in/hanimtartour" target="_blank" style="color: #0077cc; text-decoration: none; font-weight: bold;">
+    <a href="https://www.linkedin.com/in/hanimtartour" target="_blank" class="linkedin-link">
       <i class="fab fa-linkedin"></i> LinkedIn
     </a> &nbsp;|&nbsp;
 
-    <a href="https://github.com/HaniTartour" target="_blank" style="color: #0077cc; text-decoration: none; font-weight: bold;">
+    <a href="https://github.com/HaniTartour" target="_blank" class="github-link">
       <i class="fab fa-github"></i> GitHub
     </a> &nbsp;|&nbsp;
 
-    <a href="https://www.youtube.com/@HaniMTARTOUR" target="_blank" style="text-decoration: none; font-weight: bold;">
+    <a href="https://www.youtube.com/@HaniMTARTOUR" target="_blank" class="youtube-link">
       <i class="fab fa-youtube" style="color: #cc0000;"></i> YouTube
     </a>
   </p>
   <p style="margin-top: 1rem;">Built with 💙 by Hani Tartour – 2025</p>
 </footer>
-
-
 
 
   <!-- YouTube Subscribe Button Script -->

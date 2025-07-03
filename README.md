@@ -1,4 +1,11 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HaniTartour/HaniTartour.github.io/main/assets/banner.png" alt="Hani Tartour Banner" />
+</p>
+
 # 👋 Hey there, I'm Hani Tartour  
+![Profile Views](https://komarev.com/ghpvc/?username=HaniTartour&color=blue)
+![GitHub followers](https://img.shields.io/github/followers/HaniTartour?style=social)
+
 **Structural BIM Engineer | Revit Automation Wizard | Python Tinkerer**
 
 Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and pyRevit tools come to life. I build smart automation tools to save time, reduce errors, and make engineers look like heroes 💪.

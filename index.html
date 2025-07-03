@@ -1,18 +1,132 @@
+@ -1,234 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hani Tartour | Structural BIM + Automation</title>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .branding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .branding img.logo {
+      height: 60px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    .projects-link {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .projects-link a {
+      display: inline-block;
+      background: #ff6600;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .projects-link a:hover {
+      background: #cc5200;
+    }
+    .projects {
+      padding: 3rem 1rem;
+    }
+    .projects h2 {
+      text-align: center;
+      font-size: 2rem;
+    }
+    .projects-description {
+      text-align: center;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      width: 300px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+    .project-card p {
+      color: #444;
+    }
+    .project-card a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .skills {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .youtube-subscribe {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    footer a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- 🔷 HEADER -->
   <header>
     <div class="branding">
       <img src="assets/ht-logo.png" alt="HT Logo" class="logo" />
@@ -29,7 +143,6 @@
     </div>
   </header>
 
-  <!-- 🚀 FEATURED PROJECTS -->
   <section class="projects">
     <h2>🚀 Featured Projects</h2>
     <p class="projects-description">
@@ -39,50 +152,67 @@
       <div class="project-card">
         <h3>🔄 Rename Views+</h3>
         <p>Smart batch renaming of Revit views with preview UI (pyRevit).</p>
-        <a href="https://github.com/HaniTartour/RenameViewsPlus" target="_blank">View on GitHub</a>
+        <a href="https://github.com/HaniTartour/RenameViewsPlus" target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </a>
       </div>
+
       <div class="project-card">
         <h3>📌 Level Selector Tool</h3>
         <p>Dynamo + Python tool to filter and manage levels in Revit models.</p>
-        <a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank">View on GitHub</a>
+        <a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </a>
       </div>
+
       <div class="project-card">
         <h3>🧠 CloneBuddy</h3>
         <p>pyRevit GitHub Extension Manager: clone, fix, and register extensions.</p>
-        <a href="https://github.com/HaniTartour/CloneBuddy" target="_blank">View on GitHub</a>
+        <a href="https://github.com/HaniTartour/CloneBuddy" target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 🛠 TOOLS & TECH -->
   <section class="skills">
     <h2>🛠 Tools & Technologies</h2>
     <p>Dynamo, Python, Revit API, pyRevit, Power BI, VBA, SQL</p>
   </section>
 
-  <!-- ▶️ YOUTUBE CTA -->
   <section class="youtube-subscribe">
-    <p>
-      <a href="https://www.youtube.com/@HaniMTARTOUR" target="_blank" style="text-decoration: none; color: inherit;">
-        <i class="fab fa-youtube" style="color: #cc0000; margin-right: 8px;"></i>
-        Subscribe to my YouTube channel for Revit automation tools & Python tips
-      </a>
-    </p>
+    <p>▶️ Subscribe to my YouTube channel for Revit automation tools & Python tips:</p>
     <div id="yt-subscribe-button"></div>
+    <p>
+  <a href="https://www.youtube.com/@HaniMTARTOUR" target="_blank" style="text-decoration: none; color: inherit;">
+    <i class="fab fa-youtube" style="color: #cc0000; margin-right: 8px;"></i>
+    Subscribe to my YouTube channel for Revit automation tools & Python tips
+  </a>
+</p>
+
   </section>
 
-  <!-- 🔻 FOOTER -->
-  <footer>
-    <p>Connect with me:</p>
-    <p style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; align-items: center;">
-      <a href="https://www.linkedin.com/in/hanimtartour" class="linkedin-link"> <i class="fab fa-linkedin"></i> LinkedIn </a>
-      <a href="https://github.com/HaniTartour" class="github-link"> <i class="fab fa-github"></i> GitHub </a>
-      <a href="https://www.youtube.com/@HaniMTARTOUR" class="youtube-link"> <i class="fab fa-youtube"></i> YouTube </a>
-    </p>
-    <p style="margin-top: 1rem;">Built with 💙 by Hani Tartour – 2025</p>
-  </footer>
+  <footer style="text-align: center; padding: 2rem 1rem; background: #eee; font-size: 0.9rem; color: #666;">
+  <p>Connect with me:</p>
+  <p>
+    <a href="https://www.linkedin.com/in/hanimtartour" target="_blank" style="color: #0077cc; text-decoration: none; font-weight: bold;">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a> &nbsp;|&nbsp;
 
-  <!-- 📺 YouTube Subscribe Button -->
+    <a href="https://github.com/HaniTartour" target="_blank" style="color: #0077cc; text-decoration: none; font-weight: bold;">
+      <i class="fab fa-github"></i> GitHub
+    </a> &nbsp;|&nbsp;
+
+    <a href="https://www.youtube.com/@HaniMTARTOUR" target="_blank" style="color: #0077cc; text-decoration: none; font-weight: bold;">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+  </p>
+  <p style="margin-top: 1rem;">Built with 💙 by Hani Tartour – 2025</p>
+</footer>
+
+
+
+  <!-- YouTube Subscribe Button Script -->
   <script src="https://apis.google.com/js/platform.js"></script>
   <script>
     function loadSubscribeButton() {
@@ -99,7 +229,7 @@
     window.onload = loadSubscribeButton;
   </script>
 
-  <!-- 🌐 Auto-fix external links -->
+  <!-- Bonus: Auto-handle all external links if added later -->
   <script>
     document.querySelectorAll('a[href^="http"]').forEach(link => {
       link.setAttribute('target', '_blank');

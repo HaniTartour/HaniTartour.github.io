@@ -1,33 +1,61 @@
-# HaniTartour.github.io
-# 👋 Hi, I’m Hani Tartour
+# 👋 Hey there, I'm Hani Tartour  
+**Structural BIM Engineer | Revit Automation Wizard | Python Tinkerer**
 
-🏗 **Structural BIM Engineer** | 💡 **Dynamo & Revit API Automation** | 🐍 **Python Developer for BIM Tools**
-
----
-
-## 🔧 What I Do
-- Build custom Revit/Dynamo tools using Python & the Revit API
-- Automate structural detailing, parameter syncing, view management
-- Develop pyRevit buttons for tech offices and design teams
-- Teach Revit scripting and Dynamo for engineers
+Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and pyRevit tools come to life. I build smart automation tools to save time, reduce errors, and make engineers look like heroes 💪.
 
 ---
 
-## 🚀 Tools & Tech
-`Dynamo` • `Revit API` • `pyRevit` • `Python` • `IronPython` • `C#` • `Power BI` • `VBA`
+## 🛠 What I Build
+- ⚙️ Custom Revit & Dynamo automation tools (Python, Revit API)
+- 🏗 Structural detailing, view naming, parameter syncing — fully automated
+- 🧩 pyRevit buttons for smarter workflows in BIM tech offices
+- 🎓 Mentor engineers in Revit scripting, Dynamo logic & automation thinking
 
 ---
 
-## 📢 Featured Projects
-- 🔄 **Rename Views+**: Smart view renaming tool with pyRevit UI
-- 📌 **Level Selector Tool**: Multi-level Revit filtering UI (Dynamo+WinForms)
-- 🧠 **CloneBuddy**: PyRevit Extension Manager & GitHub integration tool
+## 🚀 Tech Stack
+`Revit API` • `Dynamo` • `pyRevit` • `Python` • `IronPython`  
+`C#` • `Power BI` • `VBA` • `Windows Forms` • `GitHub Pages`
 
 ---
 
-## 📬 Let’s Connect
-🔗 [LinkedIn](https://www.linkedin.com/in/hanimtartour)  
-   [Github-Portfoilo](https://hanitartour.github.io/)
-   [youtubeChannel](https://www.youtube.com/@HaniMTARTOUR)
-   
-📫 DM for collaboration, freelance, or automation discussions
+## 🌟 Featured Projects
+
+🔄 [**Rename Views+**](https://github.com/HaniTartour/RenameViewsPlus)  
+> Smart pyRevit tool to batch rename Revit views with live preview, filters & color-coded UI
+
+📌 [**Level Selector Tool**](https://github.com/HaniTartour/LevelSelectorTool)  
+> Multi-Level Revit filtering UI built with Python, WinForms & Dynamo — perfect for multi-story projects
+
+🧠 [**CloneBuddy**](https://github.com/HaniTartour/CloneBuddy)  
+> pyRevit Extension Manager to clone, fix, validate & register GitHub extensions with one click
+
+---
+
+## 📬 Let's Connect
+
+- 🔗 [LinkedIn](https://www.linkedin.com/in/hanimtartour)
+- 🌐 [My Portfolio Site](https://hanitartour.github.io)
+- ▶️ [YouTube Channel](https://www.youtube.com/@HaniMTARTOUR)
+
+**💬 DM me for:**
+- BIM automation projects  
+- Collaboration on pyRevit tools  
+- Revit/Dynamo training sessions or freelance work
+
+---
+
+## 💻 My Dev Setup
+🖥 Revit 2024 • Dynamo • PyCharm • GitHub Desktop  
+☕ Preferred Weapon: Python  
+🧠 Best ideas show up after coffee (and before deadlines)
+
+---
+
+## 📊 GitHub Stats
+![Hani's GitHub Stats](https://github-readme-stats.vercel.app/api?username=HaniTartour&show_icons=true&theme=radical)
+
+---
+
+> Built with 💙 and caffeine, powered by curiosity.
+

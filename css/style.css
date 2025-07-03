@@ -47,10 +47,23 @@ header {
   background: #eee url('/assets/placeholder.jpg') center/cover no-repeat;
 }
 
-/* 🌈 Icon Colors */
-.linkedin-link i   { color: #0077b5; } /* LinkedIn Blue */
-.github-link i     { color: #000000; } /* GitHub Black */
-.youtube-link i    { color: #cc0000; } /* YouTube Red */
+/* 🌈 Social Icon Colors */
+footer a.linkedin-link i {
+  color: #0077b5;
+}
+footer a.github-link i {
+  color: #181717;
+}
+footer a.youtube-link i {
+  color: #ff0000;
+}
+
+/* Optional: hover effect */
+footer a:hover i {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
 
 /* 🎉 Icon Animations */
 .linkedin-link:hover i {

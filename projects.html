@@ -59,6 +59,12 @@
       width: 300px;
       padding: 1rem;
     }
+    .project-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
     .project-card h3 {
       margin-top: 0;
     }
@@ -94,21 +100,20 @@
   </header>
 
   <nav>
-    <a href="index.html">🏠 Home</a>
+    <a href="index.html" target="_blank">🏠 Home</a>
     <a href="projects.html">🧩 Projects</a>
     <a href="#">📖 About</a>
     <a href="#">📬 Contact</a>
   </nav>
 
   <div class="filter-bar">
-    <button class="active" onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('pyrevit')">pyRevit</button>
-    <button onclick="filterProjects('dynamo')">Dynamo</button>
-    <button onclick="filterProjects('ui')">WinForms</button>
+    <button class="active" onclick="filterProjects(event, 'all')">All</button>
+    <button onclick="filterProjects(event, 'pyrevit')">pyRevit</button>
+    <button onclick="filterProjects(event, 'dynamo')">Dynamo</button>
+    <button onclick="filterProjects(event, 'ui')">WinForms</button>
   </div>
 
   <div class="project-grid" id="projectGrid">
-
     <!-- 🔄 Project 1 -->
     <div class="project-card" data-tags="pyrevit python ui">
       <h3>🔄 Rename Views+</h3>
@@ -117,8 +122,8 @@
         <span>pyRevit</span><span>Python</span><span>UI</span>
       </div>
       <div class="links">
-        <a href="https://github.com/HaniTartour/RenameViewsPlus">GitHub</a>
-        <a href="#">Demo</a>
+        <a href="https://github.com/HaniTartour/RenameViewsPlus" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Demo</a>
       </div>
     </div>
 
@@ -130,8 +135,8 @@
         <span>Dynamo</span><span>Python</span><span>UI</span>
       </div>
       <div class="links">
-        <a href="https://github.com/HaniTartour/LevelSelectorTool">GitHub</a>
-        <a href="#">Demo</a>
+        <a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Demo</a>
       </div>
     </div>
 
@@ -143,20 +148,39 @@
         <span>pyRevit</span><span>Python</span><span>GitHub</span>
       </div>
       <div class="links">
-        <a href="https://github.com/HaniTartour/CloneBuddy">GitHub</a>
-        <a href="#">Demo</a>
+        <a href="https://github.com/HaniTartour/CloneBuddy" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Demo</a>
       </div>
     </div>
+  </div> <!-- ✅ closes automation tools section -->
 
-  </div>
+  <!-- 👷 CONSTRUCTION PROJECTS -->
+  <section class="construction-projects">
+    <h2>🏗️ Construction & BIM Projects</h2>
+    <p class="projects-description">
+      A collection of large-scale construction projects I contributed to as a Structural BIM Engineer and Revit Automation Lead.
+    </p>
+    <div class="project-grid">
+      <!-- Repeat for all 10 construction projects -->
+      <div class="project-card">
+        <img src="assets/thumbnails/belle-vie.jpg" alt="Belle Vie Compound" />
+        <h3>🏘 Belle Vie Compound – New Zayed</h3>
+        <p>BIM Lead | Talaat Moustafa Group</p>
+      </div>
+
+      <!-- Add remaining 9 cards exactly as you wrote -->
+      <!-- ... -->
+    </div>
+  </section>
 
   <footer>
     Built with 💙 by Hani Tartour – 2025
   </footer>
 
+  <!-- ✅ JS filter fix -->
   <script>
-    function filterProjects(tag) {
-      const cards = document.querySelectorAll('.project-card');
+    function filterProjects(event, tag) {
+      const cards = document.querySelectorAll('#projectGrid .project-card');
       const buttons = document.querySelectorAll('.filter-bar button');
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');

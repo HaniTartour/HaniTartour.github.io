@@ -197,11 +197,11 @@ footer a:hover i {
 
 
 /* 🔶 Learning Hub Button */
-.Learning-link {
+.learning-link {
   margin-top: 0.5rem;
 }
 
-.Learning-link a {
+.learning-link a {
   display: inline-block;
   background: #ff6600;
   color: white;
@@ -213,6 +213,6 @@ footer a:hover i {
   transition: background 0.3s ease;
 }
 
-.Learning-link a:hover {
+.learning-link a:hover {
   background: #cc5200;
 }

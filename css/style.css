@@ -288,3 +288,27 @@ body.dark-mode .project-card p {
   color: #ccc;
 }
 
+
+/*Add specific dark-theme overrides:*/
+
+body.dark {
+  background: #1e1e1e;
+  color: #ddd;
+}
+
+body.dark header {
+  background-color: #111;
+}
+
+body.dark .project-card {
+  background: #2a2a2a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+body.dark footer {
+  background: #2a2a2a;
+  color: #aaa;
+}
+
+/* And so on—just override colors with `.dark` prefix */
+

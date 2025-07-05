@@ -39,13 +39,6 @@ header {
 /* -------------------------------
  🔶 Buttons (Shared Style)
 ---------------------------------- */
-.button-group {
-  display: flex;
-  flex-wrap: wrap;           /* Optional: wrap on small screens */
-  gap: 1rem;                 /* Space between buttons */
-  justify-content: center;  /* Optional: center them */
-  margin-top: 1rem;
-}
 
 button,
 .projects-link a,
@@ -69,6 +62,15 @@ button:hover,
 .certificates-link a:hover,
 .learning-link a:hover {
   background: #cc5200;
+}
+
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;           /* Optional: wrap on small screens */
+  gap: 1rem;                 /* Space between buttons */
+  justify-content: center;  /* Optional: center them */
+  margin-top: 1rem;
 }
 
 /*responsive media query*/

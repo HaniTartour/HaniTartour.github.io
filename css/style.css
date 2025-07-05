@@ -39,7 +39,6 @@ header {
 /* -------------------------------
  🔶 Buttons (Shared Style)
 ---------------------------------- */
-
 button,
 .projects-link a,
 .certificates-link a,
@@ -73,8 +72,9 @@ button:hover,
   margin-top: 1rem;
 }
 
-/*responsive media query*/
 
+/*responsive media query*/
+/*
 @media (max-width: 480px) {
   .button-group {
     flex-direction: column;
@@ -84,9 +84,10 @@ button:hover,
   .button-group a,
   .button-group button {
     width: 100%;
-    text-align: center;
+    text-align: center; 
   }
 }
+*/
 
 
 /*visually space the icons from the text*/

@@ -133,11 +133,43 @@
   </style>
 </head>
 
-<body>
 
+<!-- Toggle the Theme -->
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener('change', function () {
+    if (this.checked) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
+
+
+
+
+<body>
   <header>
     <h1>🚀 Hani Tartour – Project Gallery</h1>
     <p>All my tools, automation scripts, and BIM workflows in one place</p>
+	
+<!-- Add Toggle Button in the Header -->	
+	<div style="text-align: right; margin-top: 1rem;">
+	  <label style="cursor: pointer;">
+		🌙 <input type="checkbox" id="themeToggle" style="transform: scale(1.2); vertical-align: middle;"> Dark Mode
+	  </label>
+	</div>
+	
   </header>
 
   <nav>

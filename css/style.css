@@ -220,12 +220,12 @@ footer a:hover i {
 
 /* 🔳 Section Container Box Style */
 .section-box {
-  border: 1px solid #ccc;         /* light gray border */
-  border-radius: 10px;            /* smooth rounded corners */
-  padding: 2rem;                  /* space inside the box */
-  margin: 2rem auto;              /* spacing between sections */
-  background-color: #fff;         /* white background */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* light shadow for depth */
-  max-width: 1200px;              /* control width for large screens */
+  border: 1px solid #ccc;         			/* light gray border */
+  border-radius: 10px;            			/* smooth rounded corners */
+  padding: 2rem;                  			/* space inside the box */
+  margin: 2rem auto;              			/* spacing between sections */
+  background-color: #fff;         			/* white background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); 	/* light shadow for depth */
+  max-width: 1200px;              			/* control width for large screens */
 }
 

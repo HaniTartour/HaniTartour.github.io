@@ -6,7 +6,7 @@ from PIL import Image
 import pytesseract
 
 # Optional: Set path to Tesseract executable
-#pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # 📁 Folder containing images
 input_folder = 'images'  # Update this folder name

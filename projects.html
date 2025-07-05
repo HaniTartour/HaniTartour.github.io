@@ -415,24 +415,24 @@
 
 <!-- Toggle the Theme -->
 
-<script>
-  const themeToggleBtn = document.getElementById('theme-toggle');
+	<script>
+	  const themeToggleBtn = document.getElementById('theme-toggle');
 
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-  }
+	  // Load saved theme from localStorage
+	  const savedTheme = localStorage.getItem('theme');
+	  if (savedTheme === 'dark') {
+		document.body.classList.add('dark');
+	  }
 
-  // Toggle dark mode on click
-  themeToggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+	  // Toggle dark mode on click
+	  themeToggleBtn.addEventListener('click', () => {
+		document.body.classList.toggle('dark');
 
-    // Save preference
-    const isDark = document.body.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-</script>
+		// Save preference
+		const isDark = document.body.classList.contains('dark');
+		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+	  });
+	</script>
 
 
 

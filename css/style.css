@@ -343,3 +343,20 @@ body.dark .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
 }
+
+
+/* Light mode (already handled via .project-info) */
+.project-info {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+/* 🔧 Add this for dark mode: */
+body.dark .project-info {
+  color: #ccc;
+}
+
+body.dark .project-info li {
+  color: #ccc; /* Ensures list items show correctly */
+}

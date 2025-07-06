@@ -10,6 +10,16 @@
 
 Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and pyRevit tools come to life. I build smart automation tools to save time, reduce errors, and make engineers look like heroes 💪.
 
+
+## 👋 About Me
+
+Learn more about my background, skills, and project experience:
+
+👉 [Click here to view my full About Page](https://hanitartour.github.io/about.html)
+
+Includes my story, resume, project highlights, and contact info.
+
+
 ---
 
 ## 🛠 What I Build

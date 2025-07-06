@@ -24,6 +24,33 @@
 		  color: #666;
 		  margin-bottom: 2rem;
 		}	  
+		
+		
+		#scrollTopBtn {
+		  position: fixed;
+		  bottom: 30px;
+		  right: 30px;
+		  z-index: 999;
+		  font-size: 16px;
+		  background-color: #ff6600;
+		  color: white;
+		  border: none;
+		  border-radius: 50px;
+		  padding: 0.7rem 1.2rem;
+		  cursor: pointer;
+		  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+		  display: none;
+		}
+
+		#scrollTopBtn:hover {
+		  background-color: #cc5200;
+		}		
+		
+		
+		
+		
+		
+		
   </style>
     <!-- >
     body {
@@ -261,4 +288,32 @@
   </script>
 
 </body>
+
+
+<!-- Scroll-to-top -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Back to Top">↑ Top</button>
+
+<!-- JS Scroll Logic -->
+<script>
+  // Show button after scrolling down 300px
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Smooth scroll to top
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+
+
+
+
+
 </html>

@@ -309,6 +309,24 @@
 	  font-size: 0.9rem;
 	  color: #555;
 	}
+	
+	.stats-footer .yt-badge iframe {
+	  height: 30px;
+	  width: 160px;
+	  vertical-align: middle;
+	  margin: 0 0.5rem;
+	}
+
+	@media screen and (max-width: 600px) {
+	  .stats-footer p {
+		font-size: 0.85rem;
+		line-height: 1.4;
+	  }
+	  .stats-footer .yt-badge iframe {
+		width: 140px;
+		height: 28px;
+	  }
+	}
 
 
 
@@ -479,17 +497,19 @@
 	  <p>
 		🔗 LinkedIn: <strong>18,942</strong> followers |
 		🎓 Udemy: <strong>6</strong> students |
-		
 		🎥 YouTube:
-			<iframe style="height: 90px; width: 300px;" 
-			  src="https://ytbadge.vercel.app/api/subscribers/UCdgcjVPHE9_J-OS-2oUvhvA" 
-			  frameborder="0">
-			</iframe>|
-				
+		<span class="yt-badge">
+		  <iframe 
+			src="https://ytbadge.vercel.app/api/subscribers/UCDgcjVPHE9_J-OS-2oUvhvA" 
+			frameborder="0" 
+			scrolling="no">
+		  </iframe>
+		</span> |
 		👁 Visitors:
 		<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhanitartour.github.io%2Fabout.html&count_bg=%23FF6600&title_bg=%23000000&icon=github.svg&icon_color=%23FFFFFF&title=Visits&edge_flat=false" alt="visitor badge">
 	  </p>
 	</div>
+
   
   <p style="margin-top: 1rem;">Built with 💙 by Hani Tartour – 2025</p>
 </footer>

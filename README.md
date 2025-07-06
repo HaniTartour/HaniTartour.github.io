@@ -1,3 +1,5 @@
+[![About Me](https://img.shields.io/badge/About-Hani%20Tartour-orange?style=for-the-badge&logo=readthedocs)](https://hanitartour.github.io/about.html)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/HaniTartour/HaniTartour.github.io/main/assets/banner.png" alt="Hani Tartour Banner" />
 </p>
@@ -9,16 +11,6 @@
 ![GitHub followers](https://img.shields.io/github/followers/HaniTartour?style=social)
 
 Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and pyRevit tools come to life. I build smart automation tools to save time, reduce errors, and make engineers look like heroes 💪.
-
-
-## 👋 About Me
-
-Learn more about my background, skills, and project experience:
-
-👉 [Click here to view my full About Page](https://hanitartour.github.io/about.html)
-
-Includes my story, resume, project highlights, and contact info.
-
 
 ---
 

@@ -1,3 +1,5 @@
+[![About Me](https://img.shields.io/badge/About-Hani%20Tartour-orange?style=for-the-badge&logo=readthedocs)](https://hanitartour.github.io/about.html)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/HaniTartour/HaniTartour.github.io/main/assets/banner.png" alt="Hani Tartour Banner" />
 </p>

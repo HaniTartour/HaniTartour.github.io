@@ -43,20 +43,22 @@ button,
 .projects-link a,
 .certificates-link a,
 .learning-link a {
-  display: inline-block;
-  background: #ff6600;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  border: 2px solid #fff; /* Or any color you want */
-  cursor: pointer;
+  display: inline-block; 			/* the element can have width/height/padding like a block but still flow inline. */
+  background: #ff6600;				/* Sets a bright orange background. */
+  color: white;						/* Makes text white */
+  padding: 0.75rem 1.5rem;			/* Adds space inside the button (top/bottom and left/right). */
+  border-radius: 30px;				/* Makes rounded pill-like corners.*/
+  text-decoration: none;			/* Removes the underline from links. */
+  font-size: 1.1rem;				/* Makes text readable and bold. */
+  font-weight: bold;				/* Makes text readable and bold. */
+  transition: background 0.3s ease;	/* Smooth animation when background color changes. */
+  border: 2px solid #fff; 			/*Adds a white border (you can change this color). */
+  cursor: pointer;					/*  Changes the cursor to a hand on hover to show it's clickable.*/
 }
 
-button:hover,
+/* When the user hovers (moves mouse over) any of those elements:
+The background color darkens slightly to #cc5200, giving it a nice interaction effect.*/ 
+button:hover,				
 .projects-link a:hover,
 .certificates-link a:hover,
 .learning-link a:hover {
@@ -65,35 +67,16 @@ button:hover,
 
 
 .button-group {
-  display: flex;
-  flex-wrap: wrap;           /* Optional: wrap on small screens */
-  gap: 1rem;                 /* Space between buttons */
-  justify-content: center;  /* Optional: center them */
-  margin-top: 1rem;
+  display: flex;					/* is a wrapper container used to hold multiple buttons. */
+  flex-wrap: wrap;           		/* Optional: wrap on small screens */
+  gap: 1.5rem;                 		/* Space between buttons */
+  justify-content: center;  		/* Optional: center them */
+  margin-top: 1rem;					/* Adds space above the button group from the content before it. */ 
 }
-
-
-/*responsive media query*/
-/*
-@media (max-width: 480px) {
-  .button-group {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .button-group a,
-  .button-group button {
-    width: 100%;
-    text-align: center; 
-  }
-}
-*/
-
 
 /*visually space the icons from the text*/
-
 .button-group i {
-  margin-right: 2.0rem;
+  margin-right: 0.5rem;		/* Adds space after the icon, before the button text, so it's not cramped. */
 }
 
 
@@ -291,6 +274,12 @@ body.dark-mode .project-card:hover {
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
 }
 
+body.dark-mode .button-group a {
+  border: 2px solid #888;
+}
+
+
+
 /* -------------------------------
  📱 Responsive Tweaks
 ---------------------------------- */
@@ -319,3 +308,18 @@ body.dark-mode .project-card:hover {
     font-size: 1rem;
   }
 }
+
+/*responsive media query*/
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .button-group a,
+  .button-group button {
+    width: 100%;
+    text-align: center; 
+  }
+}
+/*---------------------------------- */

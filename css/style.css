@@ -311,6 +311,8 @@ body.dark-mode .button-group a {
 
 /*responsive media query*/
 /* Global fix for sizing */
+
+/*
 * {
   box-sizing: border-box;
 }
@@ -319,9 +321,9 @@ body.dark-mode .button-group a {
   .button-group {
     flex-direction: column;
     align-items: stretch;
-    padding: 0 1rem;  /* adds some breathing room */
+    padding: 0 1rem;  				/* adds some breathing room */
   }
-
+/*
   .button-group a,
   .button-group button {
     width: 100%;
@@ -335,3 +337,29 @@ body.dark-mode .button-group a {
 }
 
 /*---------------------------------- */
+
+
+/* 🌍 Global fix for box sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* 📱 Responsive layout for devices ≤ 992px */
+@media (max-width: 992px) {
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+
+  .button-group a,
+  .button-group button {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

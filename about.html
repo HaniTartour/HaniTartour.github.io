@@ -174,7 +174,7 @@
 </nav>
 
 <!-- PDF Content Wrapper -->
-<div id="pdf-content">
+<div style="page-break-after: always;"></div>
 
   <!-- Bio -->
   <section class="enhanced-section">
@@ -245,19 +245,28 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function generatePDF() {
-    const element = document.getElementById("pdf-content");
-    const opt = {
-      margin:       0.25,
-      filename:     'Hani_M_Tartour_About_Page.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true, logging: true },
-      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' },
-      enableLinks:  true,
-      pagebreak:    { mode: ['css', 'legacy'] }
-    };
-    html2pdf().set(opt).from(element).save();
-  }
+function generatePDF() {
+  const element = document.getElementById("pdf-wrapper");
+
+  const opt = {
+    margin:       [0.5, 0.5, 0.5, 0.5], // top, left, bottom, right in inches
+    filename:     'Hani_M_Tartour_About_Page.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  {
+      scale: 2,
+      useCORS: true,
+      logging: true,
+      allowTaint: false,
+      scrollX: 0,
+      scrollY: -window.scrollY
+    },
+    jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' },
+    enableLinks:  true,
+    pagebreak:    { mode: ['css', 'legacy'], avoid: ['img', 'section'] }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
 </script>
 
 </body>

@@ -9,7 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
+
    
    
   <style>
@@ -280,6 +282,16 @@
 </section>
 
 
+<section class="enhanced-section">
+  <h2><i class="fa-solid fa-file-pdf"></i> Save This Page as PDF</h2>
+  <p>You can generate a downloadable PDF of this page:</p>
+  <button onclick="generatePDF()" class="cv-download-button">
+    <i class="fa-solid fa-download"></i> Save as PDF
+  </button>
+</section>
+
+
+
 
 
 
@@ -359,6 +371,25 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
+
+
+
+<script>
+  function generatePDF() {
+    const element = document.body; // or choose a specific section
+    const options = {
+      margin:       0.5,
+      filename:     'Hani_M_Tartour_About_Page.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(element).save();
+  }
+</script>
+
+
 
 
 

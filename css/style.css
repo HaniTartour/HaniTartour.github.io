@@ -354,9 +354,10 @@ body.dark-mode .button-group a {
 
   .button-group a,
   .button-group button {
-    width: 100%;
-    max-width: 100%;
+    width: 80%;
+    max-width: 80%;
     text-align: center;
+	margin: 0 auto; /* 💡 this centers the element horizontally */
   }
 
   body {

@@ -13,6 +13,19 @@
   <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
   <!-- css style sheet -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <meta property="og:title" content="About Hani M. Tartour">
+  <meta property="og:description" content="Structural BIM Engineer • Python Developer • BIM Automation Toolmaker">
+  <meta property="og:image" content="https://hanitartour.github.io/assets/images/hani-profile.jpg">
+  <meta property="og:url" content="https://hanitartour.github.io/about.html">
+  <meta property="og:type" content="website">
+  <meta name="description" content="Portfolio of Hani Tartour, a Structural BIM Engineer and Python Developer.">
+  <meta name="author" content="Hani M Tartour">
+
+
+
 
   <!-- Styles -->
   <style>
@@ -23,6 +36,7 @@
       background-color: #f7f7f7;
       color: #333;
       line-height: 1.6;
+	  overflow-x: hidden;
     }
 
     header {
@@ -224,6 +238,68 @@
       font-weight: bold;
     }
 
+	@media screen and (max-width: 600px) {
+	  header {
+		flex-direction: column;
+		text-align: center;
+	  }
+
+	  header img {
+		width: 100px !important;
+		height: 100px !important;
+	  }
+
+	  h1 {
+		font-size: 1.5rem;
+	  }
+
+	  .enhanced-section {
+		padding: 1rem;
+		margin: 1rem auto;
+	  }
+
+	  nav a {
+		display: inline-block;
+		margin: 0.5rem;
+	  }
+
+	  ul {
+		padding-left: 1rem;
+	  }
+	}
+	
+	
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
+	
+	
+	
+	.profile-img {
+	  width: 120px;
+	  height: 120px;
+	  border-radius: 50%;
+	  object-fit: cover;
+	  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	}
+
+	@media screen and (max-width: 600px) {
+	  .profile-img {
+		width: 100px;
+		height: 100px;
+	  }
+	}
+	
+	
+	nav a:hover {
+	  color: #ff9900;
+	  transition: color 0.2s ease-in-out;
+	}
+
+
+
+
 	
 	
 	
@@ -240,8 +316,8 @@
       <i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)
     </a>
   </div>
-  <img src="assets/images/hani-profile.jpg" alt="Hani Tartour Photo"
-       style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 5px rgba(0,0,0,0.2);" />
+	<img src="assets/images/hani-profile.jpg" alt="Portrait of Hani Tartour, Structural BIM Engineer" class="profile-img" />
+
 </header>
 
 <nav>
@@ -254,7 +330,7 @@
 </nav>
 
 <!-- PDF Content Wrapper -->
-<div id="pdf-wrapper" style="width: 794px; margin: auto;">
+<div id="pdf-wrapper" style="width: 100%; max-width: 850px; margin: auto; padding: 1rem; box-sizing: border-box;">
 
   <!-- Bio -->
   <section class="enhanced-section">
@@ -430,4 +506,8 @@ function generatePDF() {
 </script>
 
 </body>
+
+
+
+
 </html>

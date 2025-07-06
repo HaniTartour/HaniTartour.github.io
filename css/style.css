@@ -310,16 +310,28 @@ body.dark-mode .button-group a {
 }
 
 /*responsive media query*/
+/* Global fix for sizing */
+* {
+  box-sizing: border-box;
+}
+
 @media (max-width: 480px) {
   .button-group {
     flex-direction: column;
     align-items: stretch;
+    padding: 0 1rem;  /* adds some breathing room */
   }
-  
+
   .button-group a,
   .button-group button {
     width: 100%;
-    text-align: center; 
+    max-width: 100%;
+    text-align: center;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
+
 /*---------------------------------- */

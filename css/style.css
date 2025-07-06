@@ -40,9 +40,9 @@ header {
  🔶 Buttons (Shared Style)
 ---------------------------------- */
 button,
-.projects-link a,
-.certificates-link a,
-.learning-link a {
+.projects-link,
+.certificates-link,
+.learning-link  {
   display: inline-block; 			/* the element can have width/height/padding like a block but still flow inline. */
   background: #ff6600;				/* Sets a bright orange background. */
   color: white;						/* Makes text white */
@@ -59,9 +59,9 @@ button,
 /* When the user hovers (moves mouse over) any of those elements:
 The background color darkens slightly to #cc5200, giving it a nice interaction effect.*/ 
 button:hover,				
-.projects-link a:hover,
-.certificates-link a:hover,
-.learning-link a:hover {
+.projects-link:hover,
+.certificates-link:hover,
+.learning-link:hover {
   background: #cc5200;
 }
 

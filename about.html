@@ -410,11 +410,12 @@
 	.collapsible-header h2 {
 	  display: flex;
 	  align-items: center;
-	  justify-content: space-between;
+	  justify-content: flex-start; /* LEFT aligned now */
 	  width: 100%;
 	  font-size: 1.25rem;
 	  margin: 0;
 	  color: #ff6600;
+	  gap: 0.5rem; /* optional: spacing between icon + title + arrow */
 	}
 
 	.toggle-icon {
@@ -444,7 +445,10 @@
 	/* Hover effect */
 	.collapsible-header:hover h2 {
 	  color: #cc5200;
+	  background-color: transparent;
+	  text-shadow: 0 0 1px rgba(255, 102, 0, 0.3); /* optional soft glow */
 	}
+
 
 	/* Keep section box style (border, padding, etc.) from .enhanced-section */
 	.enhanced-section.collapsible-section {

@@ -451,20 +451,30 @@
 	.company-details.hidden {
 	  display: none;
 	}
+
+	.company-subsection {
+	  margin-bottom: 1rem;
+	  border-left: 4px solid #ff6600;
+	  background-color: #f4f4f4;
+	  padding: 10px;
+	  border-radius: 4px;
+	}
+
 	.company-header {
 	  cursor: pointer;
 	  display: flex;
 	  justify-content: space-between;
 	  align-items: center;
-	  background: #f4f4f4;
-	  padding: 10px;
-	  margin-top: 1rem;
-	  border-left: 4px solid #ff6600;
 	}
-	.project-entry {
-	  padding: 0.5rem 1rem;
-	  margin-bottom: 1rem;
-	  border-left: 3px solid #ccc;
+
+	.company-header h3 {
+	  margin: 0;
+	  font-size: 1.1rem;
+	  color: #333;
+	}
+
+	.company-details {
+	  padding: 10px 15px;
 	}
 
 
@@ -594,7 +604,7 @@
     <!-- Company 1 -->
     <div class="company-subsection">
       <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> Al Rowad Consulting – KSA</h3>
+        <h3><i class="fa-solid fa-building"></i> COMPANY # 01</h3>
         <i class="fa-solid fa-chevron-down sub-toggle"></i>
       </div>
       <div class="company-details hidden">
@@ -615,7 +625,7 @@
     <!-- Company 2 -->
     <div class="company-subsection">
       <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> Al Rowad Consulting – KSA</h3>
+        <h3><i class="fa-solid fa-building"></i> COMPANY # 02</h3>
         <i class="fa-solid fa-chevron-down sub-toggle"></i>
       </div>
       <div class="company-details hidden">
@@ -636,7 +646,7 @@
     <!-- Company 3 -->
     <div class="company-subsection">
       <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> Al Rowad Consulting – KSA</h3>
+        <h3><i class="fa-solid fa-building"></i> COMPANY # 03</h3>
         <i class="fa-solid fa-chevron-down sub-toggle"></i>
       </div>
       <div class="company-details hidden">
@@ -657,7 +667,7 @@
     <!-- Company 4 -->
     <div class="company-subsection">
       <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> Al Rowad Consulting – KSA</h3>
+        <h3><i class="fa-solid fa-building"></i> COMPANY # 04</h3>
         <i class="fa-solid fa-chevron-down sub-toggle"></i>
       </div>
       <div class="company-details hidden">
@@ -678,7 +688,7 @@
     <!-- Company 5 -->
     <div class="company-subsection">
       <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> Al Rowad Consulting – KSA</h3>
+        <h3><i class="fa-solid fa-building"></i> COMPANY # 05</h3>
         <i class="fa-solid fa-chevron-down sub-toggle"></i>
       </div>
       <div class="company-details hidden">
@@ -982,10 +992,12 @@ document.addEventListener("DOMContentLoaded", function () {
     header.addEventListener('click', function () {
       const details = this.nextElementSibling;
       const icon = this.querySelector('.sub-toggle');
+
       if (details) {
+        const isHidden = details.classList.contains('hidden');
         details.classList.toggle('hidden');
-        icon.classList.toggle('fa-chevron-down');
-        icon.classList.toggle('fa-chevron-up');
+        icon.classList.toggle('fa-chevron-down', !isHidden);
+        icon.classList.toggle('fa-chevron-up', isHidden);
       }
     });
   });

@@ -365,13 +365,10 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: space-between;
-	  padding: 0.5rem 0.75rem;
-	  margin-bottom: 0.75rem;
 	  transition: background-color 0.3s ease, border-radius 0.3s ease;
-	  border-radius: 8px; /* smooth glow edge */
 	}
 
-	/* Section title text and icon */
+	/* Section title text and icon inside */
 	.collapsible-header h2 {
 	  display: flex;
 	  align-items: center;
@@ -381,16 +378,17 @@
 	  margin: 0;
 	  color: #ff6600;
 	  gap: 0.5rem;
+	  padding: 0.5rem 0.75rem;        /* Internal spacing */
+	  border-radius: 6px;             /* Rounded shade */
+	  background-color: transparent;
+	  transition: all 0.3s ease;
 	}
 
-	/* Hover glow effect */
-	.collapsible-header:hover {
-	  background-color: rgba(180, 180, 180, 0.15);  /* Soft gray highlight */
-	}
-
+	/* Hover effect on the h2 (not on the full header) */
 	.collapsible-header:hover h2 {
 	  color: #cc5200;
-	  text-shadow: 0 0 1px rgba(180, 180, 180, 1);
+	  background-color: rgba(180, 180, 180, 0.1);  /* Soft gray shade */
+	  text-shadow: 0 0 3px rgba(180, 180, 180, 1);
 	}
 
 	/* Toggle arrow */
@@ -401,12 +399,12 @@
 	  margin-left: 10px;
 	}
 
-	/* Collapse rotation */
+	/* Rotate arrow when collapsed */
 	.collapsible-section.collapsed .toggle-icon {
 	  transform: rotate(180deg);
 	}
 
-	/* Content visibility */
+	/* Collapsible content */
 	.collapsible-content {
 	  overflow: hidden;
 	  max-height: 1000px;
@@ -418,7 +416,7 @@
 	  padding: 0 !important;
 	}
 
-	/* Section appearance */
+	/* Section box styling */
 	.enhanced-section.collapsible-section {
 	  border: 1px solid #e0e0e0;
 	  border-left: 5px solid #ff6600;
@@ -430,6 +428,7 @@
 	  padding: 1rem;
 	  box-sizing: border-box;
 	}
+
 
 
 

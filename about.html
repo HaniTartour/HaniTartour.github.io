@@ -357,20 +357,21 @@
 	
 	
 	
-	/* Base collapsible header styling */
+	/* === COLLAPSIBLE HEADER STYLES === */
 	.collapsible-header {
-	  all: unset;                          /* remove default button styles */
+	  all: unset;
 	  width: 100%;
 	  cursor: pointer;
 	  display: flex;
 	  align-items: center;
 	  justify-content: space-between;
-	  padding: 0;
+	  padding: 0.5rem;
 	  margin-bottom: 0.75rem;
 	  transition: background-color 0.3s ease, border-radius 0.3s ease;
+	  border-radius: 8px; /* smooth glow edge */
 	}
 
-	/* Text + icon inside heading */
+	/* Section title text and icon */
 	.collapsible-header h2 {
 	  display: flex;
 	  align-items: center;
@@ -380,19 +381,19 @@
 	  margin: 0;
 	  color: #ff6600;
 	  gap: 0.5rem;
-	  background-color: transparent;   /* no fill */
-	  transition: all 0.3s ease;
 	}
 
-	/* Hover effect — soft glow, no background */
+	/* Hover glow effect */
+	.collapsible-header:hover {
+	  background-color: rgba(180, 180, 180, 0.15);  /* Soft gray highlight */
+	}
+
 	.collapsible-header:hover h2 {
 	  color: #cc5200;
-	  background-color: rgba(0, 0, 0, 0.05);  /* subtle soft shadow feel */
-	  text-shadow: 0 0 3px rgba(180, 180, 180, 1);
-	  border-radius: 6px; /* Rounded corners */
+	  text-shadow: 0 0 1px rgba(180, 180, 180, 1);
 	}
 
-	/* The little arrow icon */
+	/* Toggle arrow */
 	.toggle-icon {
 	  font-size: 1rem;
 	  color: #ff6600;
@@ -400,12 +401,12 @@
 	  margin-left: 10px;
 	}
 
-	/* When collapsed — rotate the icon */
+	/* Collapse rotation */
 	.collapsible-section.collapsed .toggle-icon {
-	  transform: rotate(-90deg);
+	  transform: rotate(180deg);
 	}
 
-	/* Smooth collapse */
+	/* Content visibility */
 	.collapsible-content {
 	  overflow: hidden;
 	  max-height: 1000px;
@@ -417,7 +418,7 @@
 	  padding: 0 !important;
 	}
 
-	/* Ensure enhanced-section appearance is kept */
+	/* Section appearance */
 	.enhanced-section.collapsible-section {
 	  border: 1px solid #e0e0e0;
 	  border-left: 5px solid #ff6600;
@@ -430,13 +431,6 @@
 	  box-sizing: border-box;
 	}
 
-
-
-	.collapsible-header:hover {
-	  background: none !important;
-	  background-color: transparent !important;
-	  box-shadow: none !important;
-	}
 
 
 

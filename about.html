@@ -353,104 +353,11 @@
 	}
 	
 	
-	.collapsible-header {
-	  background: none;
-	  border: none;
-	  text-align: left;
-	  width: 100%;
-	  font-size: 1.2rem;
-	  cursor: pointer;
-	  padding: 0.5rem 0;
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
-	  font-family: inherit;
-	}
-
-	.toggle-icon {
-	  font-weight: bold;
-	  font-size: 1.5rem;
-	  margin-left: 0.75rem;
-	  color: #ff6600;
-	  transition: transform 0.3s ease;
-	}
-
-	.collapsible-content {
-	  overflow: hidden;
-	  max-height: 1000px; /* allow full height when open */
-	  transition: max-height 0.5s ease;
-	}
-
-	.collapsible-section.collapsed .collapsible-content {
-	  max-height: 0;
-	  padding-top: 0;
-	  padding-bottom: 0;
-	}
-
-	.collapsible-section.collapsed .toggle-icon {
-	  transform: rotate(-90deg);
-	}
 	
 	
 	
 	
-	
-	.collapsible-header {
-	  all: unset;
-	  width: 100%;
-	  cursor: pointer;
-	  display: flex;
-	  align-items: center;
-	  justify-content: space-between;
-	  padding: 0;
-	  margin-bottom: 0.75rem;
-	  transition: background 0.3s ease;
-	}
-
-	.collapsible-header h2 {
-	  display: flex;
-	  align-items: center;
-	  justify-content: flex-start; /* LEFT aligned now */
-	  width: 100%;
-	  font-size: 1.25rem;
-	  margin: 0;
-	  color: #ff6600;
-	  gap: 0.5rem; /* optional: spacing between icon + title + arrow */
-	}
-
-	.toggle-icon {
-	  font-size: 1rem;
-	  color: #ff6600;
-	  transition: transform 0.3s ease;
-	  margin-left: 10px;
-	}
-
-	/* Collapsed icon rotation */
-	.collapsible-section.collapsed .toggle-icon {
-	  transform: rotate(180deg);
-	}
-
-	/* Collapsed content */
-	.collapsible-content {
-	  overflow: hidden;
-	  max-height: 1000px;
-	  transition: max-height 0.5s ease;
-	}
-
-	.collapsible-section.collapsed .collapsible-content {
-	  max-height: 0;
-	  padding: 0 !important;
-	}
-
-	/* Hover effect */
-	.collapsible-header:hover h2 {
-	  color: #cc5200;
-	  background-color: transparent;
-	  text-shadow: 0 0 1px rgba(255, 102, 0, 0.3); /* optional soft glow */
-	}
-
-
-	/* Keep section box style (border, padding, etc.) from .enhanced-section */
+	/* Wrapper for collapsible section — keeps the same enhanced look */
 	.enhanced-section.collapsible-section {
 	  border: 1px solid #e0e0e0;
 	  border-left: 5px solid #ff6600;
@@ -461,6 +368,62 @@
 	  max-width: 850px;
 	  padding: 1rem;
 	  box-sizing: border-box;
+	}
+
+	/* Header Button Styles */
+	.collapsible-header {
+	  all: unset;
+	  width: 100%;
+	  cursor: pointer;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  margin-bottom: 0.75rem;
+	}
+
+	/* Heading inside the collapsible header */
+	.collapsible-header h2 {
+	  display: flex;
+	  align-items: center;
+	  justify-content: flex-start;
+	  font-size: 1.25rem;
+	  margin: 0;
+	  color: #ff6600;
+	  gap: 0.5rem;
+	  font-weight: 700;
+	}
+
+	/* Hover effect — subtle highlight */
+	.collapsible-header:hover h2 {
+	  color: #cc5200;
+	  background-color: transparent;
+	  text-shadow: 0 0 1px rgba(255, 102, 0, 0.3);
+	}
+
+	/* Icon beside the heading (plus or arrow) */
+	.toggle-icon {
+	  font-size: 1.2rem;
+	  color: #ff6600;
+	  transition: transform 0.3s ease;
+	  margin-left: 0.75rem;
+	}
+
+	/* Rotate icon when collapsed */
+	.collapsible-section.collapsed .toggle-icon {
+	  transform: rotate(-90deg);
+	}
+
+	/* Expandable content */
+	.collapsible-content {
+	  overflow: hidden;
+	  max-height: 1000px; /* enough for large sections */
+	  transition: max-height 0.5s ease;
+	}
+
+	/* Hide content when collapsed */
+	.collapsible-section.collapsed .collapsible-content {
+	  max-height: 0;
+	  padding: 0 !important;
 	}
 
 
@@ -511,12 +474,7 @@
   </div>
 </section>
 
-	  
-	  
-	  <div class="collapsible-content">		
-		<p>I’m <strong>Hani M Tartour</strong>, a Structural BIM Engineer turned toolmaker and automation advocate. From shop drawings to scripts, I’ve made it my mission to help engineering teams work smarter using Dynamo, Python, and the Revit API.</p>
-		<p>Today, I build time-saving tools, pyRevit buttons, and smart workflows to turn frustration into automation.</p>
-</section>
+
 
   <!-- Personal Info -->
 	<section class="enhanced-section">

@@ -357,7 +357,66 @@
 	
 	
 	
-	/* Wrapper for collapsible section — keeps the same enhanced look */
+	/* Base collapsible header styling */
+	.collapsible-header {
+	  all: unset;                          /* remove default button styles */
+	  width: 100%;
+	  cursor: pointer;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  padding: 0;
+	  margin-bottom: 0.75rem;
+	  transition: background 0.3s ease;
+	}
+
+	/* Text + icon inside heading */
+	.collapsible-header h2 {
+	  display: flex;
+	  align-items: center;
+	  justify-content: flex-start;
+	  width: 100%;
+	  font-size: 1.25rem;
+	  margin: 0;
+	  color: #ff6600;
+	  gap: 0.5rem;
+	  background-color: transparent;   /* no fill */
+	  transition: all 0.3s ease;
+	}
+
+	/* Hover effect — soft glow, no background */
+	.collapsible-header:hover h2 {
+	  color: #cc5200;
+	  background-color: transparent !important;
+	  text-shadow: 0 0 1px rgba(180, 180, 180, 0.2);
+	}
+
+	/* The little arrow icon */
+	.toggle-icon {
+	  font-size: 1rem;
+	  color: #ff6600;
+	  transition: transform 0.3s ease;
+	  margin-left: 10px;
+	}
+
+	/* When collapsed — rotate the icon */
+	.collapsible-section.collapsed .toggle-icon {
+	  transform: rotate(-90deg);
+	}
+
+	/* Smooth collapse */
+	.collapsible-content {
+	  overflow: hidden;
+	  max-height: 1000px;
+	  transition: max-height 0.5s ease;
+	}
+
+	.collapsible-section.collapsed .collapsible-content {
+	  max-height: 0;
+	  padding: 0 !important;
+	}
+
+	/* Ensure enhanced-section appearance is kept */
 	.enhanced-section.collapsible-section {
 	  border: 1px solid #e0e0e0;
 	  border-left: 5px solid #ff6600;
@@ -370,61 +429,14 @@
 	  box-sizing: border-box;
 	}
 
-	/* Header Button Styles */
-	.collapsible-header {
-	  all: unset;
-	  width: 100%;
-	  cursor: pointer;
-	  display: flex;
-	  align-items: center;
-	  justify-content: space-between;
-	  margin-bottom: 0.75rem;
+
+
+	.collapsible-header:hover {
+	  background: none !important;
+	  background-color: transparent !important;
+	  box-shadow: none !important;
 	}
 
-	/* Heading inside the collapsible header */
-	.collapsible-header h2 {
-	  display: flex;
-	  align-items: center;
-	  justify-content: flex-start;
-	  font-size: 1.25rem;
-	  margin: 0;
-	  color: #ff6600;
-	  gap: 0.5rem;
-	  font-weight: 700;
-	}
-
-	/* Hover effect — subtle highlight */
-	.collapsible-header:hover h2 {
-	  color:  #ff6600;
-	  background-color: transparent;
-	  text-shadow: text-shadow: 0 0 2px rgba(120, 120, 120, 0.2); /* soft gray glow */
-	}
-
-	/* Icon beside the heading (plus or arrow) */
-	.toggle-icon {
-	  font-size: 1.2rem;
-	  color: #ff6600;
-	  transition: transform 0.3s ease;
-	  margin-left: 0.75rem;
-	}
-
-	/* Rotate icon when collapsed */
-	.collapsible-section.collapsed .toggle-icon {
-	  transform: rotate(-90deg);
-	}
-
-	/* Expandable content */
-	.collapsible-content {
-	  overflow: hidden;
-	  max-height: 1000px; /* enough for large sections */
-	  transition: max-height 0.5s ease;
-	}
-
-	/* Hide content when collapsed */
-	.collapsible-section.collapsed .collapsible-content {
-	  max-height: 0;
-	  padding: 0 !important;
-	}
 
 
 
@@ -460,19 +472,20 @@
 <!-- PDF Content Wrapper -->
 <div id="pdf-wrapper" style="width: 100%; max-width: 850px; margin: auto; padding: 1rem; box-sizing: border-box;">
 
-  <!-- Bio - my story -->
-<section class="enhanced-section collapsible-section">
-  <button class="collapsible-header">
+<!-- Bio - My Story -->
+<section class="enhanced-section collapsible-section collapsed">
+  <div class="collapsible-header">
     <h2>
       <i class="fa-solid fa-book-open-reader"></i> My Story 
-      <i class="fa-solid fa-chevron-up toggle-icon"></i>
+      <i class="fa-solid fa-chevron-down toggle-icon"></i>
     </h2>
-  </button>
+  </div>
   <div class="collapsible-content">
     <p>I’m <strong>Hani M Tartour</strong>, a Structural BIM Engineer turned toolmaker and automation advocate. From shop drawings to scripts, I’ve made it my mission to help engineering teams work smarter using Dynamo, Python, and the Revit API.</p>
     <p>Today, I build time-saving tools, pyRevit buttons, and smart workflows to turn frustration into automation.</p>
   </div>
 </section>
+
 
 
 
@@ -689,13 +702,18 @@ function generatePDF() {
 </body>
 <script>
   document.querySelectorAll('.collapsible-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const section = header.closest('.collapsible-section');
-      const icon = header.querySelector('.toggle-icon');
-
+    header.addEventListener('click', function () {
+      const section = this.closest('.collapsible-section');
       section.classList.toggle('collapsed');
-      icon.classList.toggle('fa-chevron-up');
-      icon.classList.toggle('fa-chevron-down');
+
+      const icon = this.querySelector('.toggle-icon');
+      if (section.classList.contains('collapsed')) {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      } else {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      }
     });
   });
 </script>

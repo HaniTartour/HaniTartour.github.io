@@ -451,7 +451,7 @@
 	  border-radius: 4px;
 	}
 
-	.company-toggle-header {
+	.company-header {
 	  cursor: pointer;
 	  display: flex;
 	  justify-content: space-between;
@@ -501,12 +501,6 @@
 		padding-right: 0.5rem;
 	  }
 	}
-
-
-
-
-
-
 
 	
 	
@@ -1115,23 +1109,24 @@ document.getElementById("scrollTopBtn").addEventListener("keydown", function (e)
   };
   
 // Accordion logic for companies inside Project Experience
-  document.addEventListener("DOMContentLoaded", function () {
-    const companyHeaders = document.querySelectorAll('.company-header');
+// ✅ Fix: Company accordion toggle logic
+const companyHeaders = document.querySelectorAll('.company-header');
 
-    companyHeaders.forEach(header => {
-      header.addEventListener('click', function () {
-        const details = this.nextElementSibling;
-        const icon = this.querySelector('.sub-toggle');
+companyHeaders.forEach(header => {
+  header.addEventListener('click', function () {
+    const details = this.parentElement.querySelector('.company-details');
+    const icon = this.querySelector('.sub-toggle');
 
-        if (details) {
-          const isHidden = details.classList.contains('hidden');
-          details.classList.toggle('hidden');
-          icon.classList.toggle('fa-chevron-down', !isHidden);
-          icon.classList.toggle('fa-chevron-up', isHidden);
-        }
-      });
-    });
+    if (details) {
+      const isHidden = details.classList.contains('hidden');
+      details.classList.toggle('hidden');
+      icon.classList.toggle('fa-chevron-down', !isHidden);
+      icon.classList.toggle('fa-chevron-up', isHidden);
+    }
   });
+});
+
+
  
   
 });

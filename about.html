@@ -388,7 +388,7 @@
 	.collapsible-header:hover h2 {
 	  color: #cc5200;
 	  background-color: rgba(180, 180, 180, 0.1);  /* Soft gray shade */
-	  text-shadow: 0 0 5px rgba(180, 180, 180, 1);
+	  text-shadow: 0 0 3px rgba(180, 180, 180, 1);
 	}
 
 	/* Toggle arrow */
@@ -484,8 +484,14 @@
 
 
   <!-- Personal Info -->
-	<section class="enhanced-section">
-	  <h2><i class="fa-solid fa-id-card"></i> Personal Information:</h2>
+<section class="enhanced-section collapsible-section">
+  <div class="collapsible-header">
+    <h2>
+      <i class="fa-solid fa-id-card"></i> Personal Information
+      <i class="fa-solid fa-chevron-up toggle-icon"></i>
+    </h2>
+  </div>
+  <div class="collapsible-content">
 	  <ul>
 		<li><i class="fa-solid fa-user" style="color: #ff6600;"></i> <strong>Full Name:</strong> Hani Mohamed Tartour</li>
 		<li><i class="fa-solid fa-location-dot" style="color: #ff6600;"></i> <strong>Location:</strong> Cairo, Egypt</li>
@@ -495,7 +501,7 @@
 		<li><i class="fa-solid fa-gears" style="color: #ff6600;"></i> <strong>Field:</strong> Structural Engineering & BIM Automation</li>
 		<li><i class="fa-solid fa-language" style="color: #ff6600;"></i> <strong>Languages:</strong> Arabic (native), English (normal)</li>
 	  </ul>
-	</section>
+</section>
 
 
   <!-- Education -->

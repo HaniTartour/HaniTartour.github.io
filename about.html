@@ -428,6 +428,12 @@
 	  padding: 1rem;
 	  box-sizing: border-box;
 	}
+	
+	#scrollTopBtn:focus {
+	  outline: 2px dashed #ff6600;
+	  outline-offset: 4px;
+	}
+
 
 
 
@@ -691,73 +697,87 @@
 
 
 <!-- Scroll-to-top -->
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Back to Top">↑ Top</button>
+<button id="scrollTopBtn" title="Back to Top" style="display: none;" aria-label="Scroll to top" tabindex="0">↑ Top</button>
 
-<!-- JS Scroll Logic -->
 <script>
-  window.onscroll = function () {
-    const btn = document.getElementById("scrollTopBtn");
-    btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-  };
+document.addEventListener("DOMContentLoaded", function () {
+// Scroll-to-top button visibility
+const btn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", function () {
+  btn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+});
 
-  function scrollToTop() {
+// Scroll-to-top click handler
+document.getElementById("scrollTopBtn").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Also support "Enter" key for keyboard accessibility
+document.getElementById("scrollTopBtn").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+});
 
-function generatePDF() {
-  const element = document.getElementById("pdf-wrapper");
-
-  const opt = {
-    margin:       [0.5, 0.5, 0.5, 0.5], // top, left, bottom, right in inches
-    filename:     'Hani_M_Tartour_About_Page.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  {
-      scale: 2,
-      useCORS: true,
-      logging: true,
-      allowTaint: false,
-      scrollX: 0,
-      scrollY: -window.scrollY
-    },
-    jsPDF:        { unit: 'pt', format: 'a4', orientation: 'portrait' },
-    enableLinks:  true,
-    pagebreak:    { mode: ['css', 'legacy'], avoid: ['img', 'section'] }
-  };
-
-  html2pdf().set(opt).from(element).save();
-}
-</script>
-
-</body>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.collapsible-header').forEach(header => {
-      const section = header.closest('.collapsible-section');
-      const icon = header.querySelector('.toggle-icon');
-
-      // Initial sync based on current state
-      if (section.classList.contains('collapsed')) {
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
-      } else {
+  // Expand collapsible sections before PDF export
+  function expandAllBeforePDF() {
+    document.querySelectorAll('.collapsible-section').forEach(section => {
+      section.classList.remove('collapsed');
+      const icon = section.querySelector('.toggle-icon');
+      if (icon) {
         icon.classList.remove('fa-chevron-down');
         icon.classList.add('fa-chevron-up');
       }
+    });
+  }
 
-      // Click handler to toggle icon & section state
-      header.addEventListener('click', function () {
-        section.classList.toggle('collapsed');
-        if (section.classList.contains('collapsed')) {
-          icon.classList.remove('fa-chevron-up');
-          icon.classList.add('fa-chevron-down');
-        } else {
-          icon.classList.remove('fa-chevron-down');
-          icon.classList.add('fa-chevron-up');
-        }
-      });
+  // Generate PDF
+  window.generatePDF = function () {
+    expandAllBeforePDF();
+    const element = document.getElementById("pdf-wrapper");
+
+    const opt = {
+      margin: [0.5, 0.5, 0.5, 0.5],
+      filename: 'Hani_M_Tartour_About_Page.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        logging: true,
+        allowTaint: false,
+        scrollX: 0,
+        scrollY: -window.scrollY
+      },
+      jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' },
+      enableLinks: true,
+      pagebreak: { mode: ['css', 'legacy'], avoid: ['img', 'section'] }
+    };
+
+	try {
+	  html2pdf().set(opt).from(element).save();
+	} catch (err) {
+	  alert("PDF export failed. Please try again.");
+	  console.error(err);
+	}
+  };
+
+  // Collapsible toggle logic
+  document.querySelectorAll('.collapsible-header').forEach(header => {
+    const section = header.closest('.collapsible-section');
+    const icon = header.querySelector('.toggle-icon');
+
+    // Initial state
+    icon.classList.toggle('fa-chevron-down', section.classList.contains('collapsed'));
+    icon.classList.toggle('fa-chevron-up', !section.classList.contains('collapsed'));
+
+    header.addEventListener('click', function () {
+      section.classList.toggle('collapsed');
+      icon.classList.toggle('fa-chevron-up');
+      icon.classList.toggle('fa-chevron-down');
     });
   });
+});
 </script>
-
+</body>
 
 </html>

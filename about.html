@@ -448,6 +448,25 @@
 	  background-color: #e05500;
 	}
 
+	.company-details.hidden {
+	  display: none;
+	}
+	.company-header {
+	  cursor: pointer;
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  background: #f4f4f4;
+	  padding: 10px;
+	  margin-top: 1rem;
+	  border-left: 4px solid #ff6600;
+	}
+	.project-entry {
+	  padding: 0.5rem 1rem;
+	  margin-bottom: 1rem;
+	  border-left: 3px solid #ccc;
+	}
+
 
 
 
@@ -954,6 +973,24 @@ document.getElementById("scrollTopBtn").addEventListener("keydown", function (e)
 	
 	
   };
+  
+// Accordion logic for companies inside Project Experience
+document.addEventListener("DOMContentLoaded", function () {
+  const companyHeaders = document.querySelectorAll('.company-header');
+
+  companyHeaders.forEach(header => {
+    header.addEventListener('click', function () {
+      const details = this.nextElementSibling;
+      const icon = this.querySelector('.sub-toggle');
+      if (details) {
+        details.classList.toggle('hidden');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+      }
+    });
+  });
+});
+
   
   
   

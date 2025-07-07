@@ -351,45 +351,6 @@
 		display: none !important;
 	  }
 	}
-	
-	
-	.collapsible-header {
-	  background: none;
-	  border: none;
-	  text-align: left;
-	  width: 100%;
-	  font-size: 1.2rem;
-	  cursor: pointer;
-	  padding: 0.5rem 0;
-	  display: flex;
-	  justify-content: space-between;
-	  align-items: center;
-	  font-family: inherit;
-	}
-
-	.toggle-icon {
-	  font-weight: bold;
-	  font-size: 1.5rem;
-	  margin-left: 0.75rem;
-	  color: #ff6600;
-	  transition: transform 0.3s ease;
-	}
-
-	.collapsible-content {
-	  overflow: hidden;
-	  max-height: 1000px; /* allow full height when open */
-	  transition: max-height 0.5s ease;
-	}
-
-	.collapsible-section.collapsed .collapsible-content {
-	  max-height: 0;
-	  padding-top: 0;
-	  padding-bottom: 0;
-	}
-
-	.collapsible-section.collapsed .toggle-icon {
-	  transform: rotate(-90deg);
-	}
 
 
 	
@@ -424,15 +385,12 @@
 <!-- PDF Content Wrapper -->
 <div id="pdf-wrapper" style="width: 100%; max-width: 850px; margin: auto; padding: 1rem; box-sizing: border-box;">
 
-  <!-- Bio - my story -->
-	<section class="collapsible-section">
-	  <button class="collapsible-header">
-		<h2><i class="fa-solid fa-book-open-reader"></i> My Story <span class="toggle-icon">−</span></h2>
-	  </button>
-	  <div class="collapsible-content">		
-		<p>I’m <strong>Hani M Tartour</strong>, a Structural BIM Engineer turned toolmaker and automation advocate. From shop drawings to scripts, I’ve made it my mission to help engineering teams work smarter using Dynamo, Python, and the Revit API.</p>
-		<p>Today, I build time-saving tools, pyRevit buttons, and smart workflows to turn frustration into automation.</p>
-	</section>
+  <!-- Bio -->
+  <section class="enhanced-section">
+    <h2><i class="fa-solid fa-book-open-reader"></i> My Story:</h2>
+    <p>I’m <strong>Hani M Tartour</strong>, a Structural BIM Engineer turned toolmaker and automation advocate. From shop drawings to scripts, I’ve made it my mission to help engineering teams work smarter using Dynamo, Python, and the Revit API.</p>
+    <p>Today, I build time-saving tools, pyRevit buttons, and smart workflows to turn frustration into automation.</p>
+  </section>
 
   <!-- Personal Info -->
 	<section class="enhanced-section">
@@ -645,14 +603,6 @@ function generatePDF() {
 </script>
 
 </body>
-<script>
-  document.querySelectorAll('.collapsible-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const section = header.closest('.collapsible-section');
-      section.classList.toggle('collapsed');
-    });
-  });
-</script>
 
 
 

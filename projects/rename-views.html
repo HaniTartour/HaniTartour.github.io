@@ -151,17 +151,20 @@
 	}
 
 	.lightbox-nav {
-	  position: absolute;
+	  position: fixed;
 	  top: 50%;
-	  width: 100%;
+	  left: 0;
+	  width: 100vw;
 	  display: flex;
 	  justify-content: space-between;
+	  align-items: center;
+	  pointer-events: none; /* prevents blocking the overlay click-to-close */
+	  z-index: 99999;
 	  transform: translateY(-50%);
 	}
 
-
-
 	.lightbox-nav button {
+	  pointer-events: all; /* re-enable click on buttons */
 	  background-color: rgba(255, 255, 255, 0.9);
 	  border: none;
 	  font-size: 2rem;
@@ -189,11 +192,6 @@
 		padding: 0.6rem 1rem;
 	  }
 	}
-
-
-
-
-
 
 	.lightbox-nav button:focus {
 	  outline: 2px dashed #ff6600;

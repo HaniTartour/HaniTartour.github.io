@@ -507,6 +507,38 @@
 		padding-right: 0.5rem;
 	  }
 	}
+	
+
+	.company-scroll-wrapper {
+	  max-height: 600px; /* adjust as needed */
+	  overflow-y: auto;
+	  padding-right: 8px; /* space for scrollbar */
+	  margin-top: 1rem;
+	  scroll-behavior: smooth;
+	  border: 1px solid #ddd;
+	  border-radius: 6px;
+	  background: #fff;
+	}
+
+	/* Optional: Style the scrollbar for webkit browsers */
+	.company-scroll-wrapper::-webkit-scrollbar {
+	  width: 8px;
+	}
+
+	.company-scroll-wrapper::-webkit-scrollbar-track {
+	  background: #f1f1f1;
+	  border-radius: 10px;
+	}
+
+	.company-scroll-wrapper::-webkit-scrollbar-thumb {
+	  background: #ff6600;
+	  border-radius: 10px;
+	}
+
+	.company-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+	  background: #cc5200;
+	}
+
 
 	
 	
@@ -624,221 +656,222 @@
     <i class="fa-solid fa-chevron-down toggle-icon"></i>
   </div>
   <div class="collapsible-content company-accordion">
+	<div class="company-scroll-wrapper">
 
-    <!-- Company 1 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 01</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company1 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
-
-
-    <!-- Company 2 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 02</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company2 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+		<!-- Company 1 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 01</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company1 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
 
-    <!-- Company 3 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 03</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company3 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+		<!-- Company 2 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 02</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company2 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
 
-    <!-- Company 4 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 04</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company4 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+		<!-- Company 3 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 03</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company3 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
 
-    <!-- Company 5 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 05</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company5 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+		<!-- Company 4 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 04</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company4 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
 
-    <!-- Company 6 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 06</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company6 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+		<!-- Company 5 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 05</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company5 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
 
-
-    <!-- Company 7 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 07</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company7 / project 1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
-
-
-    <!-- Company 8 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 08</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company8 / project 8/1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
-
-
-    <!-- Company 9 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 09</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company9 / project 9/1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+		<!-- Company 6 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 06</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company6 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
 
 
+		<!-- Company 7 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 07</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company7 / project 1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
-    <!-- Company 10 -->
-    <div class="company-subsection">
-      <div class="company-header">
-        <h3><i class="fa-solid fa-building"></i> COMPANY # 010</h3>
-        <i class="fa-solid fa-chevron-down sub-toggle"></i>
-      </div>
-      <div class="company-details hidden">
-			<!-- company10 / project 10/1 -->
-        <div class="project-entry">
-          <h4>Al-Madina Commercial Tower</h4>
-          <p><strong>Role:</strong> Structural BIM Engineer</p>
-          <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
-          <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
-          <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
-          <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
-        </div>
-        <!-- Add more projects under this company if needed -->
-      </div>
-    </div>
+
+		<!-- Company 8 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 08</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company8 / project 8/1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
+
+
+		<!-- Company 9 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 09</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company9 / project 9/1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
+
+
+
+
+		<!-- Company 10 -->
+		<div class="company-subsection">
+		  <div class="company-header">
+			<h3><i class="fa-solid fa-building"></i> COMPANY # 010</h3>
+			<i class="fa-solid fa-chevron-down sub-toggle"></i>
+		  </div>
+		  <div class="company-details hidden">
+				<!-- company10 / project 10/1 -->
+			<div class="project-entry">
+			  <h4>Al-Madina Commercial Tower</h4>
+			  <p><strong>Role:</strong> Structural BIM Engineer</p>
+			  <p><strong>Duration:</strong> Feb 2021 – Aug 2022</p>
+			  <p><strong>Tools:</strong> Revit, Dynamo, Navisworks</p>
+			  <p><strong>Stakeholders:</strong> Client: Ministry of Housing | Contractor: ABC Contracting</p>
+			  <p><strong>Summary:</strong> Led BIM modeling for 18-story tower. Automated documentation workflows using Dynamo scripts, saving 60% on sheet setup time.</p>
+			</div>
+			<!-- Add more projects under this company if needed -->
+		  </div>
+		</div>
 
     <!-- THIS IS END OF COMPANIES AND PROJECTS SECTION -->
-
+     </div>
   </div>
 </section>
 

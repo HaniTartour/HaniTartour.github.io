@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hani Tartour – Projects</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Inline styles -->
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .filter-bar {
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .filter-bar button {
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      background: #ddd;
+      transition: background 0.3s ease;
+    }
+
+    .filter-bar button:hover {
+      background-color: #bbb;
+    }
+
+    .filter-bar button.active {
+      background-color: #ff6600;
+      color: white;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      padding: 1rem;
+      box-sizing: border-box;
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: #eee;
+      color: #333;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+
+    .project-card .links a {
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      margin: 2rem 0;
+      color: #aaa;
+    }
+
+    .social-links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Responsive cards on small screens */
+    @media (max-width: 600px) {
+      .project-card {
+        width: 90%;
+      }
+    }
+		
+	
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      font-size: 16px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.7rem 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      display: none;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #cc5200;
+    }
+	
+	
+	
+  </style>
+
+  
+</head>
+
+
+
+
+<body>
+<header>
+  <h1>🚀 Hani Tartour – Project Gallery</h1>
+  <p>All my tools, automation scripts, and BIM workflows in one place</p>
+
+  <!-- Simple Button Toggle -->
+  <div style="text-align: right; margin-top: 1rem;">
+    <button id="theme-toggle" style="padding: 0.5rem 1rem; border-radius: 20px;">
+      🌗 Toggle Dark Mode
+    </button>
+  </div>
+</header>
+
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+	<a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+	<a href="learning.html"><i class="fas fa-graduation-cap"></i> Learning Hub</a>
+    <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
+    <a href="#"><i class="fa-solid fa-address-book"></i> Contact</a>
+    <a href="https://github.com/HaniTartour" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+  </nav>
+
+
+  <div class="filter-bar">
+    <button class="active" onclick="filterProjects(event, 'all')"><i class="fa-solid fa-warehouse"></i> All</button>
+    <button onclick="filterProjects(event, 'pyrevit')"><i class="fa-brands fa-python"></i> pyRevit</button>
+	
+	<button onclick="filterProjects(event, 'dynamo')">
+	  <img src="assets/icons/dynamo-logo.png" alt="Dynamo Icon"
+		   style="width:18px; height:18px; vertical-align:middle; margin-right:6px;">
+	  Dynamo
+	</button>
+	
+	
+    <button onclick="filterProjects(event, 'ui')"><i class="fa-brands fa-windows"></i> WinForms</button>
+	
+	  <!-- New buttons -->
+	<button onclick="filterProjects(event, 'bim')">🏗 BIM Projects</button>
+	<button onclick="filterProjects(event, 'residential')">🏘 Residential</button>
+	<button onclick="filterProjects(event, 'commercial')">🏢 Commercial</button>
+	<button onclick="filterProjects(event, 'governmental')">🏛 Governmental</button>
+	<button onclick="filterProjects(event, 'educational')">🏫 Educational</button>
+		
+<!-- New: Egypt filter with flag -->
+	<button onclick="filterProjects(event, 'egypt')" class="flag-button">
+	  <img src="assets/icons/egypt-flag.png" alt="Egypt Flag" />
+	  Egypt
+	</button>
+	
+	<!-- New: KSA filter with flag -->
+	<button onclick="filterProjects(event, 'Ksa')" class="flag-button">
+	  <img src="assets/icons/ksa-flag.png" alt="KSA Flag" />
+	  KSA
+	</button>
+
+
+
+  </div>
+
+
+  
+<!-- ✅ Dev Tools Section -->
+<div class="section-box">
+	<section class="development-projects">
+	  <h2 style="text-align: left; padding-left: 1rem;"><i class="fa-solid fa-code"></i> Revit Development Tools:</h2>
+	  <p class="projects-description" style="text-align: left; color: #666; padding-left: 3rem; padding-right: 2rem;">
+		  From repetitive tasks to complex workflows, this toolbox turns hours into seconds. These tools were developed to help Revit users automate, streamline, and supercharge their daily routines.
+		</p>
+	  <div class="project-grid" id="projectGrid">
+		<div class="project-card" data-tags="pyrevit python ui">
+		  <h3>🔄 Rename Views+</h3>
+		  <p>Smart pyRevit tool to batch rename views with live preview, filters & color-coded UI.</p>
+		  <div class="tags">
+			<span>pyRevit</span><span>Python</span><span>UI</span>
+		  </div>
+		  <div class="links">
+			<a href="https://github.com/HaniTartour/RenameViewsPlus" target="_blank">GitHub</a>
+			<a href="#">Demo</a>
+		  </div>
+		</div>
+
+		<div class="project-card" data-tags="dynamo python ui">
+		  <h3>📌 Level Selector Tool</h3>
+		  <p>Multi-level Revit filtering UI built with Python, WinForms & Dynamo — perfect for multi-story projects.</p>
+		  <div class="tags">
+			<span>Dynamo</span><span>Python</span><span>UI</span>
+		  </div>
+		  <div class="links">
+			<a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank">GitHub</a>
+			<a href="#">Demo</a>
+		  </div>
+		</div>
+
+		<div class="project-card" data-tags="pyrevit python github">
+		  <h3>🧠 CloneBuddy</h3>
+		  <p>pyRevit Extension Manager to clone, fix, validate & register GitHub extensions with one click.</p>
+		  <div class="tags">
+			<span>pyRevit</span><span>Python</span><span>GitHub</span>
+		  </div>
+		  <div class="links">
+			<a href="https://github.com/HaniTartour/CloneBuddy" target="_blank">GitHub</a>
+			<a href="#">Demo</a>
+		  </div>
+		</div>
+	  </div>
+	</section>
+</div>
+
+
+
+  <!-- ✅ Construction Projects Section -->
+ <div class="section-box"> 
+	  <section class="construction-projects">
+		<h2 style="text-align: left; padding-left: 1rem;">🏗️ Construction & BIM Projects:</h2>
+		<p class="projects-description" style="text-align: left; color: #666; padding-left: 3rem; padding-right: 2rem;">
+		  A collection of large-scale construction projects I contributed to as a Structural BIM Engineer and Revit Automation Lead.
+		</p>
+
+		<div class="project-grid">
+
+
+	  <!-- Project # 01 -->
+		  <div class="project-card" data-tags="bim residential egypt">
+			<h3><i class="fa-solid fa-building-user"></i> Belle Vie Compound</h3>
+			<img src="assets/thumbnails/belle-vie.jpg" alt="Belle Vie Thumbnail" />	
+			<ul class="project-info">
+				<li>Villas & Housing</li>
+				<li>Egypt, New Zayed</li>
+				<li>Emaar Misr | Atrium | ACE</li>
+				<li>Section Head & BIM Lead</li>
+			</ul>
+		  </div>
+
+	  <!-- Project # 02 -->
+		  <div class="project-card" data-tags="bim residential egypt">
+			<h3><i class="fa-solid fa-city"></i> Noor Smart City , Phase 01</h3>
+			<img src="assets/thumbnails/noor-city.jpg" alt="Noor Smart City Thumbnail" />
+			<ul class="project-info">
+				<li>72 Housings & 4 Parkings</li>
+				<li>Egpyt , Capital Gardens</li>
+				<li>TMG | Atrium | Shaker</li>
+				<li>Team Leader | AVE-BIM Unit</li>
+			</ul>
+		  </div>
+
+	  <!-- Project # 03 -->
+		  <div class="project-card" data-tags="bim residential egypt">
+			<h3><i class="fa-solid fa-building-user"></i> Four Seasons Private Villas</h3>
+			<img src="assets/thumbnails/fourseasons.jpg" alt="Four Seasons Villas Thumbnail" />
+			<ul class="project-info">
+				<li>Egypt , Madinaty</li>
+				<li>Hill | Atrium | CCC</li>
+				<li>Team Leader | AVE-BIM Unit</li>
+			</ul>
+		  </div>
+		  
+	  <!-- Project # 04 -->
+		  <div class="project-card" data-tags="bim governmental egypt">
+			<h3><i class="fa-solid fa-building-columns"></i> Governmental Ministry District</h3>
+			<img src="assets/thumbnails/ministers-district.jpg" alt="Ministers District Thumbnail" />
+			<ul class="project-info">
+				<li>Ministry Clusters:5A & 6A</li>
+				<li>Egypt , New Capital</li>
+				<li>Hassan Allam | DAR</li>
+				<li>Senior Technical office & BIM</li>
+			</ul>			
+		  </div>
+
+	  <!-- Project # 05 -->
+		  <div class="project-card" data-tags="bim commercial egypt">
+			<h3><i class="fa-solid fa-building-user"></i> Cairo Business Park</h3>
+			<img src="assets/thumbnails/business-park.jpg" alt="Cairo Business Park Thumbnail" />
+			<ul class="project-info">
+				<li>Egypt , New Cairo , Al Rehab</li>
+				<li>Misr Italia | CONSTEC | ECB</li>
+				<li>Senior Technical Office Engineer & BIM</li>
+			</ul>
+		  </div>
+		  
+	  <!-- Project # 06 -->
+		  <div class="project-card" data-tags="bim residential egypt">
+			<h3><i class="fa-solid fa-building-user"></i> IL Monte Galala - Chalet and Villas</h3>
+			<img src="assets/thumbnails/monte-galala.jpg" alt="IL Monte Galala Thumbnail" />
+			<ul class="project-info">
+				<li>Egypt - Al Ain Sokhna</li>
+				<li>TATWER MISR | UBTC</li>
+				<li>Senior Technical Office Engineer & BIM</li>
+			</ul>
+		  </div>
+
+	  <!-- Project # 07 -->
+		  <div class="project-card" data-tags="bim educational egypt">
+			<h3><i class="fa-solid fa-building-columns"></i> Sinai University , Food Court Building</h3>
+			<img src="assets/thumbnails/sinai-foodcourt.jpg" alt="SINAI Foodcourt Thumbnail" />
+			<ul class="project-info">
+				<li>Egypt , El Qantara El Sharqiya, Ismailia</li>
+				<li>Sinai University | ASCO | EEG</li>
+				<li>Technical Office Engineer | Revit Coordination</li>
+			</ul>
+		  </div>
+		  
+	 <!-- Project # 08 -->
+		  <div class="project-card" data-tags="bim educational egypt">
+			<h3><i class="fa-solid fa-hospital"></i> Medical Complex Hospital – Cairo Univ.</h3>
+			<img src="assets/thumbnails/medical-complex.jpg" alt="Medical Complex Hospital Thumbnail" />
+			<ul class="project-info">
+				<li>Egypt,6th October City | BIM for Healthcare</li>
+				<li>Cairo University | X-Dimensions | D.A.D</li>
+				<li>Project Coordinator | BIM delivery</li>
+			</ul>
+		  </div>
+
+	 <!-- Project # 09 -->
+		  <div class="project-card" data-tags="bim governmental Ksa">
+			<h3>🕋 Holy Haram Makkah – Saudi Expansion</h3>
+			<img src="assets/thumbnails/makkah-expansion.jpg" alt="Holy Haram Expansion Thumbnail" />
+			<ul class="project-info">
+				<li>Al-shamia Expanison and Service Buildings</li>
+				<li>KSA , Makkah</li>
+				<li>RPD | ABCD | DAR</li>
+				<li>Technical Office Engineer</li>
+			</ul>
+		  </div>
+		  
+	 <!-- Project # 010 -->
+		  <div class="project-card" data-tags="residential egypt">
+			<h3><i class="fa-solid fa-building"></i> Rayhanah Residence , Zahraa Al-Maadi</h3>
+			<img src="assets/thumbnails/rayhanah.jpg" alt="Rayhanah Residence Thumbnail" />
+			<ul class="project-info">
+				<li>Mixed Use Towers | Apartments & Commerical Areas</li>
+				<li>Egypt , Caior , Al-Maddi</li>
+				<li>Degla Group For Investments</li>
+				<li>Technical Office Engineer</li>
+			</ul>
+		  </div>
+		</div>
+	  </section>
+</div>
+
+
+
+
+
+  <footer style="text-align: center; padding: 2rem 1rem; background: #eee; font-size: 0.9rem; color: #666;">
+  <p>Connect with me:</p>
+  <p>
+    <a href="https://www.linkedin.com/in/hanimtartour" class="linkedin-link" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a> &nbsp;|&nbsp;
+
+	<a href="https://github.com/HaniTartour" class="github-link" target="_blank">
+	  <i class="fab fa-github"></i> GitHub
+    </a> &nbsp;|&nbsp;
+
+	<a href="https://www.youtube.com/@HaniMTARTOUR" class="youtube-link" target="_blank">
+	  <i class="fab fa-youtube"></i> YouTube	
+    </a>
+  </p>
+  <p style="margin-top: 1rem;">Built with 💙 by Hani Tartour – 2025</p>
+</footer>
+
+  <!-- JS Filter -->
+  <script>
+    function filterProjects(event, tag) {
+      const buttons = document.querySelectorAll('.filter-bar button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const tags = (card.dataset.tags || "").split(/\s+/); // split by any whitespace
+        card.style.display = (tag === 'all' || tags.includes(tag)) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+
+
+
+<!-- Scroll-to-top -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Back to Top">↑ Top</button>
+
+<!-- JS Scroll Logic -->
+<script>
+  // Show button after scrolling down 300px
+  window.onscroll = function () {
+    const btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Smooth scroll to top
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+
+<!-- Toggle the Theme -->
+
+	<script>
+	  const btn = document.getElementById('theme-toggle');
+	  btn.addEventListener('click', () => {
+		document.body.classList.toggle('dark');
+		localStorage.setItem(
+		  'theme',
+		  document.body.classList.contains('dark') ? 'dark' : 'light'
+		);
+	  });
+
+	  // Load saved theme on page load
+	  document.addEventListener('DOMContentLoaded', () => {
+		const theme = localStorage.getItem('theme');
+		if (theme === 'dark') {
+		  document.body.classList.add('dark');
+		}
+	  });
+	</script>
+
+
+
+
+</html>

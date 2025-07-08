@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rename Views+ | Hani Tartour</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .project-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-left: 5px solid #ff6600;
+      border-radius: 6px;
+    }
+
+    .project-container h1 {
+      color: #ff6600;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-meta {
+      color: #777;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-container img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+
+    .download-buttons a {
+      display: inline-block;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding: 0.6rem 1.2rem;
+      background: #ff6600;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .download-buttons a:hover {
+      background: #e05500;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="project-container">
+    <h1>🧠 Rename Views+ (pyRevit Tool)</h1>
+    <p class="project-meta">Automate renaming workflows across multiple views in Revit</p>
+
+    <p><strong>Summary:</strong> Rename Views+ is a pyRevit-powered tool designed to rename views intelligently in bulk. With a preview UI and built-in filters, users can visually inspect, group, and update view names across entire models — instantly.</p>
+
+    <img src="../assets/images/rename-views-preview.png" alt="Rename Views Tool Screenshot" />
+
+    <h3>Key Features:</h3>
+    <ul>
+      <li>⚡ Preview and edit view names in a live grid</li>
+      <li>🔍 Filter views by type, discipline, or duplication</li>
+      <li>📤 Export/Import renaming schema via Excel</li>
+      <li>🎨 Branded UI using BIMBuddy interface</li>
+    </ul>
+
+    <div class="download-buttons">
+      <a href="../assets/docs/rename-views-instructions.pdf" download><i class="fa-solid fa-file-pdf"></i> PDF Guide</a>
+      <a href="https://github.com/HaniTartour/HT-Toolbox" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
+    </div>
+
+    <h3>Screenshots:</h3>
+    <img src="../assets/images/rename-grid.png" alt="Rename Grid Preview" />
+    <img src="../assets/images/rename-settings.png" alt="Rename Settings" />
+
+    <h3>Technology Stack:</h3>
+    <ul>
+      <li>Python + Revit API</li>
+      <li>pyRevit framework</li>
+      <li>WinForms UI</li>
+      <li>Dynamic Grid Binding</li>
+    </ul>
+
+    <a href="../projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+  </div>
+</body>
+</html>

@@ -392,13 +392,19 @@
 	  transform: rotate(180deg);
 	}
 
+
+
 	.collapsible-content {
 	  overflow: hidden;
-	  max-height: 1000px;
+	  max-height: none; /* 👈 let it grow naturally */
 	  opacity: 1;
 	  transform: translateY(0);
 	  transition: max-height 0.4s ease, opacity 0.3s ease;
 	}
+
+
+
+
 
 	.collapsible-section.collapsed .collapsible-content {
 	  max-height: 0;

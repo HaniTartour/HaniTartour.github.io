@@ -57,16 +57,61 @@
       background: #e05500;
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: #0077cc;
-      text-decoration: none;
-    }
+	.back-link-fixed {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 20px;
+	  background-color: #ff6600;
+	  color: white;
+	  padding: 0.6rem 1.2rem;
+	  font-weight: bold;
+	  border-radius: 30px;
+	  text-decoration: none;
+	  z-index: 999;
+	  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+	  transition: background-color 0.3s ease;
+	}
 
-    .back-link:hover {
-      text-decoration: none;
-    }
+	.back-link-fixed:hover {
+	  background-color: #e05500;
+	  text-decoration: none;
+	}
+	
+	
+	
+	@media screen and (max-width: 600px) {
+	  .back-link-fixed {
+		bottom: 10px;
+		left: 10px;
+		font-size: 0.85rem;
+		padding: 0.5rem 1rem;
+	  }
+	}
+	
+	
+	.screenshot-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	  gap: 1rem;
+	  margin-top: 1rem;
+	}
+
+	.screenshot-grid img {
+	  width: 100%;
+	  border-radius: 6px;
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	  transition: transform 0.2s ease;
+	  cursor: pointer;
+	}
+
+	.screenshot-grid img:hover {
+	  transform: scale(1.02);
+	}
+
+	
+	
+	
+	
   </style>
 </head>
 
@@ -102,21 +147,28 @@
     </ul>
 
 
-    <h3>Screenshots:</h3>
-    <img src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
-	<img src="../projects/images/rename-view-demo-02.png" alt="Rename select views window" />
-	<img src="../projects/images/rename-view-demo-03.png" alt="Rename (find,replace,prefix,suffix) window" />
-	<img src="../projects/images/rename-view-demo-04.png" alt="Rename add prefix" />
-	<img src="../projects/images/rename-view-demo-05.png" alt="Rename preview window" />
-	<img src="../projects/images/rename-view-demo-06.png" alt="Rename cancelled command" />
-	<img src="../projects/images/rename-view-demo-07.png" alt="Rename view filter by keyword " />
-	<img src="../projects/images/rename-view-demo-08.png" alt="Rename select view" />
-	<img src="../projects/images/rename-view-demo-09.png" alt="Rename find & replace logic" />
-	<img src="../projects/images/rename-view-demo-010.png" alt="Rename preview window" />
-	<img src="../projects/images/rename-view-demo-011.png" alt="Rename final Result" />
+	<h3>Screenshots:</h3>
+	<div class="screenshot-grid">
+	  <a href="../projects/images/rename-view-demo-01.png" class="demo-lightbox" data-img="../projects/images/rename-view-demo-01.png" data-caption="Main Window">
+		<img src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
+	  </a>
+	  <a href="../projects/images/rename-view-demo-02.png" class="demo-lightbox" data-img="../projects/images/rename-view-demo-02.png" data-caption="Select Views">
+		<img src="../projects/images/rename-view-demo-02.png" alt="Select Views" />
+	  </a>
+	  <a href="../projects/images/rename-view-demo-03.png" class="demo-lightbox" data-img="../projects/images/rename-view-demo-03.png" data-caption="Find & Replace">
+		<img src="../projects/images/rename-view-demo-03.png" alt="Find & Replace" />
+	  </a>
+	  <!-- Add the rest of your images using the same pattern -->
+	</div>
 
 
-    <a href="../projects.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
-  </div>
+	<a href="../projects.html" class="back-link-fixed">
+	  <i class="fa-solid fa-arrow-left"></i> Back to Projects
+	</a>
+	
+	
+	
+	
+  </div> 
 </body>
 </html>

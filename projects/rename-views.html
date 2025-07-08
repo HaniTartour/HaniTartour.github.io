@@ -6,6 +6,12 @@
   <title>Rename Views+ | Hani Tartour</title>
   <meta name="description" content="Rename Views+ is a powerful pyRevit tool by Hani Tartour for batch renaming Revit views with a smart UI, filters, and Excel support.">
 
+	<meta property="og:title" content="Rename Views+ – pyRevit Tool by Hani Tartour" />
+	<meta property="og:description" content="Batch rename Revit views with preview, filters, Excel support, and a custom UI." />
+	<meta property="og:url" content="https://hanitartour.github.io/projects/rename-views.html" />
+	<meta property="og:image" content="https://hanitartour.github.io/projects/images/rename-view-demo-01.png" />
+
+
   <link rel="stylesheet" href="../assets/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
@@ -236,6 +242,10 @@
 	  font-weight: bold;
 	  text-decoration: none;
 	  transition: background-color 0.3s ease;
+	  border: none;
+	  cursor: pointer;
+	  display: flex;
+	  align-items: center;
 	}
 
 	.share-linkedin:hover {
@@ -267,13 +277,10 @@
 		Rename Views+ (pyRevit Tool)
 	  </h1>
 	  
-	  <a 
-		href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fhanitartour.github.io%2Fprojects%2Frename-views.html&title=Rename%20Views%2B%20%E2%80%93%20A%20pyRevit%20Tool%20for%20Batch%20Renaming%20Views&summary=Rename%20Revit%20views%20in%20bulk%20with%20filters%2C%20Excel%20support%2C%20and%20a%20preview%20UI.%20Part%20of%20the%20HT-Toolbox%20by%20Hani%20Tartour.&source=hanitartour.github.io"
-		target="_blank"
-		class="share-linkedin"
-		title="Share on LinkedIn">
-		<i class="fa-brands fa-linkedin"></i> Share
-	  </a>
+	  <!-- ✅ Corrected single share button -->
+	  <button id="shareAndCopyBtn" class="share-linkedin" title="Share on LinkedIn & Copy Link" aria-label="Share this page on LinkedIn">
+		<i class="fa-brands fa-linkedin" style="margin-right: 6px;"></i> Share
+	  </button>
 	</div>
 
 	<p class="project-meta">Automate renaming workflows across multiple views in your Revit projects.</p>
@@ -488,6 +495,12 @@ document.getElementById("shareAndCopyBtn").addEventListener("click", function ()
     alert("Failed to copy the link.");
     console.error("Clipboard error:", err);
   });
+  
+	navigator.clipboard.writeText(pageUrl).then(() => {
+	  alert("Copied and ready to share on LinkedIn!");
+	});
+
+  
 });
 </script>
 

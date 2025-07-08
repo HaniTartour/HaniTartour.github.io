@@ -159,18 +159,35 @@
 	  transform: translateY(-50%);
 	}
 
+
+
 	.lightbox-nav button {
-	  background: rgba(255, 255, 255, 0.7);
+	  background-color: rgba(255, 255, 255, 0.9);
 	  border: none;
-	  font-size: 1.5rem;
-	  padding: 0.5rem 1rem;
+	  font-size: 2rem;
+	  font-weight: bold;
+	  padding: 0.75rem 1.2rem;
 	  cursor: pointer;
 	  color: #333;
-	  border-radius: 4px;
+	  border-radius: 50%;
+	  margin: 0 1rem;
+	  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	  transition: all 0.2s ease-in-out;
+	  opacity: 0.9;
 	}
 
 	.lightbox-nav button:hover {
-	  background: white;
+	  background-color: #ff6600;
+	  color: white;
+	  transform: scale(1.1);
+	  opacity: 1;
+	}
+
+	@media screen and (max-width: 600px) {
+	  .lightbox-nav button {
+		font-size: 1.5rem;
+		padding: 0.6rem 1rem;
+	  }
 	}
 
 
@@ -253,17 +270,23 @@
   
  <!-- Lightbox Gallery -->
 <div id="lightboxOverlay" class="lightbox-overlay hidden">
+
   <div class="lightbox-content">
     <span id="lightboxClose" class="lightbox-close">&times;</span>
     <img id="lightboxImage" src="" alt="Screenshot" />
     <p id="lightboxCaption"></p>
     
     <!-- Navigation buttons -->
-    <div class="lightbox-nav">
-      <button id="lightboxPrev">←</button>
-      <button id="lightboxNext">→</button>
-    </div>
-  </div>
+	<div class="lightbox-nav">
+	  <button id="lightboxPrev" aria-label="Previous">
+		<i class="fa-solid fa-chevron-left"></i>
+	  </button>
+	  <button id="lightboxNext" aria-label="Next">
+		<i class="fa-solid fa-chevron-right"></i>
+	  </button>
+	</div>
+	
+  </div> 
 </div>
 
 

@@ -465,6 +465,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
+<script>
+document.getElementById("shareAndCopyBtn").addEventListener("click", function () {
+  const pageUrl = window.location.href;
+
+  // ✅ 1. Copy URL to clipboard
+  navigator.clipboard.writeText(pageUrl).then(() => {
+    console.log("Link copied to clipboard!");
+
+    // ✅ 2. Build LinkedIn Share URL
+    const shareUrl = "https://www.linkedin.com/shareArticle?mini=true"
+      + "&url=" + encodeURIComponent(pageUrl)
+      + "&title=" + encodeURIComponent("Rename Views+ – pyRevit Tool for Revit View Automation")
+      + "&summary=" + encodeURIComponent("Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI. #Revit #pyRevit #BIM #Automation")
+      + "&source=hanitartour.github.io";
+
+    // ✅ 3. Open share popup
+    window.open(shareUrl, "_blank");
+
+  }).catch(err => {
+    alert("Failed to copy the link.");
+    console.error("Clipboard error:", err);
+  });
+});
+</script>
+
   
   
   

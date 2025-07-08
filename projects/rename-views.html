@@ -67,7 +67,7 @@
 	  font-weight: bold;
 	  border-radius: 30px;
 	  text-decoration: none;
-	  z-index: 999;
+	  z-index: 10000; /* slightly higher than lightbox */
 	  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 	  transition: background-color 0.3s ease;
 	}
@@ -107,6 +107,85 @@
 	.screenshot-grid img:hover {
 	  transform: scale(1.02);
 	}
+
+
+	.lightbox-overlay {
+	  position: fixed;
+	  top: 0; left: 0;
+	  width: 100vw; height: 100vh;
+	  background-color: rgba(0, 0, 0, 0.8);
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  z-index: 9999;
+	}
+
+	.lightbox-overlay.hidden {
+	  display: none;
+	}
+
+	.lightbox-content {
+	  position: relative;
+	  max-width: 90%;
+	  max-height: 90%;
+	  text-align: center;
+	}
+
+	.lightbox-content img {
+	  max-width: 100%;
+	  max-height: 80vh;
+	  border-radius: 6px;
+	}
+
+	.lightbox-close {
+	  position: absolute;
+	  top: 10px; right: 20px;
+	  font-size: 2rem;
+	  color: white;
+	  cursor: pointer;
+	}
+
+	.lightbox-caption {
+	  margin-top: 1rem;
+	  color: white;
+	}
+
+	.lightbox-nav {
+	  position: absolute;
+	  top: 50%;
+	  width: 100%;
+	  display: flex;
+	  justify-content: space-between;
+	  transform: translateY(-50%);
+	}
+
+	.lightbox-nav button {
+	  background: rgba(255, 255, 255, 0.7);
+	  border: none;
+	  font-size: 1.5rem;
+	  padding: 0.5rem 1rem;
+	  cursor: pointer;
+	  color: #333;
+	  border-radius: 4px;
+	}
+
+	.lightbox-nav button:hover {
+	  background: white;
+	}
+
+
+
+
+
+
+	.lightbox-nav button:focus {
+	  outline: 2px dashed #ff6600;
+	  outline-offset: 2px;
+	}
+
+
+
+
 
 	
 	
@@ -149,17 +228,18 @@
 
 	<h3>Screenshots:</h3>
 	<div class="screenshot-grid">
-	  <a href="../projects/images/rename-view-demo-01.png" class="demo-lightbox" data-img="../projects/images/rename-view-demo-01.png" data-caption="Main Window">
-		<img src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
+	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-01.png" data-caption="Main Window">
+		<img class="screenshot" src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
 	  </a>
-	  <a href="../projects/images/rename-view-demo-02.png" class="demo-lightbox" data-img="../projects/images/rename-view-demo-02.png" data-caption="Select Views">
-		<img src="../projects/images/rename-view-demo-02.png" alt="Select Views" />
+	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-02.png" data-caption="Select Views">
+		<img class="screenshot" src="../projects/images/rename-view-demo-02.png" alt="Select Views" />
 	  </a>
-	  <a href="../projects/images/rename-view-demo-03.png" class="demo-lightbox" data-img="../projects/images/rename-view-demo-03.png" data-caption="Find & Replace">
-		<img src="../projects/images/rename-view-demo-03.png" alt="Find & Replace" />
+	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-03.png" data-caption="Find & Replace">
+		<img class="screenshot" src="../projects/images/rename-view-demo-03.png" alt="Find & Replace" />
 	  </a>
-	  <!-- Add the rest of your images using the same pattern -->
+	  <!-- Continue with the rest in the same pattern -->
 	</div>
+
 
 
 	<a href="../projects.html" class="back-link-fixed">
@@ -170,5 +250,83 @@
 	
 	
   </div> 
+  
+ <!-- Lightbox Gallery -->
+<div id="lightboxOverlay" class="lightbox-overlay hidden">
+  <div class="lightbox-content">
+    <span id="lightboxClose" class="lightbox-close">&times;</span>
+    <img id="lightboxImage" src="" alt="Screenshot" />
+    <p id="lightboxCaption"></p>
+    
+    <!-- Navigation buttons -->
+    <div class="lightbox-nav">
+      <button id="lightboxPrev">←</button>
+      <button id="lightboxNext">→</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const lightboxLinks = document.querySelectorAll(".demo-lightbox");
+  const overlay = document.getElementById("lightboxOverlay");
+  const image = document.getElementById("lightboxImage");
+  const caption = document.getElementById("lightboxCaption");
+  const closeBtn = document.getElementById("lightboxClose");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+
+  let currentIndex = 0;
+  const images = Array.from(lightboxLinks);
+
+  function showImage(index) {
+    const img = images[index];
+    image.src = img.dataset.img;
+    caption.textContent = img.dataset.caption || '';
+    overlay.classList.remove("hidden");
+  }
+
+  images.forEach((link, index) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => overlay.classList.add("hidden"));
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") overlay.classList.add("hidden");
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+});
+</script>
+
+  
+  
+  
+  
 </body>
+
+
+
 </html>

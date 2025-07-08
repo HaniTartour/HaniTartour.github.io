@@ -261,16 +261,7 @@
 	  line-height: 30px;
 	}
 
-
-
-
-
-	
-	
-	
   </style>
-
-  
 </head>
 
 
@@ -327,51 +318,11 @@
 	</button>
 	
 	<!-- New: KSA filter with flag -->
-	<button onclick="filterProjects(event, 'Ksa')" class="flag-button">
+	<button onclick="filterProjects(event, 'ksa')" class="flag-button">
 	  <img src="assets/icons/ksa-flag.png" alt="KSA Flag" />
 	  KSA
 	</button>
   </div>
-
-
-  
-<!-- ✅ Dev Tools Section -->
-<!-- >
-<div class="section-box">
-  <section class="development-projects">
-    <h2 style="text-align: left; padding-left: 1rem;"><i class="fa-solid fa-code"></i> Revit Development Tools:</h2>
-    <p class="projects-description" style="text-align: left; color: #666; padding-left: 3rem; padding-right: 2rem;">
-      From repetitive tasks to complex workflows, this toolbox turns hours into seconds. These tools were developed to help Revit users automate, streamline, and supercharge their daily routines.
-    </p>
-
-    <div class="project-grid" id="projectGrid">
-
-      <!-- ✅ Project Card - Rename Views+ -->
-	  <!-- >
-<div class="project-card" data-tags="pyrevit python ui">
-  <h3><a href="projects/rename-views.html">🔄 Rename Views+</a></h3>
-  <p>Smart pyRevit tool to batch rename views with live preview, filters & color-coded UI.</p>
-  
-  <div class="tags">
-    <span>pyRevit</span><span>Python</span><span>UI</span>
-  </div>
-  
-  <div class="links">
-    <a href="https://github.com/HaniTartour/HT-Toolbox" target="_blank">
-      <span><i class="fa-brands fa-github"></i> GitHub</span>
-    </a>
-    <a href="#">
-      <span><i class="fa-solid fa-play"></i> Demo</span>
-    </a>
-  </div>
-</div>
-
-    </div>
-  </section>
-</div>
-<-->
-
-
 
 
 <!-- ✅ Dev Tools Section -->
@@ -425,44 +376,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-		<div class="project-card" data-tags="dynamo python ui">
-		  <h3>📌 Level Selector Tool</h3>
-		  <p>Multi-level Revit filtering UI built with Python, WinForms & Dynamo — perfect for multi-story projects.</p>
-		  <div class="tags">
-			<span>Dynamo</span><span>Python</span><span>UI</span>
-		  </div>
-		  <div class="links">
-			<a href="https://github.com/HaniTartour/LevelSelectorTool" target="_blank">GitHub</a>
-			<a href="#">Demo</a>
-		  </div>
-		</div>
-
-
-
-
-
-		<div class="project-card" data-tags="pyrevit python github">
-		  <h3>🧠 CloneBuddy</h3>
-		  <p>pyRevit Extension Manager to clone, fix, validate & register GitHub extensions with one click.</p>
-		  <div class="tags">
-			<span>pyRevit</span><span>Python</span><span>GitHub</span>
-		  </div>
-		  <div class="links">
-			<a href="https://github.com/HaniTartour/CloneBuddy" target="_blank">GitHub</a>
-			<a href="#">Demo</a>
-		  </div>
-		</div>
-	  </div>
-	</section>
-</div>
 
 
 
@@ -569,7 +482,7 @@
 		  </div>
 
 	 <!-- Project # 09 -->
-		  <div class="project-card" data-tags="bim governmental Ksa">
+		  <div class="project-card" data-tags="bim governmental ksa">
 			<h3>🕋 Holy Haram Makkah – Saudi Expansion</h3>
 			<img src="assets/thumbnails/makkah-expansion.jpg" alt="Holy Haram Expansion Thumbnail" />
 			<ul class="project-info">
@@ -643,10 +556,6 @@
 </div>
 
 
-
-</body>
-
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // ✅ Scroll-to-top button logic
@@ -704,4 +613,10 @@
   });
 </script>
 
+<!-- Scroll-to-top -->
+<button id="scrollTopBtn" title="Back to Top" style="display:none; position:fixed; bottom:20px; right:20px; background:#ff6600; color:white; border:none; border-radius:4px; padding:10px 15px; cursor:pointer; z-index:999;">
+  ↑ Top
+</button>
+
+</body>
 </html>

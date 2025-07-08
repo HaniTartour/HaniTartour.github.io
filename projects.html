@@ -213,6 +213,57 @@
 
 
 
+	.lightbox-overlay {
+	  position: fixed;
+	  top: 0; left: 0;
+	  width: 100%; height: 100%;
+	  background: rgba(0,0,0,0.8);
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  z-index: 1000;
+	}
+
+	.lightbox-overlay.hidden {
+	  display: none;
+	}
+
+	.lightbox-content {
+	  position: relative;
+	  max-width: 90%;
+	  max-height: 90%;
+	}
+
+	.lightbox-content img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	  border-radius: 4px;
+	}
+
+	.lightbox-caption {
+	  color: #fff;
+	  text-align: center;
+	  margin-top: 0.5rem;
+	}
+
+	.lightbox-close {
+	  position: absolute;
+	  top: -10px; right: -10px;
+	  background: #fff;
+	  color: #333;
+	  font-size: 1.5rem;
+	  font-weight: bold;
+	  border-radius: 50%;
+	  width: 30px; height: 30px;
+	  text-align: center;
+	  cursor: pointer;
+	  line-height: 30px;
+	}
+
+
+
+
 
 	
 	
@@ -359,9 +410,13 @@
           <a href="https://github.com/HaniTartour/HT-Toolbox" target="_blank">
             <span><i class="fa-brands fa-github"></i> GitHub</span>
           </a>
-          <a href="#">
-            <span><i class="fa-solid fa-play"></i> Demo</span>
-          </a>
+		  
+		  <a href="#" class="demo-lightbox" 
+		     data-img="projects/images/rename-view-demo.png" 
+		     data-caption="Preview of Rename Views+ in action">
+		     <span><i class="fa-solid fa-play"></i> Demo</span>
+		  </a>
+		  
         </div>
       </div>
 
@@ -577,54 +632,76 @@
     }
   </script>
 
+
+<!-- Lightbox Overlay -->
+<div id="lightboxOverlay" class="lightbox-overlay hidden">
+  <div class="lightbox-content">
+    <span id="lightboxClose" class="lightbox-close">&times;</span>
+    <img id="lightboxImage" src="" alt="Demo screenshot">
+    <p id="lightboxCaption"></p>
+  </div>
+</div>
+
+
+
 </body>
 
 
-
-<!-- Scroll-to-top -->
-<button onclick="scrollToTop()" id="scrollTopBtn" title="Back to Top">↑ Top</button>
-
-<!-- JS Scroll Logic -->
 <script>
-  // Show button after scrolling down 300px
-  window.onscroll = function () {
-    const btn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
+  document.addEventListener('DOMContentLoaded', () => {
+    // ✅ Scroll-to-top button logic
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", function () {
+      scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300)
+        ? "block" : "none";
+    });
+
+    scrollBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ✅ Theme toggle logic
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      });
     }
-  };
 
-  // Smooth scroll to top
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    // ✅ Lightbox logic
+    document.querySelectorAll('.demo-lightbox').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const img = this.dataset.img;
+        const caption = this.dataset.caption || '';
+        document.getElementById('lightboxImage').src = img;
+        document.getElementById('lightboxCaption').textContent = caption;
+        document.getElementById('lightboxOverlay').classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', () => {
+      document.getElementById('lightboxOverlay').classList.add('hidden');
+    });
+
+    document.getElementById('lightboxOverlay').addEventListener('click', e => {
+      if (e.target.id === 'lightboxOverlay') {
+        document.getElementById('lightboxOverlay').classList.add('hidden');
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('lightboxOverlay').classList.add('hidden');
+      }
+    });
+  });
 </script>
-
-
-<!-- Toggle the Theme -->
-
-	<script>
-	  const btn = document.getElementById('theme-toggle');
-	  btn.addEventListener('click', () => {
-		document.body.classList.toggle('dark');
-		localStorage.setItem(
-		  'theme',
-		  document.body.classList.contains('dark') ? 'dark' : 'light'
-		);
-	  });
-
-	  // Load saved theme on page load
-	  document.addEventListener('DOMContentLoaded', () => {
-		const theme = localStorage.getItem('theme');
-		if (theme === 'dark') {
-		  document.body.classList.add('dark');
-		}
-	  });
-	</script>
-
-
-
 
 </html>

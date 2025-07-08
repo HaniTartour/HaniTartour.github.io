@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rename Views+ | Hani Tartour</title>
+  <meta name="description" content="Rename Views+ is a powerful pyRevit tool by Hani Tartour for batch renaming Revit views with a smart UI, filters, and Excel support.">
+
   <link rel="stylesheet" href="../assets/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -224,7 +226,7 @@
 <body>
   <div class="project-container">
     <h1>🧠 Rename Views+ (pyRevit Tool)</h1>
-    <p class="project-meta">Automate renaming workflows across multiple views in Revit Project</p>
+    <p class="project-meta">Automate renaming workflows across multiple views in your Revit projects.</p>
 
     <p><strong>Summary:</strong> Rename Views+ is a pyRevit-powered tool designed to rename views intelligently in bulk. With a preview UI and built-in filters, users can visually inspect, group, and update view names across entire models — instantly.</p>
 
@@ -255,52 +257,50 @@
 	<div class="screenshot-grid">
 	
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-01.png" data-caption="Main Window">
-		<img class="screenshot" src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
+		<img src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-02.png" data-caption="Select Views">
-		<img class="screenshot" src="../projects/images/rename-view-demo-02.png" alt="Select Views" />
+		<img src="../projects/images/rename-view-demo-02.png" alt="Select Views" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-03.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-03.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-03.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-04.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-04.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-04.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-05.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-05.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-05.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-06.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-06.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-06.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-07.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-07.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-07.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-08.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-08.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-08.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-09.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-09.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-09.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-010.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-010.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-010.png" alt="Find & Replace" />
 	  </a>
 	  
 	  <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-011.png" data-caption="Find & Replace">
-		<img class="screenshot" src="../projects/images/rename-view-demo-011.png" alt="Find & Replace" />
+		<img src="../projects/images/rename-view-demo-011.png" alt="Find & Replace" />
 	  </a>
 	  
-	  
-	  
-	  
+
 	  <!-- Continue with the rest in the same pattern -->
 	</div>
 
@@ -309,8 +309,6 @@
 	<a href="../projects.html" class="back-link-fixed">
 	  <i class="fa-solid fa-arrow-left"></i> Back to Projects
 	</a>
-	
-	
 	
 	
   </div> 
@@ -353,11 +351,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const images = Array.from(lightboxLinks);
 
   function showImage(index) {
-    const img = images[index];
-    image.src = img.dataset.img;
-    caption.textContent = img.dataset.caption || '';
-    overlay.classList.remove("hidden");
-  }
+  const img = images[index];
+  image.src = img.dataset.img;
+  const captionText = img.dataset.caption || '';
+  caption.textContent = `${index + 1} / ${images.length} — ${captionText}`;
+  overlay.classList.remove("hidden");
+}
 
   images.forEach((link, index) => {
     link.addEventListener("click", (e) => {

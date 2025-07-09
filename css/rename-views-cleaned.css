@@ -59,6 +59,7 @@ body {
 }
 
 /* Mobile */
+/*
 @media screen and (max-width: 600px) {
   .branding-inline {
     flex-direction: column;
@@ -73,7 +74,7 @@ body {
     font-size: 0.9rem;
   }
 }
-
+*/
 /* ========== END Branding Header Styles ========== */
 
 

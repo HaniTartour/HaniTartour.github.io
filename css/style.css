@@ -123,6 +123,23 @@ button:hover,
   color: white;
 }
 
+
+/* ===============================
+📦 Section Container Box Styling
+Used to visually group content like Revit Tools or Construction Projects
+================================= */
+.section-box {
+  border: 1px solid #ccc;                /* Light gray border */
+  border-left: 5px solid #ff6600;        /* Accent bar for visual emphasis */
+  border-radius: 10px;                   /* Rounded corners */
+  background-color: #fff;                /* White background */
+  padding: 2rem;                         /* Internal spacing */
+  margin: 2rem auto;                     /* Space around box + center */
+  max-width: 1200px;                     /* Keep it centered and readable */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);/* Light shadow for lift */
+  box-sizing: border-box;               /* Padding stays inside the width */
+}
+
 /* =========================
  📁 Project Cards
 =========================== */

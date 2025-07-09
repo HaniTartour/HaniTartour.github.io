@@ -38,39 +38,32 @@ body {
   color: #fff; /* ✅ White text for dark background */
 }
 
+/* ✅ This media query is now properly CLOSED */
 @media screen and (max-width: 600px) {
   .branding-inline {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-.branding-text h1 {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.3; /* ✅ Tighter line spacing */
-  color: #fff;       /* Ensure heading is white */
-}
+  .branding-text h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+  }
 
-.branding-text p {
-  margin: 0.2rem 0;  /* ✅ Reduce spacing between lines */
-  font-size: 0.95rem;
-  color: #ccc;       /* Optional: light gray for softer text */
-}
-
-/* Mobile */
-
-@media screen and (max-width: 600px) {
-  .branding-inline {
-    flex-direction: column;
-    gap: 0.5rem;
+  .branding-text p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #ccc;
   }
 }
 
-/* 👇 Now properly outside the media block */
+/* ✅ Global/default styles for non-mobile */
 .branding-text h1 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.3;
   color: #fff;
@@ -78,11 +71,12 @@ body {
 
 .branding-text p {
   margin: 0.2rem 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #ccc;
 }
 
 /* ========== END Branding Header Styles ========== */
+
 
 
 /* ========== Project Container ========== */

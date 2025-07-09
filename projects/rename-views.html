@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rename Views+ | Hani Tartour</title>
-  <meta name="description" content="Rename Views+ is a powerful pyRevit tool by Hani Tartour for batch renaming Revit views with a smart UI, filters, and Excel support.">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Rename Views+ | Hani Tartour</title>
+	<meta name="description" content="Rename Views+ is a powerful pyRevit tool by Hani Tartour for batch renaming Revit views with a smart UI, filters, and Excel support.">
+	<meta name="keywords" content="Revit, pyRevit, Rename Views, BIM, Automation, Python, Hani Tartour, BIMBuddy" />
+	<meta name="author" content="Hani M. Tartour" />
 
 	<meta property="og:title" content="Rename Views+ – pyRevit Tool by Hani Tartour" />
 	<meta property="og:description" content="Batch rename Revit views with preview, filters, Excel support, and a custom UI." />
 	<meta property="og:url" content="https://hanitartour.github.io/projects/rename-views.html" />
 	<meta property="og:image" content="https://hanitartour.github.io/projects/images/rename-view-demo-01.png" />
+	<meta property="og:title" content="Rename Views+ v1.0 – pyRevit Tool by Hani Tartour" />
+
+
+
 
   <link rel="stylesheet" href="../assets/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+
   
   <style>
     body {
@@ -323,6 +331,20 @@
     }
 
 
+	@media screen and (max-width: 500px) {
+	  .project-container {
+		padding: 1rem;
+	  }
+	}
+
+
+
+	footer a:hover i {
+	  transform: scale(1.2);
+	  transition: transform 0.2s ease;
+	}
+
+
 
 
 	
@@ -332,15 +354,16 @@
   </style>
 </head>
 
+
 <body>
 
-  <div class="project-container">
-  
+<main class="project-container"> 
+ 
   
 <!-- 📌 add brading logo&page header -->
     <header>
     <div class="branding">
-      <img src="assets/bimbuddy-logo-removebg-preview.png" alt="BIMBuddy Logo" class="logo" />
+      <img src="../assets/bimbuddy-logo-removebg-preview.png" alt="BIMBuddy Logo" class="logo" />
       <div>
 		<h1><i class="fa-solid fa-code"></i> Revit Development Tools | By: Hani Mohamed Tartour</h1>
 		<p>A showcase of completed Tools For BIM Automation </p>
@@ -360,14 +383,14 @@
 	 <p class="project-meta">Automate renaming workflows across multiple views in your Revit projects.</p>
 	
 	  <!-- ✅ Corrected single share button -->
-	  <button id="shareAndCopyBtn" class="share-linkedin" title="Share on LinkedIn & Copy Link" aria-label="Share this page on LinkedIn">
+	  <button id="shareAndCopyBtn" class="share-linkedin" title="Share on LinkedIn & Copy Link" role="button" aria-label="Share this page on LinkedIn">
 		<i class="fa-brands fa-linkedin" style="margin-right: 6px;"></i> Share
 	  </button>
 	</div>
 
 
 
-
+<div class="tool-overview-card">
 
     <p><strong>Summary:</strong> Rename Views+ is a pyRevit-powered tool designed to rename views intelligently in bulk. With a preview UI and built-in filters, users can visually inspect, group, and update view names across entire models — instantly.</p>
 
@@ -393,7 +416,7 @@
       <li>WinForms UI</li>
       <li>Dynamic Grid Binding</li>
     </ul>
-
+</div>
 
 	<h3>Screenshots:</h3>
 	<div class="screenshot-grid">
@@ -476,8 +499,9 @@
 	</a>
 	
 	
-  </div> 
-  
+
+</main> 
+ 
  <!-- Lightbox Gallery -->
 <div id="lightboxOverlay" class="lightbox-overlay hidden">
 
@@ -552,6 +576,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "ArrowRight") nextBtn.click();
     if (e.key === "ArrowLeft") prevBtn.click();
   });
+  
+ 
+<!--	 dd a Last Modified Date (Dynamic	-->
+  document.addEventListener("DOMContentLoaded", () => {
+    const lastUpdated = new Date(document.lastModified);
+    console.log("Last updated:", lastUpdated.toDateString());
+    // You could inject this to DOM if you'd like
+  });
+
+  
+  
+  
 });
 </script>
 
@@ -559,27 +595,40 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 document.getElementById("shareAndCopyBtn").addEventListener("click", function () {
   const pageUrl = window.location.href;
+  const shareText = "Check out Rename Views+: https://hanitartour.github.io/projects/rename-views.html";
 
-  // Copy URL to clipboard once
-  navigator.clipboard.writeText(pageUrl).then(() => {
-    // Toast-style alert
-    alert("✅ Link copied!\nYou’re now sharing on LinkedIn...");
+  // ✅ 1. Native Share API (Mobile Browsers)
+  if (navigator.share) {
+    navigator.share({
+      title: "Rename Views+ – pyRevit Tool for Revit View Automation",
+      text: "Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.",
+      url: pageUrl
+    }).then(() => {
+      console.log("Shared successfully via native share.");
+    }).catch((err) => {
+      console.warn("Native share failed, falling back:", err);
+    });
 
-    // Build the LinkedIn share URL
-    const shareUrl = "https://www.linkedin.com/shareArticle?mini=true"
-      + "&url=" + encodeURIComponent(pageUrl)
-      + "&title=" + encodeURIComponent("Rename Views+ – pyRevit Tool for Revit View Automation")
-      + "&summary=" + encodeURIComponent("Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.")
-      + "&source=hanitartour.github.io";
+  } else {
+    // ✅ 2. Fallback: Copy to Clipboard + LinkedIn Share
+    navigator.clipboard.writeText(shareText).then(() => {
+      alert("✅ Link copied!\nYou’re now sharing on LinkedIn...");
 
-    // Open share popup
-    window.open(shareUrl, "_blank");
-  }).catch(err => {
-    alert("❌ Failed to copy the link.");
-    console.error("Clipboard error:", err);
-  });
+      const shareUrl = "https://www.linkedin.com/shareArticle?mini=true"
+        + "&url=" + encodeURIComponent(pageUrl)
+        + "&title=" + encodeURIComponent("Rename Views+ – pyRevit Tool for Revit View Automation")
+        + "&summary=" + encodeURIComponent("Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.")
+        + "&source=hanitartour.github.io";
+
+      window.open(shareUrl, "_blank", "noopener,noreferrer");
+    }).catch(err => {
+      alert("❌ Failed to copy the link.");
+      console.error("Clipboard error:", err);
+    });
+  }
 });
 </script>
+
 
 
   

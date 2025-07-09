@@ -32,6 +32,48 @@
     }
 
 
+
+
+	.site-header {
+	  background-color: #f8f8f8;
+	  padding: 1.5rem 1rem;
+	  border-bottom: 2px solid #ff6600;
+	  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	}
+
+	.branding {
+	  display: flex;
+	  align-items: center;
+	  gap: 1.5rem;
+	  flex-wrap: wrap;
+	}
+
+	.logo {
+	  width: 80px;
+	  height: auto;
+	}
+
+	.branding-text h1 {
+	  font-size: 1.5rem;
+	  margin: 0;
+	  color: #333;
+	}
+
+	.branding-text p {
+	  margin: 0.3rem 0;
+	  color: #666;
+	  font-size: 0.95rem;
+	}
+
+
+
+
+
+
+
+
+
+
 		header {
 		  background-color: #222;
 		  color: white;
@@ -359,16 +401,16 @@
 
 
 <!-- 📌 add brading logo&page header -->
-  <header	class="site-header">
-    <div class="branding" role="banner">
-      <img src="../assets/bimbuddy-logo-removebg-preview.png" alt="BIMBuddy Logo" class="logo" />
-      <div>
-		<h1><i class="fa-solid fa-code"></i> Revit Development Tools | By: Hani Mohamed Tartour</h1>
-		<p>A showcase of completed Tools For BIM Automation </p>
-		<p>Dynamo | Python | Revit | BIM | Automation</p>
-      </div>
+<header class="site-header">
+  <div class="branding">
+    <img src="../assets/bimbuddy-logo-removebg-preview.png" alt="BIMBuddy Logo" class="logo" />
+    <div class="branding-text">
+		<h1><i class="fa-solid fa-code"></i> Revit Development Tools by Hani Tartour</h1>
+		<p>Smart tools to accelerate BIM workflows using Revit, Python, and pyRevit.</p>
+		<p>Automation · Dynamo · Python · Revit API · BIM Innovation</p>
     </div>
-  </header>
+  </div>
+</header>
 
 <main class="project-container"> 
 
@@ -474,8 +516,6 @@
 	  <i class="fa-solid fa-arrow-left"></i> Back to Projects
 	</a>
 	
-	
-
 </main> 
 
 

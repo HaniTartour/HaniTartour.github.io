@@ -139,6 +139,30 @@ Used to visually group content like Revit Tools or Construction Projects
   box-sizing: border-box;               /* Padding stays inside the width */
 }
 
+.section-box h2 {
+  font-size: 1.5rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+
+
+/* =========================
+ 📁 Projects 
+=========================== */
+.projects-description {
+  text-align: left;
+  color: #666;
+  padding: 0 2rem 0 3rem;
+}
+
+
+
+
+
+
 /* =========================
  📁 Project Cards
 =========================== */

@@ -47,10 +47,17 @@
 	  
 	  /* 🔥 Add these 2 lines: */
 	  justify-content: center;
-	  text-align: left; /* keeps the text aligned internally */
+	  text-align: left; 		/* keeps the text aligned internally */
 	}
 
+
+	.branding-text {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;     /* ✅ Center align the heading and <p> lines */
+	  text-align: center;      /* ✅ Make text appear centered */
 	}
+
 
 	.logo-inline {
 	  width: 60PX;
@@ -77,19 +84,6 @@
 		text-align: center;
 	  }
 
-	  .logo-inline {
-		width: 50px;
-		margin-bottom: 0.5rem;
-	  }
-
-	  .branding-text h1 {
-		font-size: 1.2rem;
-	  }
-
-	  .branding-text p {
-		font-size: 0.85rem;
-	  }
-	}
 
 
     .project-container {
@@ -387,7 +381,7 @@
     <div class="branding-text">
       <h1><i class="fa-solid fa-code"></i> Revit Development Tools by Hani Tartour</h1>
       <p>Smart tools to accelerate BIM workflows using Revit, Python, and pyRevit.</p>
-      <p>Automation · Dynamo · Python · Revit API · BIM Innovation</p>
+      <p>Automation • Dynamo • Python • Revit API • BIM Innovation</p>
     </div>
   </div>
 </header>

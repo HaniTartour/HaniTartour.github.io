@@ -196,11 +196,12 @@ Used to visually group content like Revit Tools or Construction Projects
 }
 
 
-.project-card h3 img {
-  width: 28px;
-  height: 28px;
+.project-card h3 a img {
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
   margin-right: 8px;
+  display: inline-block;
 }
 
 

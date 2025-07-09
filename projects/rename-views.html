@@ -14,9 +14,6 @@
 	<meta property="og:image" content="https://hanitartour.github.io/projects/images/rename-view-demo-01.png" />
 	<meta property="og:title" content="Rename Views+ v1.0 – pyRevit Tool by Hani Tartour" />
 
-
-
-
   <link rel="stylesheet" href="../assets/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
@@ -589,18 +586,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "ArrowRight") nextBtn.click();
     if (e.key === "ArrowLeft") prevBtn.click();
   });
-  
- 
-<!--	 dd a Last Modified Date (Dynamic	-->
-  document.addEventListener("DOMContentLoaded", () => {
-    const lastUpdated = new Date(document.lastModified);
-    console.log("Last updated:", lastUpdated.toDateString());
-    // You could inject this to DOM if you'd like
-  });
-
-  
-  
-  
+   
+    
 });
 </script>
 
@@ -642,7 +629,12 @@ document.getElementById("shareAndCopyBtn").addEventListener("click", function ()
 });
 </script>
 
-
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const lastUpdated = new Date(document.lastModified);
+  console.log("Last updated:", lastUpdated.toDateString());
+});
+</script>
 
   
   

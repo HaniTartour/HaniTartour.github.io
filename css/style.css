@@ -195,6 +195,16 @@ Used to visually group content like Revit Tools or Construction Projects
   font-size: 1.2rem;
 }
 
+
+.project-card h3 img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+
 .project-card p {
   color: #444;
 }

@@ -37,52 +37,47 @@
 	}
 
 	.branding-inline {
-	  display: flex;
+	  display: inline-flex;
 	  align-items: center;
+	  justify-content: center;
 	  gap: 1.2rem;
+	  text-align: left;
 	  padding: 1rem 0;
-<<<<<<< HEAD
-	  
-	  /* 🔥 Add these 2 lines: */
 	  justify-content: center;
 	  text-align: left; 		/* keeps the text aligned internally */
 	}
 
-
-	.branding-text {
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;     /* ✅ Center align the heading and <p> lines */
-	  text-align: center;      /* ✅ Make text appear centered */
-=======
->>>>>>> parent of 0294321 (UP)
-	}
-
-
-	.logo-inline {
+	.logo {
 	  width: 60px;
 	  height: auto;
 	}
 
-	.branding-text h1 {
-	  margin: 0;
-	  font-size: 1.5rem;
-	  font-weight: 700;
-	  color: #333;
+	.branding-text {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
 	}
 
-	.branding-text p {
-	  margin: 0.2rem 0;
-	  color: #666;
-	  font-size: 0.95rem;
-	}
 
-	@media (max-width: 600px) {
+	@media screen and (max-width: 600px) {
 	  .branding-inline {
 		flex-direction: column;
-		align-items: center;
+		gap: 0.5rem;
+	  }
+
+	  .branding-text h1 {
+		font-size: 1.3rem;
 		text-align: center;
 	  }
+
+	  .branding-text p {
+		font-size: 0.9rem;
+	  }
+	}
+
+
+
 
 
     .project-container {
@@ -374,9 +369,9 @@
 
 
 <!-- 📌 add brading logo&page header -->
-<header class="site-header">
-  <div class="branding-inline" role="banner">
-    <img src="../assets/bimbuddy-logo.png" alt="BIMBuddy Logo" class="logo-inline" />
+<header class="site-header" style="text-align: center;">
+  <div class="branding-inline">
+    <img src="../assets/bimbuddy-logo.png" alt="BIMBuddy Logo" class="logo" />
     <div class="branding-text">
       <h1><i class="fa-solid fa-code"></i> Revit Development Tools by Hani Tartour</h1>
       <p>Smart tools to accelerate BIM workflows using Revit, Python, and pyRevit.</p>
@@ -384,6 +379,7 @@
     </div>
   </div>
 </header>
+
 
 
 <main class="project-container"> 
@@ -636,7 +632,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-  
   
   
   

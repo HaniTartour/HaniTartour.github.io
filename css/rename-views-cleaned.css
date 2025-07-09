@@ -59,24 +59,31 @@ body {
 }
 
 /* Mobile */
-/*
+
 @media screen and (max-width: 600px) {
   .branding-inline {
     flex-direction: column;
     gap: 0.5rem;
   }
-
-  .branding-text h1 {
-    font-size: 1.3rem;
-  }
-
-  .branding-text p {
-    font-size: 0.9rem;
-  }
 }
-*/
-/* ========== END Branding Header Styles ========== */
 
+/* 👇 Now properly outside the media block */
+.branding-text h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.branding-text p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+
+/* ========== END Branding Header Styles ========== */
 
 /* ========== Project Container ========== */
 .project-container {

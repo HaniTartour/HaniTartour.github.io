@@ -572,13 +572,11 @@ footer a:hover i {
   display: block;
   width: auto; /* 👈 Reduce to 60% / 50% for smaller display */
   max-height: 250px; /* 👈 Adjust this to your desired size */
-
   margin: 0 auto;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   object-fit: contain;
 }
-
 
 
 .carousel-btn {

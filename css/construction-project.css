@@ -16,6 +16,13 @@ body {
 
 .project-header h1 {
   margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+
+.project-header p {
+  margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .project-details {

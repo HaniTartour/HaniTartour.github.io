@@ -17,6 +17,7 @@
 
 
   <!-- Styles -->
+  <link rel="stylesheet" href="../css/construction-project.css" />
   <link rel="stylesheet" href="../css/revit-tools.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
   
@@ -69,79 +70,49 @@
     </button>
   </div>
 
-  <!-- 📌 Tool Overview -->
-  <section class="tool-overview-card">
-    <p><strong>Summary:</strong> Rename Views+ is a pyRevit-powered tool designed to rename views intelligently in bulk. With a preview UI and built-in filters, users can visually inspect, group, and update view names across entire models — instantly.</p>
+    <!-- ✅ Summary -->
+    <section class="summary">
+      <h2>📋 Project Summary</h2>
+      <p>
+        Belle Vie Compound is a high-end residential project developed by Emaar Misr.
+        I led the structural BIM coordination for villas and infrastructure packages, managing modeling standards, delivery timelines, and cross-discipline clash resolution.
+        Our team implemented Dynamo-powered automation to accelerate shop drawings and rebar modeling processes.
+      </p>
+    </section>
 
-    <h3>Key Features:</h3>
-    <ul>
-      <li>⚡ Preview and edit view names in a live grid</li>
-      <li>🔍 Filter views by type, discipline, or duplication</li>
-      <li>📤 Export/Import renaming schema via Excel</li>
-      <li>🎨 Branded UI using BIMBuddy interface</li>
-    </ul>
+    <!-- 🖼 Revit Screenshots -->
+    <section class="screenshots">
+      <h2>📸 Revit Screenshots</h2>
+      <div class="screenshot-grid">
+        <img src="../assets/screenshots/belle-vie-01.jpg" alt="Villa Model View" />
+        <img src="../assets/screenshots/belle-vie-02.jpg" alt="Structural Coordination" />
+        <!-- Add more screenshots as needed -->
+      </div>
+    </section>
 
-    <div class="download-buttons">
-      <a href="../projects/docs/rename-views-plus-instructions_guide.md" download>
-        <i class="fa-solid fa-file-pdf"></i> Instructions Guide
-      </a>
-      <a href="https://github.com/HaniTartour/HT-Toolbox/tree/main/pyRevit/HT-ToolBoxExtension/HT.extension/HT_pyTools.tab/Dev.panel/05RenameViewsPlus.pushbutton"
-         target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i> View on GitHub
-      </a>
-    </div>
+    <!-- 📄 Shop Drawings -->
+    <section class="pdf-sheets">
+      <h2>📄 PDF Shop Drawings</h2>
+      <ul>
+        <li><a href="../assets/pdfs/belle-vie-villa1-foundation.pdf" target="_blank">Villa Type 1 – Foundation Plan</a></li>
+        <li><a href="../assets/pdfs/belle-vie-infra-typical-section.pdf" target="_blank">Infra Package – Typical Section</a></li>
+        <!-- Add more if needed -->
+      </ul>
+    </section>
 
-    <h3>Technology Stack:</h3>
-    <ul>
-      <li>Python + Revit API</li>
-      <li>pyRevit framework</li>
-      <li>WinForms UI</li>
-      <li>Dynamic Grid Binding</li>
-    </ul>
-  </section>
+    <!-- 💡 Advice / Recommendations -->
+    <section class="upgrade-tips">
+      <h2>💡 Recommendations for Upgrades</h2>
+      <ul>
+        <li>Use Navisworks SwitchBack to accelerate structural review cycles.</li>
+        <li>Automate IFC export using Revit task scheduler.</li>
+        <li>Introduce Power BI dashboards for RFI and issue tracking.</li>
+      </ul>
+    </section>
 
-  <!-- 📸 Screenshots -->
-  <section>
-    <h3>Tool Interface Previews:</h3>
-    <div class="screenshot-grid">
-      <!-- Repeat pattern for screenshots -->
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-01.png" data-caption="Main Window">
-        <img src="../projects/images/rename-view-demo-01.png" alt="Rename Main Window" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-02.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-02.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-03.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-03.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-04.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-04.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-05.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-05.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-06.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-06.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-07.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-07.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-08.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-08.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-09.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-09.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-10.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-10.png" alt="Select Views" />
-      </a>
-      <a class="demo-lightbox" data-img="../projects/images/rename-view-demo-11.png" data-caption="Select Views">
-        <img src="../projects/images/rename-view-demo-11.png" alt="Select Views" />
-      </a>
 
-      <!-- ... Add remaining images as you did -->
-    </div>
-  </section>
+
+
 
   <!-- 🔙 Fixed Back Button -->
   <a href="../projects.html" class="back-link-fixed" aria-label="Back to Projects page">

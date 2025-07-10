@@ -516,6 +516,22 @@ footer a:hover i {
   opacity: 1;
   transform: scale(1.05);
 }
+
+@media screen and (max-width: 600px) {
+  .logo-strip img {
+    height: 40px;
+    max-width: 80px;
+  }
+}
+
 /* ========== END Trusted By Logos ========== */
+
+
+
+.revit-logo-icon {
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
 
 

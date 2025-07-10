@@ -118,12 +118,27 @@ body {
 /* ========== Construction HEADER ========== */
 
 .construction-header {
-  background: #d6d4d2;
-  color: white;
+  background: #f0f0f0;          /* Optional: light background */
   padding: 2rem;
-  text-align: center;
+  text-align: left;             /* ✅ Align content to the left */
   border-bottom: 3px solid #ff6600;
+  color: #000;                  /* ✅ Ensure text is black */
 }
+
+.construction-header h1,
+.construction-header .location,
+.construction-header .role {
+  color: #000;                  /* ✅ Force black text for all child elements */
+  margin: 0.2rem 0;
+  font-weight: 500;
+}
+
+.construction-header h1 i {
+  color: #ff6600;
+  margin-right: 0.4rem;
+}
+
+
 
 /* ==========END Construction HEADER ========== */
 

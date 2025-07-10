@@ -83,15 +83,15 @@
 		
 <!-- 👇 Images (only one is visible at a time) -->
 		
-		  <img src="../projects/screenshots/belle-vie/rvt/01.jpg" alt="Villa Model View" class="carousel-image active" />
-		  <img src="../projects/screenshots/belle-vie/rvt/02.jpg" alt="Villa Model View" class="carousel-image" />
+		  <img src="../projects/screenshots/belle-vie/rvt/01.jpg" alt="View 01" class="carousel-image active" data-index="0" />
+		  <img src="../projects/screenshots/belle-vie/rvt/02.jpg" alt="View 02" class="carousel-image" data-index="1" />
 
 		  <!-- Add more images here -->
 
 
 <!-- 👇 Navigation Buttons -->
-    <button id="prevBtn" class="carousel-btn left">&#10094;</button>
-    <button id="nextBtn" class="carousel-btn right">&#10095;</button>
+		  <button id="prevBtn" class="carousel-btn left">&#10094;</button>
+		  <button id="nextBtn" class="carousel-btn right">&#10095;</button>
 	  </div>
 	</section>
 
@@ -145,59 +145,91 @@
 </footer>
 
 
- 
+<!--*********************************************************************************************--> 
 <!-- 🔍 Lightbox Gallery Overlay -->
-<div id="lightboxOverlay" class="lightbox-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
-
+<div id="lightboxOverlay" class="lightbox-overlay hidden">
   <div class="lightbox-content">
-    <!-- ❌ Close Button -->
-    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">
-      &times;
-    </button>
-
-    <!-- 🖼️ Displayed Image -->
-    <img id="lightboxImage" src="" alt="Screenshot preview" />
-
-    <!-- 📝 Caption (screen reader accessible) -->
-    <p id="lightboxCaption" class="lightbox-caption" aria-live="polite"></p>
-
-    <!-- Navigation Buttons -->
-    <div class="lightbox-nav" aria-label="Lightbox navigation controls">
-      <button id="lightboxPrev" type="button" aria-label="Previous image">
-        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-      </button>
-      <button id="lightboxNext" aria-label="Next image">
-        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-      </button>
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImage" src="" alt="Zoomed Screenshot" />
+    <p id="lightboxCaption" class="lightbox-caption"></p>
+    <div class="lightbox-nav">
+      <button id="lightboxPrev" aria-label="Previous">&#10094;</button>
+      <button id="lightboxNext" aria-label="Next">&#10095;</button>
     </div>
   </div>
 </div>
-
+<!--*********************************************************************************************-->
 
 <!--*********************************************************************************************-->
-    <!-- ⚙ JavaScript for Carousel Functionality -->
+    <!-- ⚙  JavaScript Logic (Combining Both Behaviors) -->
 <script>
-  const images = document.querySelectorAll('.carousel-image');
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselImages = document.querySelectorAll(".carousel-image");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
   let currentIndex = 0;
 
-  const showImage = (index) => {
-    images.forEach((img, i) => {
-      img.classList.toggle('active', i === index);
+  function showCarouselImage(index) {
+    carouselImages.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
     });
-  };
+  }
 
-  document.getElementById('prevBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+    showCarouselImage(currentIndex);
   });
 
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % carouselImages.length;
+    showCarouselImage(currentIndex);
   });
 
-  showImage(currentIndex);
+  showCarouselImage(currentIndex);
+
+  // === Lightbox logic ===
+  const overlay = document.getElementById("lightboxOverlay");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxPrev = document.getElementById("lightboxPrev");
+  const lightboxNext = document.getElementById("lightboxNext");
+
+  function openLightbox(index) {
+    const img = carouselImages[index];
+    lightboxImage.src = img.src;
+    lightboxCaption.textContent = img.alt;
+    overlay.classList.remove("hidden");
+    currentIndex = index;
+  }
+
+  carouselImages.forEach((img, i) => {
+    img.addEventListener("click", () => openLightbox(i));
+  });
+
+  lightboxClose.addEventListener("click", () => overlay.classList.add("hidden"));
+
+  lightboxPrev.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+    openLightbox(currentIndex);
+  });
+
+  lightboxNext.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % carouselImages.length;
+    openLightbox(currentIndex);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (overlay.classList.contains("hidden")) return;
+
+    if (e.key === "ArrowRight") lightboxNext.click();
+    else if (e.key === "ArrowLeft") lightboxPrev.click();
+    else if (e.key === "Escape") overlay.classList.add("hidden");
+  });
+});
 </script>
+
 
 <!--*********************************************************************************************-->
 

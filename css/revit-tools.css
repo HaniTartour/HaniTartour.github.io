@@ -79,6 +79,20 @@ body {
 
 
 
+
+/* ========== Project HEADER ========== */
+.project-header {
+  background: #222;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #ff6600;
+}
+
+.project-header h1 {
+  margin-bottom: 0.5rem;
+/* ==========END Project HEADER ========== */
+
 /* ========== Project Container ========== */
 .project-container {
   max-width: 900px;

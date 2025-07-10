@@ -37,7 +37,7 @@
   <div class="branding-inline">
     <img src="../assets/hani-profile.jpg" alt="hani Logo" class="logo" />
     <div class="branding-text">
-      <h1 style="text-align: left; padding-left: 1rem;">🏗️ Construction & BIM Projects:</h1>
+      <h1 style="text-align: left; padding-left: 1rem;">🏗️ Construction & BIM Projects</h1>
       <p>shop drawings , contractor , constrcution pahse </p>
       <p>Built with 💙 by Hani Tartour – BIM Portfolio</p>
     </div>
@@ -206,39 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "ArrowLeft") prevBtn.click();
   });
 
-  // === Share & Copy Button ===
-  const shareBtn = document.getElementById("shareAndCopyBtn");
-  if (shareBtn) {
-    shareBtn.addEventListener("click", function () {
-      const pageUrl = window.location.href;
-      const shareText = "Check out Rename Views+: https://hanitartour.github.io/projects/rename-views.html";
 
-      if (navigator.share) {
-        navigator.share({
-          title: "Rename Views+ – pyRevit Tool for Revit View Automation",
-          text: "Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.",
-          url: pageUrl
-        }).catch(err => {
-          console.warn("Native share failed, falling back:", err);
-        });
-      } else {
-        navigator.clipboard.writeText(shareText).then(() => {
-          alert("✅ Link copied!\nYou’re now sharing on LinkedIn...");
-
-          const shareUrl = "https://www.linkedin.com/shareArticle?mini=true"
-            + "&url=" + encodeURIComponent(pageUrl)
-            + "&title=" + encodeURIComponent("Rename Views+ – pyRevit Tool for Revit View Automation")
-            + "&summary=" + encodeURIComponent("Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.")
-            + "&source=hanitartour.github.io";
-
-          window.open(shareUrl, "_blank", "noopener,noreferrer");
-        }).catch(err => {
-          alert("❌ Failed to copy the link.");
-          console.error("Clipboard error:", err);
-        });
-      }
-    });
-  }
 
   // === Last Updated Console Log (optional dev aid) ===
   const lastUpdated = new Date(document.lastModified);

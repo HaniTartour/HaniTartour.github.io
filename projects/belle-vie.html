@@ -72,18 +72,30 @@
 <!--*********************************************************************************************-->
 
 <!--*********************************************************************************************-->
-	<!-- 🖼 Revit Screenshots -->
-	<section class="screenshots">
+<!-- 🖼 Revit Screenshots Carousel -->
+	<section class="screenshots-carousel">
 	  <h2>
-		<img src="../assets/logos/revit-logo.png" alt="Revit Logo" class="revit-logo-icon" />
-		Revit Screenshots
+		<img src="../assets/logos/revit-logo.png" alt="Revit Logo" style="height: 24px; vertical-align: middle;" />
+		<span style="margin-left: 8px;">Revit Screenshots</span>
 	  </h2>
-	  <div class="screenshot-grid">
-		<img src="../projetcs/screenshots/belle-vie/rvt/01.jpg" alt="Villa Model View" />
-		<img src="../projetcs/screenshots/belle-vie/rvt/02.jpg" alt="Structural Coordination" />
-		<!-- Add more screenshots as needed -->
+
+	  <div class="carousel-container">
+		<button class="carousel-nav" id="prevBtn">&#10094;</button>
+
+		<div class="carousel-images">
+		  <img src="../assets/projects/screenshots/belle-vie/rvt/01.jpg" alt="Villa Model View" class="carousel-image active" />
+		  <img src="../assets/projects/screenshots/belle-vie/rvt/01.jpg" alt="Structural Coordination" class="carousel-image" />
+		  
+		  <img src="../assets/projects/screenshots/belle-vie/rvt/02.jpg" alt="Villa Model View" class="carousel-image active" />
+		  <img src="../assets/projects/screenshots/belle-vie/rvt/02.jpg" alt="Structural Coordination" class="carousel-image" />
+		  
+		  <!-- Add more images here -->
+		</div>
+
+		<button class="carousel-nav" id="nextBtn">&#10095;</button>
 	  </div>
 	</section>
+
 <!--*********************************************************************************************-->
 
 <!--*********************************************************************************************-->
@@ -161,6 +173,35 @@
     </div>
   </div>
 </div>
+
+
+<!--*********************************************************************************************-->
+    <!-- ⚙ JavaScript for Carousel Functionality -->
+<script>
+  const images = document.querySelectorAll('.carousel-image');
+  let currentIndex = 0;
+
+  const showImage = (index) => {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  };
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  showImage(currentIndex);
+</script>
+<!--*********************************************************************************************-->
+
+
 
 
 

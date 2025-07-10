@@ -503,7 +503,7 @@ footer a:hover i {
 }
 
 .logo-strip img {
-  height: 30px;
+  height: 50px;
   max-width: 100px;
   object-fit: contain;
   filter: grayscale(100%);

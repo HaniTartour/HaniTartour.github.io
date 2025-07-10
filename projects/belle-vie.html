@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Belle Vie Compound | Construction Project</title>
-  <meta name="description" content="Structural BIM role in Belle Vie Compound. Project summary, Revit screenshots, shop drawings, and execution insights.">
-  
-  
-    <!-- Styles -->
-  <link rel="stylesheet" href="../css/construction-project.css" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Belle Vie Compound | Hani Tartour</title>
+
+  <!-- Styles -->
+
   <link rel="stylesheet" href="../css/revit-tools.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
+  
+  <!-- Favicons for all devices -->
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 
-  
-  
-  
 </head>
 
+
+
 <body>
-  <!-- 🔹 Project Title Header -->
-  <header class="project-header">
+
+<!-- 📌 CONSTRCUTION PAGE brading logo&page header -->
+<header class="site-header" style="text-align: center;">
+  <div class="branding-inline">
+    <img src="../assets/hani-profile.jpg" alt="hani Logo" class="logo" />
+    <div class="branding-text">
+      <h1 style="text-align: left; padding-left: 1rem;">🏗️ Construction & BIM Projects Showcase</h1>
+      <p>Real-world experience in structural detailing, shop drawings, and on-site BIM coordination during construction phases</p>
+      <p>Crafted with 💙 by Hani Tartour — Structural BIM Lead | Portfolio Collection</p>
+    </div>
+  </div>
+</header>
+
+
+
+<main class="project-container" role="main">
+
+  <!-- 📌 Project  and data -->
+  <div class="construction-header">
+  
     <h1><i class="fa-solid fa-building-user"></i> Belle Vie Compound</h1>
-    <p class="location">🏙️ Egypt, New Zayed – Emaar Misr</p>
-    <p class="role">👷‍♂️ Section Head & BIM Lead | Atrium | ACE</p>
-  </header>
+    <p class="location">🏙️ Egypt , New Zayed – Emaar Misr</p>
+    <p class="role">👷‍♂️ Section Head & BIM Lead | Atrium</p>
 
-  <main class="project-details">
+	  	<!-- 🤝 Trusted By Logos -->
+	<div class="trusted-by-bar">
+	  <p>Trusted by industry leaders:</p>
+	  <div class="logo-strip">
+		<img src="../assets/images/logos/belle-vie.png" alt="belle-vie Logo" />
+		<img src="../assets/images/logos/emaar-misr-logo.png" alt="Emaar Logo" />
+		<img src="../assets/images/logos/atriumeg-logo.png" alt="Atrium Logo" />
+		<img src="../assets/images/logos/ace-logo.png" alt="ACE Logo" />
+	  </div>
+	</div>
+	
+  </div>
 
-    <!-- ✅ Summary -->
+
+    <!-- ✅ project Summary -->
     <section class="summary">
       <h2>📋 Project Summary</h2>
       <p>
@@ -37,15 +69,18 @@
       </p>
     </section>
 
-    <!-- 🖼 Revit Screenshots -->
-    <section class="screenshots">
-      <h2>📸 Revit Screenshots</h2>
-      <div class="screenshot-grid">
-        <img src="../assets/screenshots/belle-vie-01.jpg" alt="Villa Model View" />
-        <img src="../assets/screenshots/belle-vie-02.jpg" alt="Structural Coordination" />
-        <!-- Add more screenshots as needed -->
-      </div>
-    </section>
+	<!-- 🖼 Revit Screenshots -->
+	<section class="screenshots">
+	  <h2>
+		<img src="../assets/logos/revit-logo.png" alt="Revit Logo" class="revit-logo-icon" />
+		Revit Screenshots
+	  </h2>
+	  <div class="screenshot-grid">
+		<img src="../assets/screenshots/belle-vie-01.jpg" alt="Villa Model View" />
+		<img src="../assets/screenshots/belle-vie-02.jpg" alt="Structural Coordination" />
+		<!-- Add more screenshots as needed -->
+	  </div>
+	</section>
 
     <!-- 📄 Shop Drawings -->
     <section class="pdf-sheets">
@@ -68,15 +103,14 @@
     </section>
 
 
-
-
-
   <!-- 🔙 Fixed Back Button -->
   <a href="../projects.html" class="back-link-fixed" aria-label="Back to Projects page">
     <i class="fa-solid fa-arrow-left"></i> Back to Projects
   </a>
 
-  </main>
+</main>
+
+
 
 <footer>
   <p>Connect with me:</p>
@@ -95,7 +129,97 @@
 </footer>
 
 
+ 
+<!-- 🔍 Lightbox Gallery Overlay -->
+<div id="lightboxOverlay" class="lightbox-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+
+  <div class="lightbox-content">
+    <!-- ❌ Close Button -->
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">
+      &times;
+    </button>
+
+    <!-- 🖼️ Displayed Image -->
+    <img id="lightboxImage" src="" alt="Screenshot preview" />
+
+    <!-- 📝 Caption (screen reader accessible) -->
+    <p id="lightboxCaption" class="lightbox-caption" aria-live="polite"></p>
+
+    <!-- ↔️ Navigation Buttons -->
+    <div class="lightbox-nav" aria-label="Lightbox navigation controls">
+      <button id="lightboxPrev" type="button" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button id="lightboxNext" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === Lightbox Setup ===
+  const lightboxLinks = document.querySelectorAll(".demo-lightbox");
+  const overlay = document.getElementById("lightboxOverlay");
+  const image = document.getElementById("lightboxImage");
+  const caption = document.getElementById("lightboxCaption");
+  const closeBtn = document.getElementById("lightboxClose");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+
+  let currentIndex = 0;
+  const images = Array.from(lightboxLinks);
+
+  function showImage(index) {
+    const img = images[index];
+    image.src = img.dataset.img;
+    const captionText = img.dataset.caption || '';
+    caption.textContent = `${index + 1} / ${images.length} — ${captionText}`;
+    overlay.classList.remove("hidden");
+  }
+
+  images.forEach((link, index) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => overlay.classList.add("hidden"));
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") overlay.classList.add("hidden");
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+
+
+
+  // === Last Updated Console Log (optional dev aid) ===
+  const lastUpdated = new Date(document.lastModified);
+  console.log("📅 Last updated:", lastUpdated.toDateString());
+});
+</script>
+ 
+  
 </body>
+
 </html>

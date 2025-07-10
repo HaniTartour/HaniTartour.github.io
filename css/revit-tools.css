@@ -78,19 +78,7 @@ body {
 /* ========== END Branding Header Styles ========== */
 
 
-/* ========== Project HEADER ========== */
-.project-header {
-  background: #d6d4d2;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 3px solid #ff6600;
-}
 
-.project-header h1 {
-  margin-bottom: 0.5rem;
-}
-/* ==========END Project HEADER ========== */
 
 /* ========== Project Container ========== */
 .project-container {
@@ -125,6 +113,22 @@ body {
   margin: 1rem 0;
 }
 /* ========== END Project Container ========== */
+
+
+
+/* ========== Project HEADER ========== */
+.project-header {
+  background: #d6d4d2;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #ff6600;
+}
+
+.project-header h1 {
+  margin-bottom: 0.5rem;
+}
+/* ==========END Project HEADER ========== */
 
 
 /* ========== Download Buttons ========== */

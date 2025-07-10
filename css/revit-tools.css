@@ -115,9 +115,9 @@ body {
 /* ========== END Project Container ========== */
 
 
+/* ========== Construction HEADER ========== */
 
-/* ========== Project HEADER ========== */
-.project-header {
+.construction-header {
   background: #d6d4d2;
   color: white;
   padding: 2rem;
@@ -125,11 +125,7 @@ body {
   border-bottom: 3px solid #ff6600;
 }
 
-.project-header h1 {
-  margin-bottom: 0.5rem;
-}
-/* ==========END Project HEADER ========== */
-
+/* ==========END Construction HEADER ========== */
 
 /* ========== Download Buttons ========== */
 .download-buttons a {
@@ -394,3 +390,68 @@ footer a:hover i {
   }
 }
 /* ========== end Mobile Padding ========== */
+
+
+
+
+.tags span {
+  display: inline-block;
+  background: #f3f3f3;
+  color: #333;
+  padding: 4px 10px;
+  margin-right: 6px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+
+
+.section-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-left: 5px solid #ff6600;
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+.location,
+.role {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.summary,
+.screenshots,
+.pdf-sheets,
+.upgrade-tips {
+  margin-top: 2rem;
+}
+
+.summary h2,
+.screenshots h2,
+.pdf-sheets h2,
+.upgrade-tips h2 {
+  font-size: 1.3rem;
+  color: #ff6600;
+  margin-bottom: 0.8rem;
+}
+
+
+
+
+.projects-description {
+  text-align: left;
+  color: #666;
+  padding: 0 2rem 0 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+

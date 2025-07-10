@@ -554,6 +554,7 @@ footer a:hover i {
   max-width: 800px;
   margin: 1rem auto;
   overflow: hidden;
+  padding: 1rem 0;
 }
 
 .carousel-image {
@@ -569,7 +570,16 @@ footer a:hover i {
 
 .carousel-image.active {
   display: block;
+  width: 60%; /* 👈 Reduce to 60% / 50% for smaller display */
+  max-height: 250px; /* 👈 Adjust this to your desired size */
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  object-fit: contain;
 }
+
+
 
 .carousel-btn {
   position: absolute;

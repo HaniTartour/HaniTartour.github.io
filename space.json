@@ -1,0 +1,36 @@
+"name": "HT-Portfolio",
+{
+  "description": "Personal portfolio website showcasing BIM tools, AI projects, and professional achievements.",
+  "source_paths": [
+    "src/",
+    "content/",
+    "assets/"
+  ],
+  "example_prompts": [
+    "Update the homepage with recent projects.",
+    "Add a blog post about a new BIM automation tool.",
+    "Improve SEO for the portfolio site.",
+    "Embed GitHub repo links in the projects section.",
+    "Design a contact form for collaboration inquiries."
+  ],
+  "supported_tools": [
+    "GitHub Pages",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "features": [
+    "Project showcase",
+    "Blog and updates",
+    "Contact form",
+    "Responsive design"
+  ],
+  "contributors": [
+    {
+      "name": "Hani Tartour",
+      "role": "Owner"
+    }
+  ],
+  "version": "1.0",
+  "last_updated": "2025-07-12"
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HT Copilot AI Usage Guide</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #004080;
+    }
+    code {
+      background-color: #eee;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+    .repo-section {
+      background: #fff;
+      border-left: 4px solid #007acc;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .repo-section h3 {
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🤖 HT Copilot AI Usage Guide</h1>
+  <p>Welcome to your personal AI-augmented dev environment. This guide shows how to use <strong>GitHub Copilot Chat</strong> across your structured repos using <code>space.json</code>.</p>
+
+  <h2>🗂️ Repo Roles</h2>
+  <div class="repo-section">
+    <h3>HT-Toolbox</h3>
+    <p><strong>Role:</strong> BIM Automation Scripts (pyRevit, Revit API)</p>
+    <ul>
+      <li>Analyze or refactor pyRevit tools</li>
+      <li>Suggest UI improvements</li>
+      <li>Generate test cases for automation</li>
+    </ul>
+    <strong>Sample Prompts:</strong>
+    <ul>
+      <li>What does <code>RenameViews.py</code> do?</li>
+      <li>Improve the UX of <code>FilterByLevel.py</code></li>
+    </ul>
+  </div>
+
+  <div class="repo-section">
+    <h3>HT-AI-Playground</h3>
+    <p><strong>Role:</strong> Prompt Engineering, Assistant Memory, AI UX</p>
+    <ul>
+      <li>Store reusable AI prompts</li>
+      <li>Test prompt styles, workflows, and logic</li>
+      <li>Maintain roadmap and design strategy</li>
+    </ul>
+    <strong>Sample Prompts:</strong>
+    <ul>
+      <li>List all .md prompts inside <code>prompts/</code></li>
+      <li>Generate 3 new prompts for Dynamo scripts</li>
+    </ul>
+  </div>
+
+  <div class="repo-section">
+    <h3>HT-Portfolio</h3>
+    <p><strong>Role:</strong> Public branding, personal projects, SEO</p>
+    <ul>
+      <li>Update and style portfolio content</li>
+      <li>Generate posts and documentation for blog</li>
+      <li>Improve layout, metadata, and forms</li>
+    </ul>
+    <strong>Sample Prompts:</strong>
+    <ul>
+      <li>Improve SEO tags for <code>index.html</code></li>
+      <li>Draft a blog post about <code>CloneBuddy.py</code></li>
+    </ul>
+  </div>
+
+  <h2>🧠 Copilot Workflow</h2>
+  <ul>
+    <li>Open a repo in VS Code</li>
+    <li>Ensure <code>space.json</code> exists and defines <code>source_paths</code></li>
+    <li>Launch Copilot Chat</li>
+    <li>Ask questions based on what’s in the open repo</li>
+  </ul>
+
+  <h2>💡 Pro Tips</h2>
+  <ul>
+    <li>Be repo-specific. Only open one at a time in VS Code.</li>
+    <li>Use full filenames/folder paths in questions when needed.</li>
+    <li>Keep prompts modular and versioned.</li>
+  </ul>
+
+  <footer>
+    🛠️ Maintained by Hani Tartour · Last updated: 2025-07-12
+  </footer>
+</body>
+</html>

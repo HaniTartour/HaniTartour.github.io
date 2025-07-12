@@ -67,7 +67,7 @@ Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and 
 
 - 🔗 [LinkedIn](https://www.linkedin.com/in/hanimtartour)
 - 🌐 [My Portfolio Site](https://hanitartour.github.io)
-- ▶️ <i class="fab fa-youtube"></i> [YouTube Channel](https://www.youtube.com/@HaniMTARTOUR)
+- ▶️ [YouTube Channel](https://www.youtube.com/@HaniMTARTOUR)
 
 **💬 DM me for:**
 - BIM automation projects  

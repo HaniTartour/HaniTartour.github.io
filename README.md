@@ -30,7 +30,7 @@ Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and 
 
 ## 🌟 Featured Projects
 
-🔄 [**Rename Views+**](https://hanitartour.github.io/projects/rename-views.html)
+🎯 [**Rename Views+**](https://hanitartour.github.io/projects/rename-views.html)
 
 ![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)
@@ -39,15 +39,14 @@ Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and 
 
 
 
-<img width="50" height="50" src="https://img.icons8.com/fluency/48/hole.png"
-           alt="Shaft Icon" style="vertical-align: middle; margin-right: 10px;" /> [**Visualize Shaft Openings (Dynamo Tool)**](https://hanitartour.github.io/projects/shaft-opening-converter.html) 
+🎯 [**Visualize Shaft Openings (Dynamo Tool)**](https://hanitartour.github.io/projects/shaft-opening-converter.html) 
 
 ![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)
 ![UI: WinForms](https://img.shields.io/badge/UI-WinForms-green?style=for-the-badge)
 > Multi-Level Revit filtering UI built with Python, WinForms & Dynamo — perfect for multi-story projects
 
-🧠 [**CloneBuddy**](https://github.com/HaniTartour/CloneBuddy)  
+🎯 [**CloneBuddy**](https://github.com/HaniTartour/CloneBuddy)  
 
 ![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)

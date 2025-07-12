@@ -112,7 +112,7 @@
     <span style="margin-left: 8px;">PDF Shop Drawings</span>
   </h2>
 
-  <div class="carousel-wrapper pdf-carousel">
+<div class="carousel-wrapper pdf-carousel-wrapper">
     <!-- ✅ Only the active one is visible -->
     <iframe src="../projects/pdfs/belle-vie/01.pdf" class="pdf-frame active" data-index="0" frameborder="0"></iframe>
     <iframe src="../projects/pdfs/belle-vie/02.pdf" class="pdf-frame" data-index="1" frameborder="0"></iframe>
@@ -179,6 +179,18 @@
   </div>
 </div>
 <!--*********************************************************************************************-->
+
+<!--*********************************************************************************************-->
+<!-- 📄 PDF Lightbox Viewer -->
+<div id="pdfLightbox" class="lightbox-overlay hidden">
+  <div class="lightbox-content">
+    <span class="lightbox-close" id="pdfLightboxClose">&times;</span>
+    <iframe id="pdfLightboxFrame" class="pdf-lightbox-frame" src="" frameborder="0"></iframe>
+  </div>
+</div>
+<!--*********************************************************************************************-->
+
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -277,6 +289,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   showPDF(currentPDFIndex);
+
+
+//===========================
+// PDF Lightbox Logic
+//===========================
+const pdfLightbox = document.getElementById("pdfLightbox");
+const pdfLightboxFrame = document.getElementById("pdfLightboxFrame");
+const pdfLightboxClose = document.getElementById("pdfLightboxClose");
+
+// Attach click event to PDF iframes
+document.querySelectorAll(".pdf-frame").forEach((frame) => {
+  frame.addEventListener("click", () => {
+    pdfLightboxFrame.src = frame.src;
+    pdfLightbox.classList.remove("hidden");
+  });
+});
+
+pdfLightboxClose.addEventListener("click", () => {
+  pdfLightbox.classList.add("hidden");
+  pdfLightboxFrame.src = ""; // Stop PDF from still running in background
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") pdfLightbox.classList.add("hidden");
+});
+
+
+
 
 
   // ========================

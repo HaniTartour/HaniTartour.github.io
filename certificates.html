@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 </head>
+<!--*********************************************************************************************-->
 
+<!--*********************************************************************************************-->
 <body>
 
   <header>
@@ -78,6 +80,10 @@
     </div>
 <!--*********************************************************************************************-->
 	
+	
+	<p id="pageNumber" style="text-align: center; font-weight: bold; color: #555; margin-top: 1rem;"></p>
+
+	
 <!--*********************************************************************************************-->
     <div class="slider-controls">
       <button onclick="prevSlide()">⏮️ Previous</button>
@@ -107,28 +113,35 @@
 <!--*********************************************************************************************-->
 
 <!--*********************************************************************************************-->
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const pageNumber = document.getElementById("pageNumber");
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.display = (i === index) ? "block" : "none";
-      });
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = (i === index) ? "block" : "none";
+    });
+
+    // 🆕 Update page number text
+    if (pageNumber) {
+      pageNumber.textContent = `📄 Certificate ${index + 1} of ${slides.length}`;
     }
+  }
 
-    function nextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
 
-    function prevSlide() {
-      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-      showSlide(slideIndex);
-    }
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
 
-    window.addEventListener("DOMContentLoaded", () => showSlide(slideIndex));
-  </script>
+  window.addEventListener("DOMContentLoaded", () => showSlide(slideIndex));
+</script>
+
 <!--*********************************************************************************************-->
 
 </body>

@@ -118,10 +118,8 @@
     slides.forEach((slide, i) => {
       slide.style.display = (i === index) ? "block" : "none";
     });
-
-    // 🆕 Update page number text
     if (pageNumber) {
-      pageNumber.textContent = `📄 Certificate ${index + 1} of ${slides.length}`;
+      pageNumber.textContent = `📄 Page ${index + 1} of ${slides.length}`;
     }
   }
 
@@ -135,7 +133,28 @@
     showSlide(slideIndex);
   }
 
-  window.addEventListener("DOMContentLoaded", () => showSlide(slideIndex));
+  // ✅ Auto-play setup
+  let autoplayInterval;
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, 5000); // every 5 seconds
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  // ✅ Start autoplay on load
+  window.addEventListener("DOMContentLoaded", () => {
+    showSlide(slideIndex);
+    startAutoplay();
+  });
+
+  // ⏸ Optional: Pause when hovering the slider
+  const slider = document.querySelector(".slider");
+  if (slider) {
+    slider.addEventListener("mouseenter", stopAutoplay);
+    slider.addEventListener("mouseleave", startAutoplay);
+  }
 </script>
 
 <!--*********************************************************************************************-->

@@ -478,53 +478,63 @@ footer a:hover {
 }
 
 
-.pdf-shopdrawings {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
+
+
+
+
+
+
+
+
+.shopdrawings-pdf {
+  margin-top: 2rem;
 }
 
-#pdf-container {
+.pdf-viewer-container {
   width: 100%;
-  border: 1px solid #ccc;
-  overflow: auto;
+  height: 600px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-#pdf-canvas {
+.pdf-viewer-container iframe {
   width: 100%;
-  display: block;
+  height: 100%;
+  border: none;
 }
 
-.zoom-controls {
-  text-align: center;
-  margin: 0.5rem 0;
-}
-
-.zoom-controls button {
-  padding: 0.3rem 0.6rem;
-  margin: 0 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  background: #eee;
-  cursor: pointer;
-}
-
-.pdf-thumbnails {
+/* Thumbnail Buttons Bar */
+.pdf-thumbnail-bar {
+  margin-top: 1rem;
   display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding-bottom: 0.5rem;
 }
 
-.thumb-canvas {
-  width: 60px;
-  height: 80px;
+.pdf-thumbnail-bar button {
+  flex-shrink: 0;
+  padding: 0.6rem 1rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 30px;
   cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: border-color 0.2s;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.thumb-canvas.selected {
-  border-color: #ff6600;
+.pdf-thumbnail-bar button:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+
+
+.pdf-viewer-container.zoomed {
+  transform: scale(1.2);
+  transform-origin: top left;
 }

@@ -39,7 +39,8 @@ Welcome to my GitHub Portfolio — a place where Dynamo graphs, Revit APIs, and 
 
 
 
-📌 [**Visualize Shaft Openings (Dynamo Tool)**](https://hanitartour.github.io/projects/shaft-opening-converter.html) 
+<img width="50" height="50" src="https://img.icons8.com/fluency/48/hole.png"
+           alt="Shaft Icon" style="vertical-align: middle; margin-right: 10px;" /> [**Visualize Shaft Openings (Dynamo Tool)**](https://hanitartour.github.io/projects/shaft-opening-converter.html) 
 
 ![Built with pyRevit](https://img.shields.io/badge/Built%20with-pyRevit-blue?style=for-the-badge&logo=autodesk)
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-ffdd54?style=for-the-badge&logo=python&logoColor=blue)

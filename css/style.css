@@ -18,6 +18,7 @@ h1, h2, h3 {
   margin: 0 0 1rem;
 }
 
+
 /* =========================
  🔝 Header & Branding
 =========================== */
@@ -26,6 +27,11 @@ header {
   color: white;
   padding: 2rem 1rem;
   text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
 }
 
 .branding {
@@ -40,6 +46,7 @@ header {
 .branding img.logo {
   height: 60px;
 }
+
 
 /* =========================
  🧭 Navigation Bar
@@ -56,6 +63,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
+
 
 /* =========================
  🔘 Shared Button Style
@@ -96,6 +104,7 @@ button:hover,
   margin-right: 0.5rem;
 }
 
+
 /* =========================
  🧰 Filter Bar
 =========================== */
@@ -123,20 +132,20 @@ button:hover,
   color: white;
 }
 
+
 /* ===============================
 📦 Section Container Box Styling
-Used to visually group content like Revit Tools or Construction Projects
 ================================= */
 .section-box {
-  border: 1px solid #ccc;                /* Light gray border */
-  border-left: 5px solid #ff6600;        /* Accent bar for visual emphasis */
-  border-radius: 10px;                   /* Rounded corners */
-  background-color: #fff;                /* White background */
-  padding: 2rem;                         /* Internal spacing */
-  margin: 2rem auto;                     /* Space around box + center */
-  max-width: 1200px;                     /* Keep it centered and readable */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);/* Light shadow for lift */
-  box-sizing: border-box;               /* Padding stays inside the width */
+  border: 1px solid #ccc;
+  border-left: 5px solid #ff6600;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-sizing: border-box;
 }
 
 .section-box h2 {
@@ -148,19 +157,14 @@ Used to visually group content like Revit Tools or Construction Projects
 }
 
 
-
 /* =========================
- 📁 Projects 
+ 📁 Projects
 =========================== */
 .projects-description {
   text-align: left;
   color: #666;
   padding: 0 2rem 0 3rem;
 }
-
-
-
-
 
 
 /* =========================
@@ -195,7 +199,6 @@ Used to visually group content like Revit Tools or Construction Projects
   font-size: 1.2rem;
 }
 
-
 .project-card h3 a img {
   width: 20px;
   height: 20px;
@@ -203,8 +206,6 @@ Used to visually group content like Revit Tools or Construction Projects
   margin-right: 4px;
   display: inline-block;
 }
-
-
 
 .project-card p {
   color: #444;
@@ -271,19 +272,23 @@ Used to visually group content like Revit Tools or Construction Projects
   cursor: pointer;
 }
 
+
 /* =========================
- 🎓 Certificates & Hub
+ 🎓 Certificates & Slider
 =========================== */
-.certificates,
-.youtube-subscribe,
-.skills {
+.certificates {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
+}
+
+.certificates h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .slider {
-  max-width: 600px;
-  margin: 1rem auto;
+  max-width: 800px;
+  margin: auto;
   position: relative;
   overflow: hidden;
 }
@@ -291,15 +296,28 @@ Used to visually group content like Revit Tools or Construction Projects
 .slide {
   display: none;
   width: 100%;
-  max-height: 400px;
+  max-height: 500px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   object-fit: contain;
+  background: white;
+}
+
+.slider-controls {
+  margin-top: 1rem;
 }
 
 .slider-controls button {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
   margin: 0 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
+
 
 /* =========================
  💡 Lightbox Viewer
@@ -353,6 +371,7 @@ Used to visually group content like Revit Tools or Construction Projects
   line-height: 30px;
 }
 
+
 /* =========================
  🔼 Scroll Button
 =========================== */
@@ -376,6 +395,7 @@ Used to visually group content like Revit Tools or Construction Projects
   background-color: #cc5200;
 }
 
+
 /* =========================
  🦶 Footer & Social Icons
 =========================== */
@@ -388,8 +408,13 @@ footer {
 }
 
 footer a {
+  color: #0077cc;
   font-weight: bold;
   text-decoration: none;
+}
+
+.social-links {
+  margin: 1rem 0;
 }
 
 footer a.linkedin-link i { color: #0077b5; }
@@ -401,31 +426,21 @@ footer a:hover i {
   transition: opacity 0.2s ease;
 }
 
-/* Social Icon Animations */
-.linkedin-link:hover i { animation: bounce 0.4s ease forwards; }
-.github-link:hover i   { animation: swing 0.5s ease forwards; }
-.youtube-link:hover i  { animation: shake 0.4s ease forwards; }
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-5px); }
+.social-links a {
+  margin: 0 0.8rem;
+  font-weight: bold;
 }
 
-@keyframes swing {
-  0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(-10deg); }
-  50%  { transform: rotate(10deg); }
-  75%  { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+footer a:hover {
+  color: #005fa3;
 }
 
-@keyframes shake {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(-3px); }
-  50%  { transform: translateX(3px); }
-  75%  { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
+.footer-credit {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
 }
+
 
 /* =========================
  📱 Responsive Fixes

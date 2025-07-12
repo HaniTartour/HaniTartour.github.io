@@ -44,7 +44,7 @@
   <!-- 📌 Project  and data -->
   <div class="construction-header">
   
-    <h1><i class="fa-solid fa-building-user"></i> Belle Vie Compound</h1>
+    <h2><i class="fa-solid fa-building-user"></i> Belle Vie Compound</h2>
     <p class="location">🏙️ Egypt , New Zayed – Emaar Misr</p>
     <p class="role">👷‍♂️ Section Head & BIM Lead | Atrium</p>
 
@@ -114,9 +114,28 @@
 
 <div class="carousel-wrapper pdf-carousel-wrapper">
     <!-- ✅ Only the active one is visible -->
-    <iframe src="../projects/pdfs/belle-vie/01.pdf" class="pdf-frame active" data-index="0" frameborder="0"></iframe>
-    <iframe src="../projects/pdfs/belle-vie/02.pdf" class="pdf-frame" data-index="1" frameborder="0"></iframe>
-	<iframe src="../projects/pdfs/belle-vie/03.pdf" class="pdf-frame" data-index="2" frameborder="0"></iframe>
+    <iframe src="../projects/pdfs/belle-vie/01.pdf" 
+			class="pdf-frame active" 
+			data-index="0" 
+			frameborder="0"
+			loading="lazy"> 
+	</iframe>
+	
+    <iframe src="../projects/pdfs/belle-vie/02.pdf" 
+			class="pdf-frame active" 
+			data-index="0" 
+			frameborder="0"
+			loading="lazy"> 
+	</iframe>
+	
+    <iframe src="../projects/pdfs/belle-vie/03.pdf" 
+			class="pdf-frame active" 
+			data-index="0" 
+			frameborder="0"
+			loading="lazy"> 
+	</iframe>
+	
+
 
     <!-- Carousel Controls -->
     <button id="pdfPrevBtn" class="carousel-btn left">&#10094;</button>
@@ -300,20 +319,23 @@ const pdfLightboxClose = document.getElementById("pdfLightboxClose");
 
 // Attach click event to PDF iframes
 document.querySelectorAll(".pdf-frame").forEach((frame) => {
-  frame.addEventListener("click", () => {
-    pdfLightboxFrame.src = frame.src;
-    pdfLightbox.classList.remove("hidden");
+frame.addEventListener("click", () => {
+  if (!frame.classList.contains("active")) return; // ✅ Ignore hidden ones
+  pdfLightboxFrame.src = frame.src;
+  pdfLightbox.classList.remove("hidden");
+});
+});
+
+if (pdfLightbox && pdfLightboxClose && pdfLightboxFrame) {
+  pdfLightboxClose.addEventListener("click", () => {
+    pdfLightbox.classList.add("hidden");
+    pdfLightboxFrame.src = ""; // stop PDF from running
   });
-});
 
-pdfLightboxClose.addEventListener("click", () => {
-  pdfLightbox.classList.add("hidden");
-  pdfLightboxFrame.src = ""; // Stop PDF from still running in background
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") pdfLightbox.classList.add("hidden");
-});
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") pdfLightbox.classList.add("hidden");
+  });
+}
 
   // ========================
   // 📅 Console Last Modified Log (optional dev tool)

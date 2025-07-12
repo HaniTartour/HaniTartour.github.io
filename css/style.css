@@ -483,58 +483,51 @@ footer a:hover {
 
 
 
-
-
-
-.shopdrawings-pdf {
-  margin-top: 2rem;
-}
-
-.pdf-viewer-container {
-  width: 100%;
-  height: 600px;
-  border: 2px solid #ccc;
-  border-radius: 6px;
+/* ======= 🧾 PDF Carousel Styles ======= */
+.pdf-carousel-wrapper {
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding-top: 1rem;
+  text-align: center;
 }
 
-.pdf-viewer-container iframe {
+.pdf-frame {
+  display: none;
   width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Thumbnail Buttons Bar */
-.pdf-thumbnail-bar {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-
-.pdf-thumbnail-bar button {
-  flex-shrink: 0;
-  padding: 0.6rem 1rem;
-  background-color: #f5f5f5;
+  height: 650px;
   border: 1px solid #ccc;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  white-space: nowrap;
-  transition: background-color 0.2s ease-in-out;
+  border-radius: 8px;
 }
 
-.pdf-thumbnail-bar button:hover {
-  background-color: #ff6600;
+.pdf-frame.active {
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: rgba(0,0,0,0.4);
   color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
 }
 
-
-
-.pdf-viewer-container.zoomed {
-  transform: scale(1.2);
-  transform-origin: top left;
+.carousel-btn.left {
+  left: 10px;
 }
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: #ff6600;
+  transform: scale(1.05);
+}
+/* ======= END PDF Carousel Styles ======= */

@@ -104,27 +104,38 @@
 <!--*********************************************************************************************-->
 
 <!-- 📄 Zoomable PDF Shop Drawings -->
-<section class="shopdrawings-pdf">
+<!-- ================================================================================= -->
+<!-- 🧾 PDF Shop Drawings Carousel -->
+<section class="pdf-carousel-section">
   <h2>
-    <img width="50" height="50" src="https://img.icons8.com/pulsar-gradient/50/pdf-2.png" alt="pdf-2" style="vertical-align: middle; margin-right: 8px;" />
-    Shop Drawings (Interactive PDFs)
+    <img src="../assets/logos/pdf-icon.svg" alt="PDF Icon" style="height: 32px; vertical-align: middle;" />
+    <span style="margin-left: 8px;">PDF Shop Drawings</span>
   </h2>
 
-  <!-- Main PDF Viewer -->
-  <div class="pdf-viewer-container">
-    <iframe id="pdfViewer" src="../projects/pdfs/belle-vie/01.pdf" frameborder="0"></iframe>
-	<iframe id="pdfViewer" src="../projects/pdfs/belle-vie/02.pdf" frameborder="0"></iframe>
-    <iframe id="pdfViewer" src="../projects/pdfs/belle-vie/03.pdf" frameborder="0"></iframe>
-  </div>
+  <div class="carousel-wrapper pdf-carousel-wrapper">
+    <!-- 👇 Embedded PDFs (only one shown at a time) -->
+    <iframe
+      src="../assets/pdfs/belle-vie-villa1-foundation.pdf"
+      class="pdf-frame active"
+      data-index="0"
+      frameborder="0"
+      loading="lazy"
+    ></iframe>
 
-  <!-- Thumbnail Navigation Bar -->
-  <div class="pdf-thumbnail-bar">
-    <button onclick="loadPDF('villa1-foundation.pdf')">🏠 Villa 1 Foundation</button>
-    <button onclick="loadPDF('infra-typical-section.pdf')">🛣️ Infra Section</button>
-    <button onclick="loadPDF('villa2-slabs.pdf')">🏗️ Slabs</button>
-    <!-- Add more as needed -->
+    <iframe
+      src="../assets/pdfs/belle-vie-infra-typical-section.pdf"
+      class="pdf-frame"
+      data-index="1"
+      frameborder="0"
+      loading="lazy"
+    ></iframe>
+
+    <!-- 👇 Navigation buttons -->
+    <button id="pdfPrevBtn" class="carousel-btn left">&#10094;</button>
+    <button id="pdfNextBtn" class="carousel-btn right">&#10095;</button>
   </div>
 </section>
+<!-- ================================================================================= -->
 
 
 
@@ -189,15 +200,15 @@
 </div>
 <!--*********************************************************************************************-->
 
-<!--*********************************************************************************************-->
-    <!-- ⚙  JavaScript Logic (Combining Both Behaviors) -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  // ========================
+  // 🎡 Revit Image Carousel
+  // ========================
   const carouselImages = document.querySelectorAll(".carousel-image");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  let currentIndex = 0;
+  const rvtPrevBtn = document.getElementById("prevBtn");
+  const rvtNextBtn = document.getElementById("nextBtn");
+  let currentImageIndex = 0;
 
   function showCarouselImage(index) {
     carouselImages.forEach((img, i) => {
@@ -205,19 +216,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
-    showCarouselImage(currentIndex);
+  rvtPrevBtn?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+    showCarouselImage(currentImageIndex);
   });
 
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % carouselImages.length;
-    showCarouselImage(currentIndex);
+  rvtNextBtn?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+    showCarouselImage(currentImageIndex);
   });
 
-  showCarouselImage(currentIndex);
+  showCarouselImage(currentImageIndex);
 
-  // === Lightbox logic ===
+
+  // ========================
+  // 🔍 Lightbox (for screenshots)
+  // ========================
   const overlay = document.getElementById("lightboxOverlay");
   const lightboxImage = document.getElementById("lightboxImage");
   const lightboxCaption = document.getElementById("lightboxCaption");
@@ -227,133 +241,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openLightbox(index) {
     const img = carouselImages[index];
+    if (!img) return;
     lightboxImage.src = img.src;
-    lightboxCaption.textContent = img.alt;
+    lightboxCaption.textContent = img.alt || `Image ${index + 1}`;
     overlay.classList.remove("hidden");
-    currentIndex = index;
+    currentImageIndex = index;
   }
 
   carouselImages.forEach((img, i) => {
     img.addEventListener("click", () => openLightbox(i));
   });
 
-  lightboxClose.addEventListener("click", () => overlay.classList.add("hidden"));
+  lightboxClose?.addEventListener("click", () => overlay.classList.add("hidden"));
 
-  lightboxPrev.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
-    openLightbox(currentIndex);
+  lightboxPrev?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+    openLightbox(currentImageIndex);
   });
 
-  lightboxNext.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % carouselImages.length;
-    openLightbox(currentIndex);
+  lightboxNext?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+    openLightbox(currentImageIndex);
   });
 
   document.addEventListener("keydown", (e) => {
     if (overlay.classList.contains("hidden")) return;
-
+    if (e.key === "Escape") overlay.classList.add("hidden");
     if (e.key === "ArrowRight") lightboxNext.click();
-    else if (e.key === "ArrowLeft") lightboxPrev.click();
-    else if (e.key === "Escape") overlay.classList.add("hidden");
+    if (e.key === "ArrowLeft") lightboxPrev.click();
   });
-});
-</script>
-<!--*********************************************************************************************-->
 
-<!--*********************************************************************************************-->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  // === Lightbox Setup ===
-  const lightboxLinks = document.querySelectorAll(".demo-lightbox");
-  const overlay = document.getElementById("lightboxOverlay");
-  const image = document.getElementById("lightboxImage");
-  const caption = document.getElementById("lightboxCaption");
-  const closeBtn = document.getElementById("lightboxClose");
-  const prevBtn = document.getElementById("lightboxPrev");
-  const nextBtn = document.getElementById("lightboxNext");
 
-  let currentIndex = 0;
-  const images = Array.from(lightboxLinks);
+  // ========================
+  // 🧾 PDF Carousel Section
+  // ========================
+  const pdfFrames = document.querySelectorAll(".pdf-frame");
+  const pdfPrevBtn = document.getElementById("pdfPrevBtn");
+  const pdfNextBtn = document.getElementById("pdfNextBtn");
+  let currentPDFIndex = 0;
 
-  function showImage(index) {
-    const img = images[index];
-    image.src = img.dataset.img;
-    const captionText = img.dataset.caption || '';
-    caption.textContent = `${index + 1} / ${images.length} — ${captionText}`;
-    overlay.classList.remove("hidden");
+  function showPDF(index) {
+    pdfFrames.forEach((frame, i) => {
+      frame.classList.toggle("active", i === index);
+    });
   }
 
-  images.forEach((link, index) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      currentIndex = index;
-      showImage(currentIndex);
-    });
+  pdfPrevBtn?.addEventListener("click", () => {
+    currentPDFIndex = (currentPDFIndex - 1 + pdfFrames.length) % pdfFrames.length;
+    showPDF(currentPDFIndex);
   });
 
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+  pdfNextBtn?.addEventListener("click", () => {
+    currentPDFIndex = (currentPDFIndex + 1) % pdfFrames.length;
+    showPDF(currentPDFIndex);
   });
 
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  });
-
-  closeBtn.addEventListener("click", () => overlay.classList.add("hidden"));
-
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) overlay.classList.add("hidden");
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") overlay.classList.add("hidden");
-    if (e.key === "ArrowRight") nextBtn.click();
-    if (e.key === "ArrowLeft") prevBtn.click();
-  });
+  showPDF(currentPDFIndex);
 
 
-
-  // === Last Updated Console Log (optional dev aid) ===
+  // ========================
+  // 📅 Console Last Modified Log (optional dev tool)
+  // ========================
   const lastUpdated = new Date(document.lastModified);
   console.log("📅 Last updated:", lastUpdated.toDateString());
 });
 </script>
-<!--*********************************************************************************************--> 
+
+
   
-<!--*********************************************************************************************-->
-<script>
-  function loadPDF(fileName) {
-    const viewer = document.getElementById("pdfViewer");
-    viewer.src = `../assets/pdfs/belle-vie/${fileName}`;
-  }
-</script>
-<!--*********************************************************************************************-->
+  
+  
+
  
-<!--*********************************************************************************************--> 
-<!-- Optional Zoom Controls -->
-<div style="margin-top: 1rem; text-align: right;">
-  <button onclick="zoomIn()">🔍 Zoom In</button>
-  <button onclick="zoomOut()">➖ Zoom Out</button>
-</div>
 
-<script>
-  let zoomLevel = 1;
-  const container = document.querySelector('.pdf-viewer-container');
-
-  function zoomIn() {
-    zoomLevel += 0.1;
-    container.style.transform = `scale(${zoomLevel})`;
-    container.style.transformOrigin = "top left";
-  }
-
-  function zoomOut() {
-    zoomLevel = Math.max(1, zoomLevel - 0.1);
-    container.style.transform = `scale(${zoomLevel})`;
-  }
-</script>
-<!--*********************************************************************************************-->
   
   
   
@@ -362,8 +322,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </script>
-
-
-
 
 </html>

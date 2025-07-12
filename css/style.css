@@ -567,6 +567,18 @@ footer a:hover {
 }
 
 
+.pdf-lightbox-frame {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.lightbox-overlay:not(.hidden) .pdf-lightbox-frame {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
 
 
 .carousel-btn {

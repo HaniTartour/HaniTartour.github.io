@@ -117,27 +117,33 @@
 
 <div class="carousel-wrapper pdf-carousel-wrapper">
     <!-- ✅ Only the active one is visible -->
+	
+<div class="pdf-wrapper active" data-index="0">
     <iframe src="../projects/pdfs/belle-vie/01.pdf" 
-			class="pdf-frame active" 
-			data-index="0" 
-			frameborder="0"
+			class="pdf-frame" 
+			frameborder="0" 
 			loading="lazy"> 
 	</iframe>
+	<div class="pdf-overlay" title="Click to enlarge PDF"></div>
+</div>
 	
+<div class="pdf-wrapper" data-index="1">
     <iframe src="../projects/pdfs/belle-vie/02.pdf" 
 			class="pdf-frame" 
-			data-index="1" 
 			frameborder="0"
 			loading="lazy"> 
 	</iframe>
+	<div class="pdf-overlay" title="Click to enlarge PDF"></div>
+</div>
 	
+<div class="pdf-wrapper" data-index="2">
     <iframe src="../projects/pdfs/belle-vie/03.pdf" 
 			class="pdf-frame" 
-			data-index="2" 
 			frameborder="0"
 			loading="lazy"> 
 	</iframe>
-	
+		<div class="pdf-overlay" title="Click to enlarge PDF"></div>
+</div>
 
 
     <!-- Carousel Controls -->
@@ -322,13 +328,16 @@ const pdfLightboxFrame = document.getElementById("pdfLightboxFrame");
 const pdfLightboxClose = document.getElementById("pdfLightboxClose");
 
 // Attach click event to PDF iframes
-document.querySelectorAll(".pdf-frame").forEach((frame) => {
-frame.addEventListener("click", () => {
-  if (!frame.classList.contains("active")) return; // ✅ Ignore hidden ones
-  pdfLightboxFrame.src = frame.src;
-  pdfLightbox.classList.remove("hidden");
+document.querySelectorAll(".pdf-overlay").forEach((overlayDiv) => {
+  overlayDiv.addEventListener("click", () => {
+    const wrapper = overlayDiv.parentElement;
+    const iframe = wrapper.querySelector(".pdf-frame");
+    if (!wrapper.classList.contains("active")) return;
+    pdfLightboxFrame.src = iframe.src;
+    pdfLightbox.classList.remove("hidden");
+  });
 });
-});
+
 
 if (pdfLightbox && pdfLightboxClose && pdfLightboxFrame) {
   pdfLightboxClose.addEventListener("click", () => {

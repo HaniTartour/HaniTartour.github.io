@@ -483,7 +483,10 @@ footer a:hover {
 
 
 
-/* ======= 🧾 PDF Carousel Styles ======= */
+/* ================================
+   🧾 PDF Carousel Core Styles
+   ================================ */
+
 .pdf-carousel-wrapper {
   position: relative;
   overflow: hidden;
@@ -491,25 +494,11 @@ footer a:hover {
   text-align: center;
 }
 
-
-
-.pdf-frame {
-  display: none;
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: none; /* Hide all by default */
-}
-
-.pdf-frame.active {
-  display: block;
-}
-
-
+/* PDF wrapper container (one per PDF) */
 .pdf-wrapper {
   position: relative;
   width: 100%;
-  height: 600px; /* adjust as needed */
+  height: 600px; /* ✅ Adjustable as needed */
   display: none;
 }
 
@@ -517,7 +506,19 @@ footer a:hover {
   display: block;
 }
 
+/* Iframe displaying the PDF */
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
+/* Optional: Avoid duplicate declarations */
+.pdf-frame:not(.active) {
+  display: none;
+}
+
+/* Overlay to simulate "zoom-in" clickable area */
 .pdf-overlay {
   position: absolute;
   top: 0;
@@ -525,24 +526,34 @@ footer a:hover {
   width: 100%;
   height: 100%;
   cursor: zoom-in;
-  background: rgba(0, 0, 0, 0); /* invisible but catches click */
+  background: rgba(0, 0, 0, 0); /* Fully invisible but catches click */
   z-index: 10;
 }
 
-
+/* ================================
+   🎯 Carousel Navigation Buttons
+   ================================ */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  background-color: rgba(0,0,0,0.4);
-  color: white;
-  border: none;
+  font-weight: bold;
   padding: 0.6rem 1rem;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-  transition: all 0.2s ease-in-out;
+
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #ff6600;
+  transform: scale(1.05);
 }
 
 .carousel-btn.left {
@@ -553,13 +564,30 @@ footer a:hover {
   right: 10px;
 }
 
-.carousel-btn:hover {
-  background-color: #ff6600;
-  transform: scale(1.05);
-}
-/* ======= END PDF Carousel Styles ======= */
+/* ================================
+   📄 PDF Lightbox Full View
+   ================================ */
+.pdf-lightbox-frame {
+  width: 90vw;
+  height: 90vh;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 
-/* ========== 📄 PDF Shop Drawing Viewer ========== */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+/* Only visible when overlay is active */
+.lightbox-overlay:not(.hidden) .pdf-lightbox-frame {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ================================
+   🧾 PDF Carousel Container
+   ================================ */
 .pdf-carousel {
   position: relative;
   width: 100%;
@@ -572,67 +600,9 @@ footer a:hover {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-
-
-
-.pdf-frame.active {
-  display: block; /* Show only the active one */
-}
-
-
-.pdf-lightbox-frame {
-  width: 90vw;
-  height: 90vh;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-
-.pdf-lightbox-frame {
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  transform: scale(0.95);
-  opacity: 0;
-}
-
-.lightbox-overlay:not(.hidden) .pdf-lightbox-frame {
-  transform: scale(1);
-  opacity: 1;
-}
-
-
-
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.85);
-  border: none;
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  color: #333;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
-  z-index: 5;
-}
-
-.carousel-btn:hover {
-  background-color: #ff6600;
-  color: #fff;
-}
-
-.carousel-btn.left {
-  left: 10px;
-}
-
-.carousel-btn.right {
-  right: 10px;
-}
-
+/* ================================
+   📱 Responsive Adjustments
+   ================================ */
 @media screen and (max-width: 768px) {
   .pdf-carousel {
     height: 450px;
@@ -643,8 +613,5 @@ footer a:hover {
     padding: 0.4rem 0.8rem;
   }
 }
-/* ==========END 📄 PDF Shop Drawing Viewer ========== */
-
-
 
 

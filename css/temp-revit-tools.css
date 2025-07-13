@@ -93,6 +93,7 @@ body {
   margin-bottom: 1.5rem;
   text-align: left;
   border-bottom: 3px solid #ff6600;
+  gap: 1.5rem;
 }
 
 
@@ -152,10 +153,12 @@ body {
 🤝 5. Trusted By Logos
 ======================================================== */
 [data-project="revit-tools"] .trusted-by-bar {
+  width: 100%;
   background-color: #f3f3f3;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  margin-top: 1.5rem;
 }
 
 [data-project="revit-tools"] .trusted-by-bar p {

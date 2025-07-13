@@ -413,3 +413,36 @@ footer {
     margin: 0.6rem 0;
   }
 }
+
+/* ========================================================
+ 🔙 Floating Back Button (Bottom-Left)
+======================================================== */
+.back-link-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff6600;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-link-fixed:hover {
+  background-color: #cc5200;
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 600px) {
+  .back-link-fixed {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}

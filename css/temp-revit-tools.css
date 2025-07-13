@@ -264,21 +264,24 @@ body {
   cursor: pointer;
 }
 
-/* 17. Lightbox navigation arrows */
+
+
+/* 17. Lightbox navigation arrows (positioned at screen edges) */
 [data-project="revit-tools"] .lightbox-nav {
-  position: absolute;
+  position: fixed;                          /* ✅ Changed from absolute to fixed to escape image bounds */
   top: 50%;
-  width: 100%;
+  left: 0;
+  width: 100vw;                             /* ✅ Full screen width to stretch beyond image */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;          /* ✅ Push arrows to the edges */
   transform: translateY(-50%);
   z-index: 10000;
+  pointer-events: none;                    /* ✅ Allow buttons inside to still be clickable */
 }
 
-
-
-
+/* Navigation buttons styling */
 [data-project="revit-tools"] .lightbox-nav button {
+  pointer-events: all;                     /* ✅ Re-enable clicks for the buttons */
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
   font-size: 2rem;
@@ -286,12 +289,16 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin: 0 1rem;                          /* ✅ Optional: spacing from edge */
 }
 
+/* Hover effect */
 [data-project="revit-tools"] .lightbox-nav button:hover {
   background-color: #ff6600;
   color: #fff;
 }
+
+
 
 
 /* 18. Lightbox caption */

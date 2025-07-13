@@ -281,14 +281,6 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-
-.lightbox-close:hover {
-  background-color: #ff6600;
-  color: #fff;
-}
-
-
-
 .lightbox-nav {
   position: absolute;
   top: 50%;

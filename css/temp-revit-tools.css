@@ -290,6 +290,18 @@ h1, h2, h3 {
   font-size: 1rem;
 }
 
+/* Lightbox content image */
+[data-project="revit-tools"] .lightbox-content img {
+  max-width: 90vw;      /* ✅ Keeps image within screen width */
+  max-height: 80vh;     /* ✅ Keeps image within screen height */
+  width: auto;
+  height: auto;
+  object-fit: contain;  /* ✅ Maintains aspect ratio, no squish */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+
 /* 19. Lightbox <a class="demo-lightbox"> hover style if you use custom clickable wrappers */
 [data-project="revit-tools"] .demo-lightbox {
   cursor: zoom-in;

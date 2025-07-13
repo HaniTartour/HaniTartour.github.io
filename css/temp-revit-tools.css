@@ -141,7 +141,7 @@ h1, h2, h3 {
 [data-project="revit-tools"] .tool-overview-card {
   background: #fff;			 	/* White background for clean contrast */
   padding: 2rem 1.5rem;			/* Inner spacing: 2rem top/bottom, 1.5rem sides */
-  margin: 2rem auto;			/* Vertical spacing + auto-center horizontally */
+  margin: 0.5rem auto;			/* Vertical spacing + auto-center horizontally */
 }
 
 

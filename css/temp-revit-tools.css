@@ -97,6 +97,22 @@ body {
 }
 
 
+
+[data-project="revit-tools"] .project-header .header-text {
+  flex: 1 1 60%;
+  min-width: 250px;
+}
+
+[data-project="revit-tools"] .project-header .header-actions {
+  flex: 1 1 30%;
+  text-align: right;
+  min-width: 200px;
+  display: flex;
+  align-items: start;
+  justify-content: flex-end;
+}
+
+
 [data-project="revit-tools"] .project-header h2 {
   font-size: 1.8rem;
   color: #000;
@@ -478,6 +494,10 @@ body {
     align-items: flex-start;
   }
 
+  [data-project="revit-tools"] .project-header .header-actions {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
 
   [data-project="revit-tools"] .trusted-by-bar .logo-strip {
     justify-content: center;

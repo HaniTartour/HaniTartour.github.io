@@ -372,8 +372,8 @@ h1, h2, h3 {
 
 /* ---------- Control Vertical Spacing Between Sections ---------- */
 [data-project="revit-tools"] section {
-  margin-top: 3rem;     /* Adds space above each section */
-  margin-bottom: 3rem;  /* Adds space below each section */
+  margin-top: 1.5rem;     /* Adds space above each section */
+  margin-bottom: 1.5rem;  /* Adds space below each section */
 }
 
 

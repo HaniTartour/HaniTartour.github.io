@@ -502,3 +502,40 @@ footer a:hover i {
 .screenshot-grid img:hover {
   transform: scale(1.03);
 }
+
+
+/* ========== Download Buttons ========== */
+.download-buttons a {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.6rem 1.2rem;
+  background: #ff6600;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.download-buttons a:hover {
+  background: #e05500;
+}
+
+
+/* ========== Share Button ========== */
+.share-linkedin {
+  background-color: #0a66c2;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.share-linkedin:hover {
+  background-color: #084b9d;
+}

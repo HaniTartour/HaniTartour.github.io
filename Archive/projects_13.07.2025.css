@@ -1,0 +1,665 @@
+/* ========== Global Styles ========== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== Branding Header Styles ========== */
+.site-header {
+  background-color: #222;
+  padding: 1.5rem 1rem;
+  border-bottom: 2px solid #ff6600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.branding-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.branding-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* ✅ White text for dark background */
+}
+
+/* ✅ This media query is now properly CLOSED */
+@media screen and (max-width: 600px) {
+  .branding-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .branding-text h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  .branding-text p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+}
+
+/* ✅ Global/default styles for non-mobile */
+.branding-text h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.branding-text p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* ========== END Branding Header Styles ========== */
+
+
+
+
+/* ========== Project Container ========== */
+.project-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-left: 5px solid #ff6600;
+  border-radius: 6px;
+  box-sizing: border-box; /* ✅ Prevent overflow padding issues */
+}
+
+.project-container h1 {
+  color: #ff6600;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.project-meta {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-container img {
+  max-width: 100%;
+  height: auto;           /* ✅ Prevent squishing if any strange size */
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+/* ========== END Project Container ========== */
+
+
+/* ========== Construction HEADER ========== */
+
+.construction-header {
+  background: #f0f0f0;
+  padding: 2rem;
+  text-align: left;
+  border-bottom: 3px solid #ff6600;
+  color: #000;
+}
+
+.construction-header h1 {
+  color: #000;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.construction-header p {
+  color: #000;
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.construction-header h1 i {
+  color: #ff6600;
+  margin-right: 0.4rem;
+}
+
+
+
+
+/* ==========END Construction HEADER ========== */
+
+/* ========== Download Buttons ========== */
+.download-buttons a {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.6rem 1.2rem;
+  background: #ff6600;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.download-buttons a:hover {
+  background: #e05500;
+}
+
+/* ========== Floating Back Button ========== */
+.back-link-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff6600;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-link-fixed:hover {
+  background-color: #e05500;
+}
+
+@media screen and (max-width: 600px) {
+  .back-link-fixed {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ========== Screenshot Gallery ========== */
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.screenshot-grid img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.screenshot-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* ========== Lightbox ========== */
+.lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-overlay.hidden {
+  display: none;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 6px;
+}
+
+
+
+.lightbox-close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-caption {
+  margin-top: 1rem;
+  color: white;
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translateY(-50%);
+}
+
+.lightbox-nav button {
+  pointer-events: all;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.75rem 1.2rem;
+  cursor: pointer;
+  color: #333;
+  border-radius: 50%;
+  margin: 0 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+  opacity: 0.9;
+}
+
+.lightbox-nav button:hover {
+  background-color: #ff6600;
+  color: white;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.lightbox-nav button:focus {
+  outline: 2px dashed #ff6600;
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .lightbox-nav button {
+    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+
+
+
+/* ========== END Lightbox ========== */
+
+/* ========== Project Header & Share Button ========== */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.project-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ff6600;
+}
+
+.share-linkedin {
+  background-color: #0a66c2;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.share-linkedin:hover {
+  background-color: #084b9d;
+}
+
+/* ========== END Project Header & Share Button ========== */
+
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links {
+  margin: 1rem 0;
+}
+
+.linkedin-link i { color: #0077b5; }
+.github-link i   { color: #000000; }
+.youtube-link i  { color: #cc0000; }
+
+.social-links a {
+  margin: 0 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+footer a:hover {
+  color: #005fa3; /* Slightly darker blue for hover */
+}
+
+footer a:hover i {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+.footer-credit {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+@media screen and (max-width: 600px) {
+  .social-links a {
+    display: block;
+    margin: 0.6rem 0;
+  }
+}
+
+/* ========== end footer section ========== */
+
+
+/* ========== Mobile Padding ========== */
+@media screen and (max-width: 600px) {
+  .project-container {
+    padding: 1rem 1rem;  /* Top-Bottom | Left-Right padding */
+    margin: 1rem auto;
+  }
+}
+/* ========== end Mobile Padding ========== */
+
+
+
+
+.tags span {
+  display: inline-block;
+  background: #f3f3f3;
+  color: #333;
+  padding: 4px 10px;
+  margin-right: 6px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
+
+
+.section-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-left: 5px solid #ff6600;
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+.location,
+.role {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.summary,
+.screenshots,
+.pdf-sheets,
+.upgrade-tips {
+  margin-top: 2rem;
+}
+
+.summary h2,
+.screenshots h2,
+.pdf-sheets h2,
+.upgrade-tips h2 {
+  font-size: 1.3rem;
+  color: #ff6600;
+  margin-bottom: 0.8rem;
+}
+
+
+
+
+.projects-description {
+  text-align: left;
+  color: #666;
+  padding: 0 2rem 0 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+/* ========== 🤝 Trusted By Logos ========== */
+.trusted-by-bar {
+  background-color: #f3f3f3;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.trusted-by-bar p {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  color: #444;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.logo-strip {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.logo-strip img {
+  height: 50px;
+  max-width: 100px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-strip img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+  .logo-strip img {
+    height: 40px;
+    max-width: 80px;
+  }
+}
+
+/* ========== END Trusted By Logos ========== */
+
+
+
+/* ================================
+   🧾 PDF Carousel Core Styles
+   ================================ */
+
+.pdf-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+/* PDF wrapper container (one per PDF) */
+.pdf-wrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 600px; /* ✅ Adjustable as needed */
+
+}
+
+.pdf-wrapper.active {
+  display: block;
+}
+
+/* Iframe displaying the PDF */
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Optional: Avoid duplicate declarations */
+.pdf-frame:not(.active) {
+  display: none;
+}
+
+/* Overlay to simulate "zoom-in" clickable area */
+.pdf-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  background: rgba(0, 0, 0, 0); /* Fully invisible but catches click */
+  z-index: 10;
+}
+
+/* ================================
+   🎯 Carousel Navigation Buttons
+   ================================ */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #ff6600;
+  transform: scale(1.05);
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+/* ================================
+   📄 PDF Lightbox Full View
+   ================================ */
+.pdf-lightbox-frame {
+  width: 90vw;
+  height: 90vh;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+/* Only visible when overlay is active */
+.lightbox-overlay:not(.hidden) .pdf-lightbox-frame {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ================================
+   🧾 PDF Carousel Container
+   ================================ */
+.pdf-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   📱 Responsive Adjustments
+   ================================ */
+@media screen and (max-width: 768px) {
+  .pdf-carousel {
+    height: 450px;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+

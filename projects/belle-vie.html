@@ -247,11 +247,11 @@ document.addEventListener("DOMContentLoaded", function () {
     showCarouselImage(currentImageIndex);
   });
 
-  showCarouselImage(currentImageIndex);
+  showCarouselImage(currentImageIndex);  // Initialize view
 
 
   // ========================
-  // 🔍 Lightbox (for screenshots)
+  // 🔍 Lightbox for Images
   // ========================
   const overlay = document.getElementById("lightboxOverlay");
   const lightboxImage = document.getElementById("lightboxImage");
@@ -288,75 +288,75 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", (e) => {
     if (overlay.classList.contains("hidden")) return;
     if (e.key === "Escape") overlay.classList.add("hidden");
-    if (e.key === "ArrowRight") lightboxNext.click();
-    if (e.key === "ArrowLeft") lightboxPrev.click();
+    if (e.key === "ArrowRight") lightboxNext?.click();
+    if (e.key === "ArrowLeft") lightboxPrev?.click();
   });
 
 
   // ========================
   // 🧾 PDF Carousel Section
   // ========================
-  const pdfFrames = document.querySelectorAll(".pdf-frame");
+  const pdfWrappers = document.querySelectorAll(".pdf-wrapper");
   const pdfPrevBtn = document.getElementById("pdfPrevBtn");
   const pdfNextBtn = document.getElementById("pdfNextBtn");
   let currentPDFIndex = 0;
 
   function showPDF(index) {
-    pdfFrames.forEach((frame, i) => {
-      frame.classList.toggle("active", i === index);
+    pdfWrappers.forEach((wrapper, i) => {
+      wrapper.classList.toggle("active", i === index);
     });
   }
 
   pdfPrevBtn?.addEventListener("click", () => {
-    currentPDFIndex = (currentPDFIndex - 1 + pdfFrames.length) % pdfFrames.length;
+    currentPDFIndex = (currentPDFIndex - 1 + pdfWrappers.length) % pdfWrappers.length;
     showPDF(currentPDFIndex);
   });
 
   pdfNextBtn?.addEventListener("click", () => {
-    currentPDFIndex = (currentPDFIndex + 1) % pdfFrames.length;
+    currentPDFIndex = (currentPDFIndex + 1) % pdfWrappers.length;
     showPDF(currentPDFIndex);
   });
 
-  showPDF(currentPDFIndex);
+  showPDF(currentPDFIndex); // Initialize first PDF
 
 
-//===========================
-// PDF Lightbox Logic
-//===========================
-const pdfLightbox = document.getElementById("pdfLightbox");
-const pdfLightboxFrame = document.getElementById("pdfLightboxFrame");
-const pdfLightboxClose = document.getElementById("pdfLightboxClose");
+  // ========================
+  // 🔍 PDF Lightbox Viewer
+  // ========================
+  const pdfLightbox = document.getElementById("pdfLightbox");
+  const pdfLightboxFrame = document.getElementById("pdfLightboxFrame");
+  const pdfLightboxClose = document.getElementById("pdfLightboxClose");
 
-// Attach click event to PDF iframes
-document.querySelectorAll(".pdf-overlay").forEach((overlayDiv) => {
-  overlayDiv.addEventListener("click", () => {
-    const wrapper = overlayDiv.parentElement;
-    const iframe = wrapper.querySelector(".pdf-frame");
-    if (!wrapper.classList.contains("active")) return;
-    pdfLightboxFrame.src = iframe.src;
-    pdfLightbox.classList.remove("hidden");
+  // Overlay trigger logic
+  document.querySelectorAll(".pdf-overlay").forEach((overlayDiv) => {
+    overlayDiv.addEventListener("click", () => {
+      const wrapper = overlayDiv.parentElement;
+      const iframe = wrapper.querySelector(".pdf-frame");
+      if (!wrapper.classList.contains("active")) return;
+      pdfLightboxFrame.src = iframe.src;
+      pdfLightbox.classList.remove("hidden");
+    });
   });
-});
 
-
-if (pdfLightbox && pdfLightboxClose && pdfLightboxFrame) {
-  pdfLightboxClose.addEventListener("click", () => {
+  // Close logic
+  pdfLightboxClose?.addEventListener("click", () => {
     pdfLightbox.classList.add("hidden");
-    pdfLightboxFrame.src = ""; // stop PDF from running
+    pdfLightboxFrame.src = ""; // Unload PDF to free memory
   });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") pdfLightbox.classList.add("hidden");
   });
-}
+
 
   // ========================
-  // 📅 Console Last Modified Log (optional dev tool)
+  // 🛠 Dev Console Aid
   // ========================
   const lastUpdated = new Date(document.lastModified);
   console.log("📅 Last updated:", lastUpdated.toDateString());
 });
 </script>
+
  
  
 </body>

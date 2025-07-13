@@ -139,9 +139,9 @@ h1, h2, h3 {
 
 /* 9. Tool card or overview section */
 [data-project="revit-tools"] .tool-overview-card {
-  background: #fff;
-  padding: 2rem 1.5rem;
-  margin: 2rem auto;
+  background: #fff;			 	/* White background for clean contrast */
+  padding: 2rem 1.5rem;			/* Inner spacing: 2rem top/bottom, 1.5rem sides */
+  margin: 2rem auto;			/* Vertical spacing + auto-center horizontally */
 }
 
 
@@ -368,19 +368,27 @@ h1, h2, h3 {
 }
 
 
-/*----------Control Vertical Spacing Between Sections--------*/
+
+
+/* ---------- Control Vertical Spacing Between Sections ---------- */
 [data-project="revit-tools"] section {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;     /* Adds space above each section */
+  margin-bottom: 3rem;  /* Adds space below each section */
 }
 
 
-/*------Add a Divider Line Between Sections--------*/
+/* ---------- Add a Divider Line Between Sections ---------- */
 [data-project="revit-tools"] section::before {
-  content: "";
-  display: block;
-  height: 1px;
-  background-color: #ddd;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  content: "";                   /* Empty pseudo-element for the divider */
+  display: block;                /* Treats it like a block element */
+  height: 1px;                   /* Thin horizontal divider */
+  background-color: #ddd;       /* Light gray line */
+  margin-bottom: 2rem;          /* Space after the line */
+  margin-top: 2rem;             /* Space before the line */
+}
+
+
+/* ❌ Remove divider before the first section */
+[data-project="revit-tools"] section:first-of-type::before {
+  display: none;  /* Hides the pseudo-element for the first section */
 }

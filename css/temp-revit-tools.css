@@ -125,22 +125,27 @@ body {
 
 /* 8. Share on LinkedIn button */
 [data-project="revit-tools"] .share-linkedin {
-  background-color: #0a66c2;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  background-color: #0a66c2;        /* 🔵 LinkedIn blue background */
+  color: white;                     /* 🔤 White text */
+  padding: 0.5rem 1rem;             /* 📦 Vertical + horizontal padding for size */
+  border-radius: 30px;              /* 🟢 Rounded pill shape */
+  font-weight: bold;                /* 📝 Bold text for emphasis */
+  text-decoration: none;            /* ❌ No underline */
+  transition: background-color 0.3s ease;  /* 🔁 Smooth hover transition */
+  border: none;                     /* ❌ No border */
+  cursor: pointer;                  /* 🖱️ Pointer cursor on hover */
+  display: flex;                    /* ➕ Flex layout to align icon + text */
+  align-items: center;             /* 🔄 Vertically center icon with text */
+  margin-left: auto; /* 👈 Pushes the button to the right in a flex container */
 }
 
+/* 🟦 Hover style for the button */
 [data-project="revit-tools"] .share-linkedin:hover {
-  background-color: #084b9d;
+  background-color: #084b9d;        /* 🔵 Darker LinkedIn shade on hover */
 }
+
+
+
 
 
 /* 9. Tool card or overview section */

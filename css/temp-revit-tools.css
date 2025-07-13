@@ -1,0 +1,391 @@
+
+/* ========================================================
+🔧 REVIT TOOLS PROJECT – Scoped Overrides for Project Card Elements
+======================================================== */
+
+
+/* ================🌐 1. Global Reset & Base Styles=================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin: 0 0 1rem;
+}
+
+
+
+/* 1. Header styling override if any global reset affects it */
+[data-project="revit-tools"] .site-header {
+  background-color: #222;
+  border-bottom: 2px solid #ff6600;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Branding inline layout (image + text) */
+[data-project="revit-tools"] .branding-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* 3. BIMBuddy Logo image */
+[data-project="revit-tools"] .logo {
+  width: 60px;
+  height: auto;
+}
+
+/* 4. Branding text inside the header */
+[data-project="revit-tools"] .branding-text {
+  color: #fff;
+  text-align: center;
+}
+
+[data-project="revit-tools"] .branding-text h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.3rem 0;
+}
+
+[data-project="revit-tools"] .branding-text p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.2rem 0;
+}
+
+/* 5. Main project card container */
+[data-project="revit-tools"] .project-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border-left: 5px solid #ff6600;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 6. Project header wrapper (title + share) */
+[data-project="revit-tools"] .project-header {
+  background: #f0f0f0;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  border-bottom: 3px solid #ff6600;
+}
+
+
+[data-project="revit-tools"] .project-header h2 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+[data-project="revit-tools"] .project-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0.2rem 0;
+}
+
+[data-project="revit-tools"] .project-header h2 i {
+  color: #ff6600;
+  margin-right: 0.4rem;
+}
+
+
+
+/* 7. Meta info below header */
+[data-project="revit-tools"] .project-meta {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+
+/* 8. Share on LinkedIn button */
+[data-project="revit-tools"] .share-linkedin {
+  background-color: #0a66c2;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+[data-project="revit-tools"] .share-linkedin:hover {
+  background-color: #084b9d;
+}
+
+
+/* 9. Tool card or overview section */
+[data-project="revit-tools"] .tool-overview-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-left: 5px solid #ff6600;
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* 10. Download buttons (Revit Add-in .zip, etc.) */
+[data-project="revit-tools"] .download-buttons a {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.6rem 1.2rem;
+  background: #ff6600;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+[data-project="revit-tools"] .download-buttons a:hover {
+  background: #e05500;
+}
+
+
+
+/* 11. Screenshot grid layout (2 or 4 columns) */
+[data-project="revit-tools"] .screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  [data-project="revit-tools"] .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* 12. Images inside lightbox links */
+[data-project="revit-tools"] .screenshot-grid img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+[data-project="revit-tools"] .screenshot-grid img:hover {
+  transform: scale(1.03);
+}
+
+
+
+/* 13. Social links section in footer */
+[data-project="revit-tools"] .social-links {
+  margin: 1rem 0;
+}
+
+
+[data-project="revit-tools"] .linkedin-link i { color: #0077b5; }
+[data-project="revit-tools"] .github-link i { color: #000000; }
+[data-project="revit-tools"] .youtube-link i { color: #cc0000; }
+
+
+
+[data-project="revit-tools"].social-links a {
+  margin: 0 0.8rem;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+[data-project="revit-tools"].social-links i {
+  transition: transform 0.2s ease;
+}
+
+
+/* 14. Lightbox overlay for full-size view */
+[data-project="revit-tools"] .lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+[data-project="revit-tools"] .lightbox-overlay.hidden {
+  display: none;
+}
+
+/* 15. Lightbox content container */
+[data-project="revit-tools"] .lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+/* 16. Close button for lightbox */
+[data-project="revit-tools"] .lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* 17. Lightbox navigation arrows */
+[data-project="revit-tools"] .lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10000;
+}
+
+
+
+
+[data-project="revit-tools"] .lightbox-nav button {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+[data-project="revit-tools"] .lightbox-nav button:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+
+/* 18. Lightbox caption */
+[data-project="revit-tools"] .lightbox-caption {
+  margin-top: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+
+/* 19. Lightbox <a class="demo-lightbox"> hover style if you use custom clickable wrappers */
+[data-project="revit-tools"] .demo-lightbox {
+  cursor: zoom-in;
+  display: inline-block;
+}
+
+
+/* ========================================================
+🔗 10. Footer & Social Links
+======================================================== */
+[data-project="revit-tools"] footer {
+  background: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+[data-project="revit-tools"] footer a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+[data-project="revit-tools"] footer a:hover i,
+.social-links a:hover i {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+
+[data-project="revit-tools"] footer a:hover {
+  color: #005fa3; /* Slightly darker blue for hover */
+}
+
+
+[data-project="revit-tools"] .footer-credit {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+
+
+/* Fixed back button style for Revit tools (matches global default but scoped) */
+[data-project="revit-tools"] .back-link-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff6600;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+[data-project="revit-tools"] .back-link-fixed:hover {
+  background-color: #cc5200;
+  transform: translateY(-2px);
+}
+
+
+@media screen and (max-width: 600px) {
+  [data-project="revit-tools"] .back-link-fixed {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+/*----------Control Vertical Spacing Between Sections--------*/
+[data-project="revit-tools"] section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+/*------Add a Divider Line Between Sections--------*/
+[data-project="revit-tools"] section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}

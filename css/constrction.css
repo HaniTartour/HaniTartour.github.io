@@ -1,0 +1,72 @@
+/* ========================================================
+🏗️ CONSTRUCTION PROJECT STYLES (Scoped via body[data-project="construction"])
+======================================================== */
+
+/* Override the back button position/behavior for construction projects */
+[data-project="construction"] .back-link-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff6600;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+[data-project="construction"] .back-link-fixed:hover {
+  background-color: #cc5200;
+  transform: translateY(-2px);
+}
+
+/* Construction screenshot grid layout: 4 columns on desktop, 2 on mobile */
+[data-project="construction"] .screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  [data-project="construction"] .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Trusted-by logos for construction clients */
+[data-project="construction"] .logo-strip img {
+  height: 50px;
+  max-width: 100px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+[data-project="construction"] .logo-strip img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Optional: PDF wrapper height specific to construction shop drawings */
+[data-project="construction"] .pdf-wrapper {
+  height: 600px;
+}
+
+/* Optional: PDF lightbox frame sizing (can be tweaked later if needed) */
+[data-project="construction"] .pdf-lightbox-frame {
+  width: 90vw;
+  height: 90vh;
+}
+
+/* Optional: Carousel button behavior stays scoped */
+[data-project="construction"] .carousel-btn {
+  font-size: 2rem;
+  padding: 0.6rem 1rem;
+}

@@ -338,6 +338,7 @@ h1, h2, h3 {
 }
 
 
+
 /* ========================================================
 🔗 10. Footer & Social Links
 ======================================================== */
@@ -345,10 +346,15 @@ footer {
   background: #eee;
   text-align: center;
   padding: 2rem 1rem;
+  background: #eee;
   font-size: 0.9rem;
   color: #666;
 }
 
+footer a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
 .footer-credit {
   margin-top: 1rem;
   font-style: italic;
@@ -359,20 +365,55 @@ footer {
   margin: 1rem 0;
 }
 
+.linkedin-link i { color: #0077b5; }
+.github-link i   { color: #000000; }
+.youtube-link i  { color: #cc0000; }
+
 .social-links a {
   margin: 0 0.8rem;
+  text-decoration: none;
   color: #0077cc;
   font-weight: bold;
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
+footer a:hover {
+  color: #005fa3; /* Slightly darker blue for hover */
 .social-links i {
   transition: transform 0.2s ease;
 }
 
+footer a:hover i {
 .social-links a:hover i {
   transform: scale(1.2);
+  transition: transform 0.2s ease;
 }
+
+.footer-credit {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+@media screen and (max-width: 600px) {
+  .social-links a {
+    display: block;
+    margin: 0.6rem 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ========================================================
@@ -413,6 +454,7 @@ footer {
     margin: 0.6rem 0;
   }
 }
+
 
 /* ========================================================
  🔙 Floating Back Button (Bottom-Left)

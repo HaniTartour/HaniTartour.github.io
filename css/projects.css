@@ -545,10 +545,11 @@ footer a:hover i {
 
 /* PDF wrapper container (one per PDF) */
 .pdf-wrapper {
+  display: none;
   position: relative;
   width: 100%;
   height: 600px; /* ✅ Adjustable as needed */
-  display: none;
+
 }
 
 .pdf-wrapper.active {

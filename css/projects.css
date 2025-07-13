@@ -357,7 +357,9 @@ footer a {
   color: #0077cc;
   text-decoration: none;
   font-weight: bold;
-.footer-credit {
+}
+  
+footer-credit {
   margin-top: 1rem;
   font-style: italic;
   font-size: 0.85rem;
@@ -382,22 +384,24 @@ footer a {
 
 footer a:hover {
   color: #005fa3; /* Slightly darker blue for hover */
+}
+
 .social-links i {
   transition: transform 0.2s ease;
 }
 
-footer a:hover i {
+footer a:hover i,
 .social-links a:hover i {
   transform: scale(1.2);
   transition: transform 0.2s ease;
 }
+
 
 .footer-credit {
   margin-top: 1rem;
   font-style: italic;
   font-size: 0.85rem;
 }
-
 
 
 /* ========================================================

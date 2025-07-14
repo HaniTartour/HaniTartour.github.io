@@ -15,26 +15,30 @@
   <meta property="og:url" content="https://hanitartour.github.io/projects/shaft-opening-converter.html" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../css/revit-tools.css" />
+  <link rel="stylesheet" href="../css/projects.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
 </head>
 
+
+
 <body>
 
-<!-- Branding Header -->
+<!-- 📌 add brading logo&page header -->
 <header class="site-header" style="text-align: center;">
   <div class="branding-inline">
     <img src="../assets/bimbuddy-logo.png" alt="BIMBuddy Logo" class="logo" />
     <div class="branding-text">
-      <h1><i class="fa-solid fa-cube"></i> Revit Development Tools by Hani Tartour</h1>
-      <p>Smart tools to accelerate BIM workflows using Revit, Dynamo, and coordination-ready data.</p>
+      <h1><i class="fa-solid fa-code"></i> Revit Development Tools by Hani Tartour</h1>
+      <p>Smart tools to accelerate BIM workflows using Revit, Python, and pyRevit.</p>
+      <p>Automation • Dynamo • Python • Revit API • BIM Innovation</p>
     </div>
   </div>
 </header>
 
-<main class="project-container">
 
-  <!-- Project Header -->
+<main class="project-container" role="main">
+
+  <!-- 📌 Project Header -->
   <div class="project-header">
     <h1>
       <img width="50" height="50" src="https://img.icons8.com/fluency/48/hole.png"
@@ -46,12 +50,16 @@
       Visualize and compare shaft openings using DirectShape solids from both host and linked Revit models.
     </p>
 
-    <button id="shareAndCopyBtn" class="share-linkedin" title="Share on LinkedIn & Copy Link">
+    <button id="shareAndCopyBtn"
+            class="share-linkedin"
+            title="Share on LinkedIn & Copy Link"
+            role="button"
+            aria-label="Share this page on LinkedIn">
       <i class="fa-brands fa-linkedin" style="margin-right: 6px;"></i> Share
     </button>
   </div>
 
-  <!-- Tool Overview -->
+  <!-- 📌 Tool Overview -->
   <section class="tool-overview-card">
     <p><strong>Summary:</strong> Shaft Opening Converter is a Dynamo-based toolset that generates visible 3D solids from otherwise invisible "shaft openings" in Revit. It supports both the active project and any linked models. These solids are useful for visualization, model coordination, and exporting to Navisworks.</p>
 
@@ -67,7 +75,8 @@
       <a href="../projects/docs/shaft-opening-converter_guide.md" download>
         <i class="fa-solid fa-file-pdf"></i> Instructions Guide
       </a>
-      <a href="https://github.com/HaniTartour/HT-Toolbox" target="_blank">
+      <a href="https://github.com/HaniTartour/HT-Toolbox/tree/main/pyRevit/HT-ToolBoxExtension/HT.extension/HT_pyTools.tab/Dev.panel/05RenameViewsPlus.pushbutton"
+         target="_blank" rel="noopener">
         <i class="fa-brands fa-github"></i> View on GitHub
       </a>
     </div>
@@ -80,9 +89,9 @@
     </ul>
   </section>
 
-  <!-- Screenshots -->
+  <!-- 📸 Screenshots -->
   <section>
-    <h3>Screenshots:</h3>
+    <h3>Tool Interface Previews:</h3>
     <div class="screenshot-grid">
       <a class="demo-lightbox" data-img="../projects/images/shaft-opening01.png" data-caption="DirectShape Preview">
         <img src="../projects/images/shaft-opening01.png" alt="Shaft Demo Image" />
@@ -110,32 +119,157 @@
     </div>
   </section>
 
-  <!-- Back Button -->
+  <!-- 🔙 Fixed Back Button -->
   <a href="../projects.html" class="back-link-fixed" aria-label="Back to Projects page">
     <i class="fa-solid fa-arrow-left"></i> Back to Projects
   </a>
 
 </main>
 
-<!-- Footer -->
+
+
 <footer>
   <p>Connect with me:</p>
   <div class="social-links">
-    <a href="https://www.linkedin.com/in/hanimtartour" class="linkedin-link" target="_blank">
+    <a href="https://www.linkedin.com/in/hanimtartour" class="linkedin-link" target="_blank" aria-label="Visit my LinkedIn profile">
       <i class="fab fa-linkedin"></i> LinkedIn
     </a>
-    <a href="https://github.com/HaniTartour" class="github-link" target="_blank">
+    <a href="https://github.com/HaniTartour" class="github-link" target="_blank" aria-label="Visit my GitHub">
       <i class="fab fa-github"></i> GitHub
     </a>
-    <a href="https://www.youtube.com/@HaniMTARTOUR" class="youtube-link" target="_blank">
+    <a href="https://www.youtube.com/@HaniMTARTOUR" class="youtube-link" target="_blank" aria-label="Visit my YouTube channel">
       <i class="fab fa-youtube"></i> YouTube
     </a>
   </div>
   <p class="footer-credit">Built with 💙 by Hani Tartour – 2025</p>
 </footer>
 
-<!-- Scripts -->
-<script src="js/lightbox-and-share.js"></script>
 
+ 
+<!-- 🔍 Lightbox Gallery Overlay -->
+<div id="lightboxOverlay" class="lightbox-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+
+  <div class="lightbox-content">
+    <!-- ❌ Close Button -->
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">
+      &times;
+    </button>
+
+    <!-- 🖼️ Displayed Image -->
+    <img id="lightboxImage" src="" alt="Screenshot preview" />
+
+    <!-- 📝 Caption (screen reader accessible) -->
+    <p id="lightboxCaption" class="lightbox-caption" aria-live="polite"></p>
+
+    <!-- ↔️ Navigation Buttons -->
+    <div class="lightbox-nav" aria-label="Lightbox navigation controls">
+      <button id="lightboxPrev" type="button" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button id="lightboxNext" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === Lightbox Setup ===
+  const lightboxLinks = document.querySelectorAll(".demo-lightbox");
+  const overlay = document.getElementById("lightboxOverlay");
+  const image = document.getElementById("lightboxImage");
+  const caption = document.getElementById("lightboxCaption");
+  const closeBtn = document.getElementById("lightboxClose");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+
+  let currentIndex = 0;
+  const images = Array.from(lightboxLinks);
+
+  function showImage(index) {
+    const img = images[index];
+    image.src = img.dataset.img;
+    const captionText = img.dataset.caption || '';
+    caption.textContent = `${index + 1} / ${images.length} — ${captionText}`;
+    overlay.classList.remove("hidden");
+  }
+
+  images.forEach((link, index) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => overlay.classList.add("hidden"));
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") overlay.classList.add("hidden");
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+
+  // === Share & Copy Button ===
+  const shareBtn = document.getElementById("shareAndCopyBtn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+      const pageUrl = window.location.href;
+      const shareText = "Check out Rename Views+: https://hanitartour.github.io/projects/rename-views.html";
+
+      if (navigator.share) {
+        navigator.share({
+          title: "Rename Views+ – pyRevit Tool for Revit View Automation",
+          text: "Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.",
+          url: pageUrl
+        }).catch(err => {
+          console.warn("Native share failed, falling back:", err);
+        });
+      } else {
+        navigator.clipboard.writeText(shareText).then(() => {
+          alert("✅ Link copied!\nYou’re now sharing on LinkedIn...");
+
+          const shareUrl = "https://www.linkedin.com/shareArticle?mini=true"
+            + "&url=" + encodeURIComponent(pageUrl)
+            + "&title=" + encodeURIComponent("Rename Views+ – pyRevit Tool for Revit View Automation")
+            + "&summary=" + encodeURIComponent("Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.")
+            + "&source=hanitartour.github.io";
+
+          window.open(shareUrl, "_blank", "noopener,noreferrer");
+        }).catch(err => {
+          alert("❌ Failed to copy the link.");
+          console.error("Clipboard error:", err);
+        });
+      }
+    });
+  }
+
+  // === Last Updated Console Log (optional dev aid) ===
+  const lastUpdated = new Date(document.lastModified);
+  console.log("📅 Last updated:", lastUpdated.toDateString());
+});
+</script>
+ 
+  
 </body>
+
 </html>

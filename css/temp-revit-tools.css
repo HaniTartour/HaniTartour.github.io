@@ -263,7 +263,7 @@ body {
 [data-project="revit-tools"] .social-links {
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* ⬅️ Control horizontal spacing here */
+  gap: 1.0rem; /* ⬅️ Control horizontal spacing here */
   flex-wrap: wrap;
 }
 
@@ -516,7 +516,7 @@ body {
   [data-project="revit-tools"] .social-links {
     flex-direction: row;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   [data-project="revit-tools"] .social-links i {
@@ -585,7 +585,7 @@ body {
   [data-project="revit-tools"] .social-links {
     flex-direction: row;
     justify-content: flex-center;
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 
   [data-project="revit-tools"] .social-links i {

@@ -485,7 +485,11 @@ body {
 
 
 
-/* 📱 Mobile-first base styles: <600px */
+
+
+/* ========================================================
+📱 Mobile-First Styles: Up to 600px
+======================================================== */
 [data-project="revit-tools"] .project-header {
   flex-direction: column;
   align-items: flex-start;
@@ -496,13 +500,20 @@ body {
   margin-top: 1rem;
 }
 
-[data-project="revit-tools"] .project-header h2 {
-  white-space: normal;
-  text-overflow: initial;
-  font-size: 1.2rem;
+[data-project="revit-tools"] .project-header .header-text {
+  width: 100%;
+  flex: none;
+  margin-bottom: 0.75rem;
 }
 
-[data-project="revit-tools"] .project-header p {
+[data-project="revit-tools"] .project-header .header-text h2 {
+  font-size: 1.1rem;
+  white-space: normal;
+  text-overflow: initial;
+}
+
+[data-project="revit-tools"] .project-header .header-text p {
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -562,6 +573,20 @@ body {
   font-size: 1.2rem;
 }
 
+[data-project="revit-tools"] .linkedin-link i,
+[data-project="revit-tools"] .github-link i,
+[data-project="revit-tools"] .youtube-link i {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+[data-project="revit-tools"] .demo-lightbox {
+  margin: 0.5rem 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
 [data-project="revit-tools"] .back-link-fixed {
   bottom: 10px;
   left: 10px;
@@ -590,6 +615,11 @@ body {
   max-width: 100%;
 }
 
+[data-project="revit-tools"] .lightbox-overlay {
+  overscroll-behavior: none;
+  padding: 1rem;
+}
+
 [data-project="revit-tools"] .tool-overview-card {
   padding: 1.25rem 1rem;
 }
@@ -612,7 +642,11 @@ body {
 }
 
 
-/* 💻 Tablet Styles: 481px – 899px */
+
+
+
+
+
 @media screen and (min-width: 481px) and (max-width: 899px) {
   [data-project="revit-tools"] .logo {
     width: 50px;
@@ -672,7 +706,17 @@ body {
 }
 
 
-/* 🖥️ Desktop Styles: 900px and up */
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 900px) {
   [data-project="revit-tools"] .logo {
     width: 60px;
@@ -764,7 +808,6 @@ body {
     font-size: 0.85rem;
   }
 }
-
 
 
 

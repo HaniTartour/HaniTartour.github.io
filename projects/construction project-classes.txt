@@ -1,0 +1,35 @@
+.site-header
+.branding-inline
+.logo
+.branding-text
+.project-container
+.construction-header
+.location
+.role
+.trusted-by-bar
+.logo-strip
+.logo-strip img
+.summary
+.screenshots-carousel
+.carousel-wrapper
+.carousel-image
+.carousel-btn
+.pdf-carousel-wrapper
+.pdf-wrapper
+.pdf-frame
+.pdf-overlay
+.upgrade-tips
+.back-link-fixed
+.lightbox-overlay
+.lightbox-content
+.lightbox-nav
+.lightbox-nav button
+.lightbox-close
+.lightbox-caption
+.pdf-lightbox-frame
+footer
+.social-links
+.linkedin-link
+.github-link
+.youtube-link
+.footer-credit

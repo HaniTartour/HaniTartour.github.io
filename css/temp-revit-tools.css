@@ -267,8 +267,12 @@ body {
 
 /* 13. Social links section in footer */
 [data-project="revit-tools"] .social-links {
-  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* ⬅️ Control horizontal spacing here */
+  flex-wrap: wrap;
 }
+
 
 
 [data-project="revit-tools"] .linkedin-link i { color: #0077b5; }
@@ -491,7 +495,7 @@ body {
 
 
 /*-------📱 Responsive Tweaks-----*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   [data-project="revit-tools"] .project-header {
     flex-direction: column;
     align-items: flex-start;
@@ -520,5 +524,12 @@ body {
     margin: 0; /* override original margin for stacked layout */
   }
 
-}
 
+  [data-project="revit-tools"] .social-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+
+}

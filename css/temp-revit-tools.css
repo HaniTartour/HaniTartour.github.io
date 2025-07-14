@@ -114,7 +114,7 @@ body {
 
 
 [data-project="revit-tools"] .project-header h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #000;
   margin-bottom: 0.5rem;
   white-space: nowrap;           /* 👈 Don't break to a new line */

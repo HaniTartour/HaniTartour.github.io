@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Pick One Object | Hani Tartour</title>
+	<meta name="description" content="Pick One Object is a pyRevit tool by Hani Tartour that allows you to select any element in Revit and display its info using a branded Windows Form.">
+	<meta name="keywords" content="Revit, pyRevit, BIM, Pick Object, Hani Tartour, BIMBuddy, Revit API, Element Info"/>
+	<meta name="author" content="Hani M. Tartour"/>
+
+<!-- Social Sharing -->
+  <meta property="og:title" content="Pick One Object – pyRevit Tool by Hani Tartour" />
+  <meta property="og:description" content="Select a Revit element and view its ID, Name, Category, and Level with a branded UI." />
+  <meta property="og:url" content="https://hanitartour.github.io/projects/pick-object.html" />
+  <meta property="og:image" content="https://hanitartour.github.io/projects/images/pick-object-demo.png" />
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/projects.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
+  
+  <!-- Favicons for all devices -->
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+</head>
+
+
+
+<body>
+
+<!-- 📌 add brading logo&page header -->
+<header class="site-header" style="text-align: center;">
+  <div class="branding-inline">
+    <img src="../assets/bimbuddy-logo.png" alt="BIMBuddy Logo" class="logo" />
+    <div class="branding-text">
+      <h1><i class="fa-solid fa-code"></i> Revit Development Tools by Hani Tartour</h1>
+      <p>Smart tools to accelerate BIM workflows using Revit, Python, and pyRevit.</p>
+      <p>Automation • Dynamo • Python • Revit API • BIM Innovation</p>
+    </div>
+  </div>
+</header>
+
+
+<main class="project-container" role="main">
+
+  <!-- 📌 Project Header -->
+  <div class="project-header">
+    <h1>
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/search-property.png"
+           alt="Pick Icon" style="vertical-align: middle; margin-right: 10px;" />
+      Pick One Object (pyRevit Tool)
+    </h1>
+    <p class="project-meta">v1.0.0 · Last updated: July 2025</p>
+    <p class="project-meta">Select a Revit element and instantly view its properties in a modern Windows Form.</p>
+
+    <button id="shareAndCopyBtn"
+            class="share-linkedin"
+            title="Share on LinkedIn & Copy Link"
+            role="button"
+            aria-label="Share this page on LinkedIn">
+      <i class="fa-brands fa-linkedin" style="margin-right: 6px;"></i> Share
+    </button>
+  </div>
+
+  <!-- 📌 Tool Overview -->
+  <section class="tool-overview-card">
+    <p><strong>Summary:</strong> Pick One Object is a quick-access pyRevit utility that lets users click any element in Revit and view its details in a sleek BIMBuddy-branded UI. A powerful micro-tool perfect for debugging or understanding object data on the fly.</p>
+
+    <h3>Key Features:</h3>
+    <ul>
+      <li>🖱️ Pick a single element directly from the model</li>
+      <li>🔎 Displays Element ID, Name, Category, and Level</li>
+      <li>🪞 Clean Windows Form with BIMBuddy styling</li>
+      <li>📋 Easily copy information for documentation or reports</li>
+    </ul>
+
+    <div class="download-buttons">
+      <a href="../projects/docs/rename-views-plus-instructions_guide.md" download>
+        <i class="fa-solid fa-file-pdf"></i> Instructions Guide
+      </a>
+      <a href="https://github.com/HaniTartour/HT-Toolbox/tree/main/pyRevit/HT-ToolBoxExtension/HT.extension/HT_pyTools.tab/Dev.panel/05RenameViewsPlus.pushbutton"
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <h3>Technology Stack:</h3>
+    <ul>
+      <li>Python + Revit API</li>
+      <li>pyRevit</li>
+      <li>Windows Forms UI</li>
+      <li>Branded with BIMBuddy style</li>
+    </ul>
+  </section>
+
+  <!-- 📸 Screenshots -->
+  <section>
+    <h3>Tool Interface Previews:</h3>
+    <div class="screenshot-grid">
+      <!-- Repeat pattern for screenshots -->
+      <a class="demo-lightbox" data-img="../projects/images/pick-one-object01.png" data-caption="Main Window">
+        <img src="../projects/images/pick-one-object01.png" alt="Rename Main Window" />
+      </a>
+      <a class="demo-lightbox" data-img="../projects/images/pick-one-object02.png" data-caption="Select Views">
+        <img src="../projects/images/pick-one-object02.png" alt="Select Views" />
+      </a>
+      <a class="demo-lightbox" data-img="../projects/images/pick-one-object03.png" data-caption="Select Views">
+        <img src="../projects/images/pick-one-object03.png" alt="Select Views" />
+      </a>
+      <a class="demo-lightbox" data-img="../projects/images/pick-one-object04.png" data-caption="Select Views">
+        <img src="../projects/images/pick-one-object04.png" alt="Select Views" />
+      </a>
+      <a class="demo-lightbox" data-img="../projects/images/pick-one-object05.png" data-caption="Select Views">
+        <img src="../projects/images/pick-one-object05.png" alt="Select Views" />
+      </a>
+      <a class="demo-lightbox" data-img="../projects/images/pick-one-object06.png" data-caption="Select Views">
+        <img src="../projects/images/pick-one-object06.png" alt="Select Views" />
+      </a>
+      <!-- ... Add remaining images as you did -->
+    </div>
+  </section>
+
+  <!-- 🔙 Fixed Back Button -->
+  <a href="../projects.html" class="back-link-fixed" aria-label="Back to Projects page">
+    <i class="fa-solid fa-arrow-left"></i> Back to Projects
+  </a>
+
+</main>
+
+
+
+<footer>
+  <p>Connect with me:</p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/hanimtartour" class="linkedin-link" target="_blank" aria-label="Visit my LinkedIn profile">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/HaniTartour" class="github-link" target="_blank" aria-label="Visit my GitHub">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://www.youtube.com/@HaniMTARTOUR" class="youtube-link" target="_blank" aria-label="Visit my YouTube channel">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+  </div>
+  <p class="footer-credit">Built with 💙 by Hani Tartour – 2025</p>
+</footer>
+
+
+ 
+<!-- 🔍 Lightbox Gallery Overlay -->
+<div id="lightboxOverlay" class="lightbox-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+
+  <div class="lightbox-content">
+    <!-- ❌ Close Button -->
+    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">
+      &times;
+    </button>
+
+    <!-- 🖼️ Displayed Image -->
+    <img id="lightboxImage" src="" alt="Screenshot preview" />
+
+    <!-- 📝 Caption (screen reader accessible) -->
+    <p id="lightboxCaption" class="lightbox-caption" aria-live="polite"></p>
+
+    <!-- ↔️ Navigation Buttons -->
+    <div class="lightbox-nav" aria-label="Lightbox navigation controls">
+      <button id="lightboxPrev" type="button" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button id="lightboxNext" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // === Lightbox Setup ===
+  const lightboxLinks = document.querySelectorAll(".demo-lightbox");
+  const overlay = document.getElementById("lightboxOverlay");
+  const image = document.getElementById("lightboxImage");
+  const caption = document.getElementById("lightboxCaption");
+  const closeBtn = document.getElementById("lightboxClose");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+
+  let currentIndex = 0;
+  const images = Array.from(lightboxLinks);
+
+  function showImage(index) {
+    const img = images[index];
+    image.src = img.dataset.img;
+    const captionText = img.dataset.caption || '';
+    caption.textContent = `${index + 1} / ${images.length} — ${captionText}`;
+    overlay.classList.remove("hidden");
+  }
+
+  images.forEach((link, index) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex = index;
+      showImage(currentIndex);
+    });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => overlay.classList.add("hidden"));
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) overlay.classList.add("hidden");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") overlay.classList.add("hidden");
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+
+  // === Share & Copy Button ===
+  const shareBtn = document.getElementById("shareAndCopyBtn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+      const pageUrl = window.location.href;
+      const shareText = "Check out Rename Views+: https://hanitartour.github.io/projects/rename-views.html";
+
+      if (navigator.share) {
+        navigator.share({
+          title: "Rename Views+ – pyRevit Tool for Revit View Automation",
+          text: "Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.",
+          url: pageUrl
+        }).catch(err => {
+          console.warn("Native share failed, falling back:", err);
+        });
+      } else {
+        navigator.clipboard.writeText(shareText).then(() => {
+          alert("✅ Link copied!\nYou’re now sharing on LinkedIn...");
+
+          const shareUrl = "https://www.linkedin.com/shareArticle?mini=true"
+            + "&url=" + encodeURIComponent(pageUrl)
+            + "&title=" + encodeURIComponent("Rename Views+ – pyRevit Tool for Revit View Automation")
+            + "&summary=" + encodeURIComponent("Check out Rename Views+, a powerful pyRevit tool to batch rename Revit views with live preview, filters & a branded UI.")
+            + "&source=hanitartour.github.io";
+
+          window.open(shareUrl, "_blank", "noopener,noreferrer");
+        }).catch(err => {
+          alert("❌ Failed to copy the link.");
+          console.error("Clipboard error:", err);
+        });
+      }
+    });
+  }
+
+  // === Last Updated Console Log (optional dev aid) ===
+  const lastUpdated = new Date(document.lastModified);
+  console.log("📅 Last updated:", lastUpdated.toDateString());
+});
+</script>
+ 
+  
+</body>
+
+</html>

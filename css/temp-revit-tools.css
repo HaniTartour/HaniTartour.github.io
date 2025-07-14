@@ -584,7 +584,7 @@ body {
 
   [data-project="revit-tools"] .social-links {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-center;
     gap: 1.2rem;
   }
 

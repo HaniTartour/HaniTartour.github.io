@@ -449,6 +449,70 @@
 
 
 
+/* ========================================================
+🧩 CONSTRUCTION.CSS – Missing Styles Add-on Block
+(Completes minor gaps found in audit)
+======================================================== */
+
+/* ✅ Style for project meta paragraphs inside construction header */
+[data-project="construction"] .project-meta {
+  font-size: 0.95rem;
+  color: #777;
+  margin: 0.4rem 0;
+}
+
+
+/* ✅ Wrapper header for PDF section (like screenshot carousel heading) */
+[data-project="construction"] .shop-drawings-carousel h2 {
+  font-size: 1.3rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/* ✅ Optional image hover zoom for screenshots (matches Revit Tools) */
+[data-project="construction"] .carousel-image:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+
+/* ✅ Optional styling if demo-lightbox anchor wrappers used (same as Revit Tools) */
+[data-project="construction"] .demo-lightbox {
+  cursor: zoom-in;
+  display: inline-block;
+}
+
+
+/* ✅ Lightbox iframe (PDF view) - fallback style */
+[data-project="construction"] .lightbox-content iframe.pdf-lightbox-frame {
+  width: 90vw;
+  height: 90vh;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ✅ Optional global section divider (if using multiple <section>) */
+[data-project="construction"] section:not(:first-of-type)::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+
+
+
+
+
+
 /* ============================================================
 📱 CONSTRUCTION — Responsive Layout Adjustments
 ============================================================ */
@@ -484,5 +548,25 @@
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
   }
+  
+  [data-project="construction"] .logo-strip {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  [data-project="construction"] .shop-drawings-carousel h2,
+  [data-project="construction"] .screenshots-carousel h2 {
+    font-size: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  [data-project="construction"] .lightbox-content iframe.pdf-lightbox-frame {
+    width: 100%;
+    height: 85vh;
+  }
+  
+  
+  
 }
 

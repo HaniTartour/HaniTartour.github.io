@@ -192,13 +192,14 @@ body {
 }
 
 [data-project="revit-tools"] .logo-strip img {
-  height: 50px;
-  max-width: 100px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease-in-out;
+  height: 50px;                    /* Set a fixed height for all logos for consistency */
+  max-width: 100px;                /* Prevent logos from stretching too wide */
+  object-fit: contain;             /* Maintain aspect ratio without cropping */
+  filter: grayscale(0%);         /* Apply full grayscale to logos (for subtle branding) */
+  opacity: 0.7;                    /* Slightly faded appearance to reduce visual noise */
+  transition: all 0.3s ease-in-out;/* Smooth transition for hover effects (e.g., opacity, scale) */
 }
+
 
 [data-project="revit-tools"] .logo-strip img:hover {
   filter: none;

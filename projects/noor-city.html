@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Belle Vie Compound | Hani Tartour</title>
 
+	<meta name="description" content="Belle Vie Compound BIM project by Hani Tartour — Structural BIM Lead, featuring shop drawings, Revit screenshots, and coordination tools.">
+	<meta name="author" content="Hani Tartour">
+
   <!-- Styles -->
 
   <link rel="stylesheet" href="../css/projects.css" />
@@ -16,11 +19,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 
+<!-- PDF.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.8.162/pdf.min.js"></script>
+
 </head>
 
 
 
-<body>
+<body data-project="construction">
 
 <!-- 📌 CONSTRCUTION PAGE brading logo&page header -->
 <header class="site-header" style="text-align: center;">
@@ -41,7 +47,7 @@
   <!-- 📌 Project  and data -->
   <div class="construction-header">
   
-    <h1><i class="fa-solid fa-building-user"></i> Belle Vie Compound</h1>
+    <h2><i class="fa-solid fa-building-user"></i> Belle Vie Compound</h2>
     <p class="location">🏙️ Egypt , New Zayed – Emaar Misr</p>
     <p class="role">👷‍♂️ Section Head & BIM Lead | Atrium</p>
 
@@ -51,14 +57,15 @@
 	  <div class="logo-strip">
 		<img src="../assets/images/logos/belle-vie.png" alt="belle-vie Logo" />
 		<img src="../assets/images/logos/emaar-misr-logo.png" alt="Emaar Logo" />
-		<img src="../assets/images/logos/atriumeg-logo.png" alt="Atrium Logo" />
+		<img src="../assets/images/logos/atriumeg-logo-h50.png" alt="Atrium Logo" />
 		<img src="../assets/images/logos/ace-logo.png" alt="ACE Logo" />
 	  </div>
 	</div>
 	
   </div>
+<!--*********************************************************************************************-->
 
-
+<!--*********************************************************************************************-->
     <!-- ✅ project Summary -->
     <section class="summary">
       <h2>📋 Project Summary</h2>
@@ -68,50 +75,106 @@
         Our team implemented Dynamo-powered automation to accelerate shop drawings and rebar modeling processes.
       </p>
     </section>
+<!--*********************************************************************************************-->
 
-	<!-- 🖼 Revit Screenshots -->
-	<section class="screenshots">
+<!--*********************************************************************************************-->
+<!-- 🖼 Revit Screenshots Carousel -->
+	<section class="screenshots-carousel">
 	  <h2>
-		<img src="../assets/logos/revit-logo.png" alt="Revit Logo" class="revit-logo-icon" />
-		Revit Screenshots
+		<img src="../assets/logos/revit-logo.png" alt="Revit Logo" style="height: 50px; vertical-align: middle;" />
+		<span style="margin-left: 8px;">Revit Screenshots</span>
 	  </h2>
-	  <div class="screenshot-grid">
-		<img src="../assets/screenshots/belle-vie-01.jpg" alt="Villa Model View" />
-		<img src="../assets/screenshots/belle-vie-02.jpg" alt="Structural Coordination" />
-		<!-- Add more screenshots as needed -->
+
+	  <div class="carousel-wrapper">
+		
+<!-- 👇 Images (only one is visible at a time) -->
+		
+		  <img src="../projects/screenshots/belle-vie/rvt/01.jpg" alt="View 01" class="carousel-image active" data-index="0" />
+		  <img src="../projects/screenshots/belle-vie/rvt/02.jpg" alt="View 02" class="carousel-image" data-index="1" />
+
+		  <!-- Add more images here -->
+<!--*********************************************************************************************-->
+
+<!--*********************************************************************************************-->
+<!-- 👇 Navigation Buttons -->
+		  <button id="prevBtn" class="carousel-btn left">&#10094;</button>
+		  <button id="nextBtn" class="carousel-btn right">&#10095;</button>
 	  </div>
 	</section>
 
-    <!-- 📄 Shop Drawings -->
-    <section class="pdf-sheets">
-      <h2>📄 PDF Shop Drawings</h2>
-      <ul>
-        <li><a href="../assets/pdfs/belle-vie-villa1-foundation.pdf" target="_blank">Villa Type 1 – Foundation Plan</a></li>
-        <li><a href="../assets/pdfs/belle-vie-infra-typical-section.pdf" target="_blank">Infra Package – Typical Section</a></li>
-        <!-- Add more if needed -->
-      </ul>
-    </section>
+<!--*********************************************************************************************-->
 
+
+
+
+<!-- ================================================================================= -->
+<!-- 🧾 Shop Drawing Carousel -->
+<section class="shop-drawings-carousel">
+  <h2>
+    <img width="50" height="50" src="https://img.icons8.com/pulsar-gradient/50/pdf-2.png" alt="pdf-2" style="vertical-align: middle; margin-right: 8px;" />
+    <span style="margin-left: 8px;">PDF Shop Drawings</span>
+  </h2>
+
+<div class="carousel-wrapper pdf-carousel-wrapper">
+    <!-- ✅ Only the active one is visible -->
+	
+<div class="pdf-wrapper active" data-index="0">
+    <iframe src="../projects/pdfs/belle-vie/01.pdf" 
+			class="pdf-frame" 
+			frameborder="0" 
+			loading="lazy"> 
+	</iframe>
+	<div class="pdf-overlay" title="Click to enlarge PDF"></div>
+</div>
+	
+<div class="pdf-wrapper" data-index="1">
+    <iframe src="../projects/pdfs/belle-vie/02.pdf" 
+			class="pdf-frame" 
+			frameborder="0"
+			loading="lazy"> 
+	</iframe>
+	<div class="pdf-overlay" title="Click to enlarge PDF"></div>
+</div>
+	
+<div class="pdf-wrapper" data-index="2">
+    <iframe src="../projects/pdfs/belle-vie/03.pdf" 
+			class="pdf-frame" 
+			frameborder="0"
+			loading="lazy"> 
+	</iframe>
+		<div class="pdf-overlay" title="Click to enlarge PDF"></div>
+</div>
+
+
+    <!-- Carousel Controls -->
+    <button id="pdfPrevBtn" class="carousel-btn left">&#10094;</button>
+    <button id="pdfNextBtn" class="carousel-btn right">&#10095;</button>
+  </div>
+</section>
+<!-- ================================================================================= -->
+
+
+<!--*********************************************************************************************-->
     <!-- 💡 Advice / Recommendations -->
     <section class="upgrade-tips">
-      <h2>💡 Recommendations for Upgrades</h2>
+      <h2>💡 Future Updates (optional)</h2>
       <ul>
-        <li>Use Navisworks SwitchBack to accelerate structural review cycles.</li>
-        <li>Automate IFC export using Revit task scheduler.</li>
-        <li>Introduce Power BI dashboards for RFI and issue tracking.</li>
+        <li>to be added later.</li>
       </ul>
     </section>
+<!--*********************************************************************************************-->
 
-
+<!--*********************************************************************************************-->
   <!-- 🔙 Fixed Back Button -->
   <a href="../projects.html" class="back-link-fixed" aria-label="Back to Projects page">
     <i class="fa-solid fa-arrow-left"></i> Back to Projects
   </a>
+<!--*********************************************************************************************-->
 
 </main>
 
 
-
+<!--*********************************************************************************************-->
 <footer>
   <p>Connect with me:</p>
   <div class="social-links">
@@ -127,99 +190,173 @@
   </div>
   <p class="footer-credit">Built with 💙 by Hani Tartour – 2025</p>
 </footer>
+<!--*********************************************************************************************-->
 
-
- 
+<!--*********************************************************************************************--> 
 <!-- 🔍 Lightbox Gallery Overlay -->
-<div id="lightboxOverlay" class="lightbox-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
-
+<div id="lightboxOverlay" class="lightbox-overlay hidden">
   <div class="lightbox-content">
-    <!-- ❌ Close Button -->
-    <button id="lightboxClose" class="lightbox-close" aria-label="Close lightbox">
-      &times;
-    </button>
-
-    <!-- 🖼️ Displayed Image -->
-    <img id="lightboxImage" src="" alt="Screenshot preview" />
-
-    <!-- 📝 Caption (screen reader accessible) -->
-    <p id="lightboxCaption" class="lightbox-caption" aria-live="polite"></p>
-
-    <!-- ↔️ Navigation Buttons -->
-    <div class="lightbox-nav" aria-label="Lightbox navigation controls">
-      <button id="lightboxPrev" type="button" aria-label="Previous image">
-        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-      </button>
-      <button id="lightboxNext" aria-label="Next image">
-        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-      </button>
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img id="lightboxImage" src="" alt="Zoomed Screenshot" />
+    <p id="lightboxCaption" class="lightbox-caption"></p>
+    <div class="lightbox-nav">
+      <button id="lightboxPrev" aria-label="Previous">&#10094;</button>
+      <button id="lightboxNext" aria-label="Next">&#10095;</button>
     </div>
   </div>
 </div>
+<!--*********************************************************************************************-->
+
+<!--*********************************************************************************************-->
+<!-- 📄 PDF Lightbox Viewer -->
+<div id="pdfLightbox" class="lightbox-overlay hidden">
+  <div class="lightbox-content">
+    <span class="lightbox-close" id="pdfLightboxClose">&times;</span>
+	<iframe id="pdfLightboxFrame" class="pdf-lightbox-frame" src="" frameborder="0" loading="lazy"></iframe>
+
+  </div>
+</div>
+<!--*********************************************************************************************-->
 
 
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // === Lightbox Setup ===
-  const lightboxLinks = document.querySelectorAll(".demo-lightbox");
-  const overlay = document.getElementById("lightboxOverlay");
-  const image = document.getElementById("lightboxImage");
-  const caption = document.getElementById("lightboxCaption");
-  const closeBtn = document.getElementById("lightboxClose");
-  const prevBtn = document.getElementById("lightboxPrev");
-  const nextBtn = document.getElementById("lightboxNext");
+  // ========================
+  // 🎡 Revit Image Carousel
+  // ========================
+  const carouselImages = document.querySelectorAll(".carousel-image");
+  const rvtPrevBtn = document.getElementById("prevBtn");
+  const rvtNextBtn = document.getElementById("nextBtn");
+  let currentImageIndex = 0;
 
-  let currentIndex = 0;
-  const images = Array.from(lightboxLinks);
-
-  function showImage(index) {
-    const img = images[index];
-    image.src = img.dataset.img;
-    const captionText = img.dataset.caption || '';
-    caption.textContent = `${index + 1} / ${images.length} — ${captionText}`;
-    overlay.classList.remove("hidden");
+  function showCarouselImage(index) {
+    carouselImages.forEach((img, i) => {
+      img.classList.toggle("active", i === index);
+    });
   }
 
-  images.forEach((link, index) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      currentIndex = index;
-      showImage(currentIndex);
-    });
+  rvtPrevBtn?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+    showCarouselImage(currentImageIndex);
   });
 
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+  rvtNextBtn?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+    showCarouselImage(currentImageIndex);
   });
 
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+  showCarouselImage(currentImageIndex);  // Initialize view
+
+
+  // ========================
+  // 🔍 Lightbox for Images
+  // ========================
+  const overlay = document.getElementById("lightboxOverlay");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxPrev = document.getElementById("lightboxPrev");
+  const lightboxNext = document.getElementById("lightboxNext");
+
+  function openLightbox(index) {
+    const img = carouselImages[index];
+    if (!img) return;
+    lightboxImage.src = img.src;
+    lightboxCaption.textContent = img.alt || `Image ${index + 1}`;
+    overlay.classList.remove("hidden");
+    currentImageIndex = index;
+  }
+
+  carouselImages.forEach((img, i) => {
+    img.addEventListener("click", () => openLightbox(i));
   });
 
-  closeBtn.addEventListener("click", () => overlay.classList.add("hidden"));
+  lightboxClose?.addEventListener("click", () => overlay.classList.add("hidden"));
 
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) overlay.classList.add("hidden");
+  lightboxPrev?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+    openLightbox(currentImageIndex);
+  });
+
+  lightboxNext?.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+    openLightbox(currentImageIndex);
   });
 
   document.addEventListener("keydown", (e) => {
+    if (overlay.classList.contains("hidden")) return;
     if (e.key === "Escape") overlay.classList.add("hidden");
-    if (e.key === "ArrowRight") nextBtn.click();
-    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "ArrowRight") lightboxNext?.click();
+    if (e.key === "ArrowLeft") lightboxPrev?.click();
   });
 
 
+  // ========================
+  // 🧾 PDF Carousel Section
+  // ========================
+  const pdfWrappers = document.querySelectorAll(".pdf-wrapper");
+  const pdfPrevBtn = document.getElementById("pdfPrevBtn");
+  const pdfNextBtn = document.getElementById("pdfNextBtn");
+  let currentPDFIndex = 0;
 
-  // === Last Updated Console Log (optional dev aid) ===
+  function showPDF(index) {
+    pdfWrappers.forEach((wrapper, i) => {
+      wrapper.classList.toggle("active", i === index);
+    });
+  }
+
+  pdfPrevBtn?.addEventListener("click", () => {
+    currentPDFIndex = (currentPDFIndex - 1 + pdfWrappers.length) % pdfWrappers.length;
+    showPDF(currentPDFIndex);
+  });
+
+  pdfNextBtn?.addEventListener("click", () => {
+    currentPDFIndex = (currentPDFIndex + 1) % pdfWrappers.length;
+    showPDF(currentPDFIndex);
+  });
+
+  showPDF(currentPDFIndex); // Initialize first PDF
+
+
+  // ========================
+  // 🔍 PDF Lightbox Viewer
+  // ========================
+  const pdfLightbox = document.getElementById("pdfLightbox");
+  const pdfLightboxFrame = document.getElementById("pdfLightboxFrame");
+  const pdfLightboxClose = document.getElementById("pdfLightboxClose");
+
+  // Overlay trigger logic
+  document.querySelectorAll(".pdf-overlay").forEach((overlayDiv) => {
+    overlayDiv.addEventListener("click", () => {
+      const wrapper = overlayDiv.parentElement;
+      const iframe = wrapper.querySelector(".pdf-frame");
+      if (!wrapper.classList.contains("active")) return;
+      pdfLightboxFrame.src = iframe.src;
+      pdfLightbox.classList.remove("hidden");
+    });
+  });
+
+  // Close logic
+  pdfLightboxClose?.addEventListener("click", () => {
+    pdfLightbox.classList.add("hidden");
+    pdfLightboxFrame.src = ""; // Unload PDF to free memory
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") pdfLightbox.classList.add("hidden");
+  });
+
+
+  // ========================
+  // 🛠 Dev Console Aid
+  // ========================
   const lastUpdated = new Date(document.lastModified);
   console.log("📅 Last updated:", lastUpdated.toDateString());
 });
 </script>
- 
-  
-</body>
 
+ 
+ 
+</body>
 </html>

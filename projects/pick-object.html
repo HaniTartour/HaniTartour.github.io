@@ -17,7 +17,7 @@
 
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../css/projects.css" />
+  <link rel="stylesheet" href="../css/temp-revit-tools.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
   
   <!-- Favicons for all devices -->
@@ -29,7 +29,8 @@
 
 
 
-<body>
+<body data-project="revit-tools">
+
 
 <!-- 📌 add brading logo&page header -->
 <header class="site-header" style="text-align: center;">
@@ -48,6 +49,9 @@
 
   <!-- 📌 Project Header -->
   <div class="project-header">
+  
+<!-- Title + Description (Left Column) -->
+  <div class="header-text">
     <h1>
       <img width="50" height="50" src="https://img.icons8.com/ios/50/search-property.png"
            alt="Pick Icon" style="vertical-align: middle; margin-right: 10px;" />
@@ -55,6 +59,7 @@
     </h1>
     <p class="project-meta">v1.0.0 · Last updated: July 2025</p>
     <p class="project-meta">Select a Revit element and instantly view its properties in a modern Windows Form.</p>
+  </div>
 
     <button id="shareAndCopyBtn"
             class="share-linkedin"
@@ -63,6 +68,19 @@
             aria-label="Share this page on LinkedIn">
       <i class="fa-brands fa-linkedin" style="margin-right: 6px;"></i> Share
     </button>
+	
+	
+  <!-- 🤝 Trusted By Logos (Full Width Below Header) -->
+  <div class="trusted-by-bar">
+	<p>Frameworks & Tools Behind This:</p>
+    <div class="logo-strip">
+      <img src="../assets/logos/python-logo-h50.png" alt="Python Logo" />
+      <img src="../assets/logos/revit-h50.png" alt="Revit Logo" />
+      <img src="../assets/logos/pyrevit-logo-h50.png" alt="pyRevit Logo" />
+      <img src="../assets/logos/dynamo-h50.png" alt="Dynamo Logo" />
+      <img src="../assets/logos/Revit-API-h50.png" alt="Dynamo Logo" />
+    </div>
+  </div>
   </div>
 
   <!-- 📌 Tool Overview -->

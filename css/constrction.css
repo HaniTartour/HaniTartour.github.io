@@ -50,3 +50,439 @@
   font-size: 1rem;
   color: #ccc;
 }
+
+
+/* ============================================================
+🏗️ CONSTRUCTION PROJECT — CORE CONTAINER & HEADER SECTIONS
+============================================================ */
+
+/* 1️⃣ Main content wrapper (white box with orange stripe) */
+[data-project="construction"] .project-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #ff6600;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+
+/* 2️⃣ Optional fallback project-header (if used outside .construction-header) */
+[data-project="construction"] .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+[data-project="construction"] .project-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ff6600;
+}
+
+[data-project="construction"] .project-meta {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* 3️⃣ Construction Header (project name, location, role) */
+[data-project="construction"] .construction-header {
+  background: #f0f0f0;
+  padding: 2rem;
+  text-align: left;
+  border-bottom: 3px solid #ff6600;
+  color: #000;
+}
+
+[data-project="construction"] .construction-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #000;
+}
+
+[data-project="construction"] .construction-header h2 i {
+  color: #ff6600;
+  margin-right: 0.4rem;
+}
+
+[data-project="construction"] .construction-header p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+}
+
+
+/* 4️⃣ Trusted By bar — construction companies & consultants */
+[data-project="construction"] .trusted-by-bar {
+  background-color: #f3f3f3;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+[data-project="construction"] .trusted-by-bar p {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  color: #444;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+[data-project="construction"] .logo-strip {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+[data-project="construction"] .logo-strip img {
+  height: 50px;
+  max-width: 100px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+[data-project="construction"] .logo-strip img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ============================================================
+📋 CONSTRUCTION — Summary Section (project overview text)
+============================================================ */
+[data-project="construction"] .summary {
+  margin-top: 2rem;
+}
+
+[data-project="construction"] .summary h2 {
+  font-size: 1.3rem;
+  color: #ff6600;
+  margin-bottom: 0.8rem;
+}
+
+[data-project="construction"] .summary p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+/* ============================================================
+🖼️ CONSTRUCTION — Screenshot Carousel or Grid
+============================================================ */
+[data-project="construction"] .screenshots-carousel h2 {
+  font-size: 1.3rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-project="construction"] .carousel-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+[data-project="construction"] .carousel-image {
+  display: none;
+  width: 100%;
+  border-radius: 6px;
+}
+
+[data-project="construction"] .carousel-image.active {
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Arrows for screenshots */
+[data-project="construction"] .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+[data-project="construction"] .carousel-btn:hover {
+  background-color: #ff6600;
+  transform: scale(1.05);
+}
+
+[data-project="construction"] .carousel-btn.left {
+  left: 10px;
+}
+
+[data-project="construction"] .carousel-btn.right {
+  right: 10px;
+}
+
+
+/* ============================================================
+📄 CONSTRUCTION — PDF Shop Drawings Viewer
+============================================================ */
+[data-project="construction"] .shop-drawings-carousel h2 {
+  font-size: 1.3rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-project="construction"] .pdf-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 1rem;
+  background: #f2f2f2;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-project="construction"] .pdf-wrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+[data-project="construction"] .pdf-wrapper.active {
+  display: block;
+}
+
+[data-project="construction"] .pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+[data-project="construction"] .pdf-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  background: rgba(0, 0, 0, 0); /* Invisible, clickable layer */
+  z-index: 10;
+}
+
+/* PDF arrows */
+[data-project="construction"] .pdf-carousel-wrapper .carousel-btn {
+  top: 50%;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+[data-project="construction"] .pdf-carousel-wrapper .carousel-btn:hover {
+  background-color: #ff6600;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ============================================================
+🔍 CONSTRUCTION — Lightbox for Zoomed Screenshots & PDFs
+============================================================ */
+[data-project="construction"] .lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+[data-project="construction"] .lightbox-overlay.hidden {
+  display: none;
+}
+
+[data-project="construction"] .lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+}
+
+[data-project="construction"] .lightbox-content img,
+[data-project="construction"] .pdf-lightbox-frame {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-project="construction"] .lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+[data-project="construction"] .lightbox-caption {
+  margin-top: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+
+[data-project="construction"] .lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10000;
+}
+
+[data-project="construction"] .lightbox-nav button {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+[data-project="construction"] .lightbox-nav button:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+/* ============================================================
+🔙 CONSTRUCTION — Floating Back to Projects Button
+============================================================ */
+[data-project="construction"] .back-link-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff6600;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+[data-project="construction"] .back-link-fixed:hover {
+  background-color: #cc5200;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+🔗 CONSTRUCTION — Footer Styles & Social Icons
+============================================================ */
+[data-project="construction"] footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+[data-project="construction"] .footer-credit {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+[data-project="construction"] .social-links {
+  margin: 1rem 0;
+}
+
+[data-project="construction"] .social-links a {
+  margin: 0 0.8rem;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+[data-project="construction"] .social-links a:hover {
+  color: #005fa3;
+}
+
+[data-project="construction"] .social-links a i {
+  transition: transform 0.2s ease;
+}
+
+[data-project="construction"] .social-links a:hover i {
+  transform: scale(1.2);
+}
+
+[data-project="construction"] .linkedin-link i { color: #0077b5; }
+[data-project="construction"] .github-link i   { color: #000000; }
+[data-project="construction"] .youtube-link i  { color: #cc0000; }
+
+
+
+/* ============================================================
+📱 CONSTRUCTION — Responsive Layout Adjustments
+============================================================ */
+@media screen and (max-width: 768px) {
+  [data-project="construction"] .branding-inline {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  [data-project="construction"] .carousel-btn,
+  [data-project="construction"] .pdf-carousel-wrapper .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  [data-project="construction"] .pdf-wrapper {
+    height: 450px;
+  }
+
+  [data-project="construction"] .logo-strip img {
+    height: 40px;
+    max-width: 80px;
+  }
+
+  [data-project="construction"] .social-links a {
+    display: block;
+    margin: 0.6rem 0;
+  }
+
+  [data-project="construction"] .back-link-fixed {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+

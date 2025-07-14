@@ -117,7 +117,12 @@ body {
   font-size: 1.8rem;
   color: #000;
   margin-bottom: 0.5rem;
+  white-space: nowrap;           /* 👈 Don't break to a new line */
+  overflow: hidden;              /* Optional: hide overflow if it's too long */
+  text-overflow: ellipsis;       /* Optional: adds "..." if overflow is hidden */
 }
+
+
 
 [data-project="revit-tools"] .project-header p {
   font-size: 1rem;
@@ -130,7 +135,6 @@ body {
   color: #ff6600;
   margin-right: 0.4rem;
 }
-
 
 
 /* 7. Meta info below header */

@@ -121,6 +121,16 @@
 }
 
 
+[data-project="construction"] .location,
+[data-project="construction"] .role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin: 0.2rem 0;
+}
+
+
+
 /* 4️⃣ Trusted By bar — construction companies & consultants */
 [data-project="construction"] .trusted-by-bar {
   background-color: #f3f3f3;
@@ -178,6 +188,41 @@
   line-height: 1.6;
   color: #444;
 }
+
+
+[data-project="construction"] .upgrade-tips {
+  margin-top: 3rem;
+  background: #fdfdfd;
+  border-left: 4px solid #ff6600;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+[data-project="construction"] .upgrade-tips h2 {
+  color: #ff6600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+[data-project="construction"] .upgrade-tips ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+[data-project="construction"] .upgrade-tips li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+
+
+
+
+
+
+
 
 
 /* ============================================================

@@ -196,7 +196,7 @@ body {
   max-width: 100px;                /* Prevent logos from stretching too wide */
   object-fit: contain;             /* Maintain aspect ratio without cropping */
   filter: grayscale(0%);         /* Apply full grayscale to logos (for subtle branding) */
-  opacity: 0.7;                    /* Slightly faded appearance to reduce visual noise */
+  opacity: 1;                    /* Slightly faded appearance to reduce visual noise */
   transition: all 0.3s ease-in-out;/* Smooth transition for hover effects (e.g., opacity, scale) */
 }
 

@@ -1,72 +1,52 @@
-/* ========================================================
-🏗️ CONSTRUCTION PROJECT STYLES (Scoped via body[data-project="construction"])
-======================================================== */
+/* ================================================
+🚧 CONSTRUCTION PROJECT — HEADER & BRANDING SECTION
+================================================= */
 
-/* Override the back button position/behavior for construction projects */
-[data-project="construction"] .back-link-fixed {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #ff6600;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  z-index: 10000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* Full header bar background, padding, shadow */
+[data-project="construction"] .site-header {
+  background-color: #222;
+  padding: 1.5rem 1rem;
+  border-bottom: 2px solid #ff6600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-[data-project="construction"] .back-link-fixed:hover {
-  background-color: #cc5200;
-  transform: translateY(-2px);
+/* Flex layout for logo and text */
+[data-project="construction"] .branding-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
-/* Construction screenshot grid layout: 4 columns on desktop, 2 on mobile */
-[data-project="construction"] .screenshot-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+/* Branding logo image */
+[data-project="construction"] .logo {
+  width: 60px;
+  height: auto;
 }
 
-@media screen and (max-width: 768px) {
-  [data-project="construction"] .screenshot-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Text block inside header */
+[data-project="construction"] .branding-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
 }
 
-/* Trusted-by logos for construction clients */
-[data-project="construction"] .logo-strip img {
-  height: 50px;
-  max-width: 100px;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease-in-out;
+/* Header title style */
+[data-project="construction"] .branding-text h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
 }
 
-[data-project="construction"] .logo-strip img:hover {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* Optional: PDF wrapper height specific to construction shop drawings */
-[data-project="construction"] .pdf-wrapper {
-  height: 600px;
-}
-
-/* Optional: PDF lightbox frame sizing (can be tweaked later if needed) */
-[data-project="construction"] .pdf-lightbox-frame {
-  width: 90vw;
-  height: 90vh;
-}
-
-/* Optional: Carousel button behavior stays scoped */
-[data-project="construction"] .carousel-btn {
-  font-size: 2rem;
-  padding: 0.6rem 1rem;
+/* Subtitle + supporting line */
+[data-project="construction"] .branding-text p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #ccc;
 }

@@ -485,7 +485,7 @@ body {
 
 
 /*-------📱 Responsive Tweaks-----*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   [data-project="revit-tools"] .project-header {
     flex-direction: column;
     align-items: flex-start;

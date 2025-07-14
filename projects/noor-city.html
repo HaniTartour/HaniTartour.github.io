@@ -292,6 +292,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+// ✅ Allow closing lightbox when clicking on dark background
+	overlay.addEventListener("click", function (e) {
+	  if (e.target === overlay) {
+		overlay.classList.add("hidden");
+	  }
+	});
+
+
   // ========================
   // 🧾 PDF Carousel Section
   // ========================

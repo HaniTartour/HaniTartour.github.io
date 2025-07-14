@@ -797,10 +797,10 @@ body {
   }
 
   [data-project="revit-tools"] .share-linkedin {
-    justify-content: flex-start;
+    justify-content: flex-end;		 /* 👈 Align button to the right */
     font-size: 0.95rem;
     width: auto;
-    margin-left: 0;
+    margin-left: auto;				/* 👈 Push it to the right within flex */
     padding: 0.6rem 1rem;
   }
 
